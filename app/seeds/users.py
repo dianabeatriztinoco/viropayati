@@ -3,17 +3,28 @@ from app.models import db, User
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='Demo', email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password')
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password')
+    demo_student = User(
+        fullname='Demo Student', username='demo_student', email='demoStudent@aa.io', password='password', teacher=False)
+    demo_teacher = User(
+        fullname='Demo Teacher', username='demo_teacher', email='demoTeacher@aa.io', password='password', teacher=True)    
+    student1 = User(
+        fullname='marnie student', username='marnie_student', email='marnieStudent@aa.io', password='password', teacher=False)
+    student2 = User(
+        fullname='bobbie student', username='bobbie_student', email='bobbieStudent@aa.io', password='password', teacher=False)
+    teacher1 = User(
+        fullname='marnie teacher', username='marnie_teacher', email='marnieTeacher@aa.io', password='password', teacher=True)
+    teacher2 = User(
+        fullname='bobbie teacher', username='bobbie_teacher', email='bobbieTeacher@aa.io', password='password', teacher=True)
+    teacher3 = User(
+        fullname='bobbie teacher', username='bobbie_teacher', email='bobbieTeacher@aa.io', password='password', teacher=True)
 
-    db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
-
+    db.session.add(demo_student)
+    db.session.add(demo_teacher)
+    db.session.add(student1)
+    db.session.add(student2)
+    db.session.add(teacher1)
+    db.session.add(teacher2)
+    db.session.add(teacher3)
     db.session.commit()
 
 

@@ -1,15 +1,32 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 from flask_login import UserMixin
+from .teacher import teachers
+
+# Teachers = db.Table(
+#     "",
+#     db.Column("followerId", db.Integer, db.ForeignKey("users.id")),
+#     db.Column("followingId", db.Integer, db.ForeignKey("users.id")),
+#     db.Column("timestamp", db.DateTime, default=datetime.now)
+# )
 
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
+    fullname = db.Column(db.String(40), nullable=False)
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    isTeacher = db.Column(db.Boolean, default=False, nullable=False)
+    teacher = db.Column(db.Integer,  db.ForeignKey('teachers.userId'))
+    created_at = db.Column(db.DateTime, default=datetime.now,)
+
+    # yogaClasses = db.relationship('YogaClass', back_populates="users")
+    userTeachers = db.relationship('YogaClass', secondary=teachers, back_populates='yogaTeachers')
+    
 
     @property
     def password(self):
@@ -25,6 +42,9 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'fullname': self.fullname,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'teacher': self.teacher,
+            'created_at': self.created_at
         }
