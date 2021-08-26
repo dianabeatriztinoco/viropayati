@@ -5,13 +5,14 @@ import LogoutButton from '../auth/LogoutButton';
 import DemoLogin from '../auth/DemoLogin'
 import './navBar.css'
 import { useSelector } from 'react-redux';
+import viropayati_logo from '../../assets/viropayati_logo.png'
 
 
 const NavBar = ({setAuthenticated}) => {
 
   const sessionUser = useSelector(state => state.session.user)
 
-  const viropayatiLogo = 'https://i.imgur.com/a/LRtoMCZ.png'
+  // const viropayatiLogo = 'https://i.imgur.com/a/LRtoMCZ.png'
   if(sessionUser){
 
   return (
@@ -19,7 +20,7 @@ const NavBar = ({setAuthenticated}) => {
       <div className="navBarContainer">
         <div className='viropayatiLogo'>
           <NavLink to='/splash' exact={true} activeClassName='active'>
-            <img src={`${viropayatiLogo}`}></img>
+            <img src={viropayati_logo}></img>
           </NavLink>
         </div>
         {/* <div>
@@ -55,7 +56,7 @@ else {
       <div className="navBarContainer">
         <div className='viropayatiLogo'>
           <NavLink to='/' exact={true} activeClassName='active'>
-            <img src='viropayati_logo.png'></img>
+            <img src={viropayati_logo}></img>
           </NavLink>
         </div>
         <div className="authContainer">
