@@ -11,6 +11,7 @@ const NavBar = ({setAuthenticated}) => {
 
   const sessionUser = useSelector(state => state.session.user)
 
+  const viropayatiLogo = 'https://i.imgur.com/a/LRtoMCZ.png'
   if(sessionUser){
 
   return (
@@ -18,7 +19,7 @@ const NavBar = ({setAuthenticated}) => {
       <div className="navBarContainer">
         <div className='viropayatiLogo'>
           <NavLink to='/splash' exact={true} activeClassName='active'>
-            <img src='viropayati_logo.png'></img>
+            <img src={`${viropayatiLogo}`}></img>
           </NavLink>
         </div>
         {/* <div>
