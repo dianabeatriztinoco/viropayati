@@ -1,6 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .yoga_classes import seed_classes, undo_classes
+from .teachers import seed_teachers, undo_teachers
 
 
 # Creates a seed group to hold our commands
@@ -12,7 +13,9 @@ seed_commands = AppGroup('seed')
 @seed_commands.command('all')
 def seed():
     seed_users()
+    seed_teachers()
     seed_classes()
+    
     # Add other seed functions here
 
 
@@ -20,5 +23,6 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_users()
+    undo_teachers()
     undo_classes()
     # Add other undo functions here

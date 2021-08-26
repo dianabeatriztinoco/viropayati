@@ -3,13 +3,13 @@ from app.models import db, YogaClass
 
 def seed_classes():
     class1 = YogaClass(
-        title='Vynasa Power Flow', description='description', price=20, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, teacher_id=1)
+        title='Vynasa Power Flow', description='description', price=20, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=1)
     class2 = YogaClass(
-        title='Gentle Yoga',  description='description', price=10, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, teacher_id=2)
+        title='Gentle Yoga',  description='description', price=10, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=2)
     class3 = YogaClass(
-        title='Heart Opening Hatha', description='description', price=5, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, teacher_id=3)
+        title='Heart Opening Hatha', description='description', price=5, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=3)
     class4 = YogaClass(
-        title='Self Love Yoga',  description='description', price=0, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, teacher_id=4)
+        title='Self Love Yoga',  description='description', price=0, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=4)
     
     db.session.add(class1)
     db.session.add(class2)

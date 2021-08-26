@@ -3,17 +3,18 @@ from app.models import db, Teacher
 
 def seed_teachers():
     teacher1 = Teacher(
-        user_id=2, bio='biobiobiobio', class_id=1)
+        userId=2, bio='biobiobiobio')
     teacher2 = Teacher(
-         user_id=5, bio='biobiobiobio', class_id=2)
+         userId=5, bio='biobiobiobio')
     teacher3 = Teacher(
-        user_id=6, bio='biobiobiobio', class_id=3)
+        userId=6, bio='biobiobiobio')
     teacher4 = Teacher(
-        user_id=7, bio='biobiobiobio', class_id=4)
+        userId=7, bio='biobiobiobio')
     
     db.session.add(teacher1)
     db.session.add(teacher2)
     db.session.add(teacher3)
+    db.session.add(teacher4)
     
     db.session.commit()
 

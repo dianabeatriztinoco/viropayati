@@ -1,20 +1,23 @@
 from .db import db
+from datetime import datetime, timedelta
+from flask_login import UserMixin
+# from .teacher import teachers
 
-teachers = db.Table(
-    "teachers",
-    db.Model.metadata,
-    db.Column('userId', db.Integer, db.ForeignKey('users.id')),
-    db.Column('yogaClassId', db.Integer, db.ForeignKey('yogaClasses.id'))
-)
-    # users = db.relationship('User', back_populates='teachers')
-    # yoga_classes = db.relationship('YogaClass', back_populates='teachers')
 
-    # def to_dict(self):
-    #     return {
-    #         'id': self.id,
-    #         'user_id': self.fullname,
-    #         'bio': self.username,
-    #         'class_id': self.email,
-    #     }
+class Teacher(db.Model, UserMixin):
+    __tablename__ = 'teachers'
 
- 
+    id = db.Column(db.Integer, primary_key=True)
+    userId = db.Column(db.Integer, db.ForeignKey('users.id'))
+    bio = db.Column(db.String(100), nullable=False)
+
+    users = db.relationship('User', back_populates='teachers')
+    yogaClasses = db.relationship('YogaClass', back_populates='yogaTeachers')
+    # users = db.relationship('User', back_populates="yogaClasses")
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'bio': self.bio,
+        }

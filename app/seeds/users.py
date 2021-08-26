@@ -4,19 +4,19 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo_student = User(
-        fullname='Demo Student', username='demo_student', email='demoStudent@aa.io', password='password', teacher=False)
+        fullname='Demo Student', username='demo_student', email='demoStudent@aa.io', password='password', isTeacher=False)
     demo_teacher = User(
-        fullname='Demo Teacher', username='demo_teacher', email='demoTeacher@aa.io', password='password', teacher=True)    
+        fullname='Demo Teacher', username='demo_teacher', email='demoTeacher@aa.io', password='password', isTeacher=True)    
     student1 = User(
-        fullname='marnie student', username='marnie_student', email='marnieStudent@aa.io', password='password', teacher=False)
+        fullname='marnie student', username='marnie_student', email='marnieStudent@aa.io', password='password', isTeacher=False)
     student2 = User(
-        fullname='bobbie student', username='bobbie_student', email='bobbieStudent@aa.io', password='password', teacher=False)
+        fullname='bobbie student', username='bobbie_student', email='bobbieStudent@aa.io', password='password', isTeacher=False)
     teacher1 = User(
-        fullname='marnie teacher', username='marnie_teacher', email='marnieTeacher@aa.io', password='password', teacher=True)
+        fullname='marnie teacher', username='marnie_teacher', email='marnieTeacher@aa.io', password='password', isTeacher=True)
     teacher2 = User(
-        fullname='bobbie teacher', username='bobbie_teacher', email='bobbieTeacher@aa.io', password='password', teacher=True)
+        fullname='bobbie teacher', username='bobbie_teacher', email='bobbieTeacher@aa.io', password='password', isTeacher=True)
     teacher3 = User(
-        fullname='bobbie teacher', username='bobbie_teacher', email='bobbieTeacher@aa.io', password='password', teacher=True)
+        fullname='carlie teacher', username='carlie_teacher', email='carlieTeacher@aa.io', password='password', isTeacher=True)
 
     db.session.add(demo_student)
     db.session.add(demo_teacher)

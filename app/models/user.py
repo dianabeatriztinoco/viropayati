@@ -2,7 +2,7 @@ from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 from flask_login import UserMixin
-from .teacher import teachers
+
 
 # Teachers = db.Table(
 #     "",
@@ -21,13 +21,13 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     isTeacher = db.Column(db.Boolean, default=False, nullable=False)
-    teacher = db.Column(db.Integer,  db.ForeignKey('teachers.userId'))
     created_at = db.Column(db.DateTime, default=datetime.now,)
 
     # yogaClasses = db.relationship('YogaClass', back_populates="users")
-    userTeachers = db.relationship('YogaClass', secondary=teachers, back_populates='yogaTeachers')
+    teachers = db.relationship('Teacher', back_populates='users')
+    # userTeachers = db.relationship('YogaClass', secondary=teachers, back_populates='yogaTeachers')
     
-
+    
     @property
     def password(self):
         return self.hashed_password
@@ -45,6 +45,11 @@ class User(db.Model, UserMixin):
             'fullname': self.fullname,
             'username': self.username,
             'email': self.email,
-            'teacher': self.teacher,
+            'isTeacher': self.isTeacher,
             'created_at': self.created_at
         }
+
+
+# User.userTeachers.append(YogaClass)
+# db.session.add(User)
+# db.session.commit()

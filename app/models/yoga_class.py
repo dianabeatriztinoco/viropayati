@@ -1,25 +1,26 @@
 from .db import db
 from datetime import datetime, timedelta
 from flask_login import UserMixin
-from .teacher import teachers
 
 
 class YogaClass(db.Model, UserMixin):
     __tablename__ = 'yogaClasses'
 
     id = db.Column(db.Integer, primary_key=True)
+    taughtBy = db.Column(db.Integer, db.ForeignKey('teachers.id'))
     title = db.Column(db.String(40), nullable=False)
     description = db.Column(db.String(100), nullable=False)
-    price = db.Column(db.Integer, nullable=False, unique=True)
+    price = db.Column(db.Integer, nullable=False)
     address = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(100), nullable=False)
     state = db.Column(db.String(100), nullable=False)
     postal_code = db.Column(db.Integer, nullable=False)
-    teacher_id = db.Column(db.Integer, db.ForeignKey('teachers.yogaClassId'))
     created_at = db.Column(db.DateTime, default=datetime.now)
 
+    yogaTeachers = db.relationship('Teacher', back_populates='yogaClasses')
+    # yogaTeachers = db.relationship('User', secondary=teachers, back_populates='userTeachers')
     # users = db.relationship('User', back_populates="yogaClasses")
-    yogaTeachers = db.relationship('User', secondary=teachers, back_populates='userTeachers')
+    
 
     def to_dict(self):
         return {
@@ -34,3 +35,4 @@ class YogaClass(db.Model, UserMixin):
             'teacher_id': self.teacher_id,
             'created_at': self.created_at
         }
+
