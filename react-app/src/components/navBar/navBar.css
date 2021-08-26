@@ -1,0 +1,27 @@
+.navBarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid  rosybrown;
+}
+
+.authContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.loginDiv {
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.signupDiv {
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.demoDiv {
+
+}

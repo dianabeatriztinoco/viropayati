@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loginDemo } from '../../store/session';
 import { useHistory } from "react-router-dom";
-
+import './demoLogin.css'
 
 const DemoLoginButton = () => {
   const dispatch = useDispatch()
@@ -14,7 +14,7 @@ const DemoLoginButton = () => {
 
   return (
     <button onClick={onDemoLogin} className="demo-button" >
-      Log In as Demo User
+      Demo 
     </button>
   );
 };

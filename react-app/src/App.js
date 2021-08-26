@@ -28,6 +28,12 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
+      <Route path='/' exact={true}>
+        SPLASH PAGE
+        </Route>
+      <Route path='/login' exact={true}>
+          <LoginForm />
+        </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
