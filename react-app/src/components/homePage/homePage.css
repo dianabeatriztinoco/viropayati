@@ -1,0 +1,45 @@
+.homePageButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.availableClassesDiv{
+   margin-right: 200px;
+}
+
+.teacherReviewsDiv {
+
+}
+
+.availableClassesLink{
+    text-decoration: none;
+    color: sandybrown;
+    cursor: pointer;
+    border: 2px;
+}
+
+.teacherReviewsLink {
+    text-decoration: none;
+    color: sandybrown;
+    cursor: pointer;
+}
+
+
+.availableClassesButton{
+    border-radius: 5px;
+height: 400px;
+width: 700px;
+background-color: rgb(217, 240, 208);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+border-radius: 5px;
+}
+
+.teacherReviewsButton {
+    border-radius: 5px;
+    height: 400px;
+    width: 700px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}

@@ -1,0 +1,25 @@
+.splashImage {
+    height: auto;
+    width: 2000px;
+}
+
+.splashImageDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.splashPageTxt {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    font-family: cursive;
+    font-size: xx-large;
+  
+}
+
+.splashPageTxtLink {
+    text-decoration: none;
+    color: sandybrown;
+    cursor: pointer;
+}

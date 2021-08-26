@@ -8,6 +8,9 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import SplashPage from './components/splashPage/SplashPage';
+import HomePage from './components/homePage/HomePage';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -27,9 +30,13 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <Footer />
       <Switch>
       <Route path='/' exact={true}>
-        SPLASH PAGE
+       <SplashPage />
+        </Route>
+        <Route path='/homepage' exact={true}>
+       <HomePage />
         </Route>
       <Route path='/login' exact={true}>
           <LoginForm />
