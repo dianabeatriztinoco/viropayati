@@ -2,14 +2,20 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: solid  rosybrown;
+    border-bottom:1px solid rgb(211, 211, 211);
 }
 
+.viropayatiLogo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
 .authContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 30px;
+    margin-right: 20px;
 }
 
 .loginDiv {
@@ -24,4 +30,30 @@
 
 .demoDiv {
 
+}
+
+.loginDiv-Button {
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+
+.signupDiv-Button {
+    height: 40px;
+    width: 70px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+
+.loginDiv-Button {
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
 }

@@ -16,7 +16,7 @@ const NavBar = ({setAuthenticated}) => {
   return (
     <nav>
       <div className="navBarContainer">
-        <div>
+        <div className='viropayatiLogo'>
           <NavLink to='/splash' exact={true} activeClassName='active'>
             <img src='viropayati_logo.png'></img>
           </NavLink>
@@ -39,7 +39,7 @@ const NavBar = ({setAuthenticated}) => {
         {/* <div>
           <DemoLogin/>
         </div> */}
-        <div>
+        <div className='logOutDiv'>
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div>
       </div>
@@ -52,7 +52,7 @@ else {
   return (
     <nav>
       <div className="navBarContainer">
-        <div>
+        <div className='viropayatiLogo'>
           <NavLink to='/' exact={true} activeClassName='active'>
             <img src='viropayati_logo.png'></img>
           </NavLink>
@@ -60,12 +60,12 @@ else {
         <div className="authContainer">
         <div>
           <NavLink className='loginDiv' to='/login' exact={true} activeClassName='active'>
-            Login
+            <button className='loginDiv-Button'>Login</button>
           </NavLink>
         </div>
         <div >
           <NavLink className='signupDiv' to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
+           <button className='signupDiv-Button'> Sign Up </button>
           </NavLink>
         </div>
         {/* <li>
