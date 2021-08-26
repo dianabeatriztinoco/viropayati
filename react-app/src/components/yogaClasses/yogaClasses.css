@@ -1,0 +1,45 @@
+.yogaClassContainer {
+    margin-bottom: 900px;
+
+}
+
+.yogaClassDisplay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* width: 800px;
+    height: 500px; */
+}
+
+.classContainer {
+    /* width: 200px; */
+}
+
+.yogaClassImage {
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.style {
+    margin-top: 10px;
+    font-family: cursive;
+}
+
+.teacher {
+    font-family: cursive;
+}
+
+.bookClassButton {
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: 350px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}

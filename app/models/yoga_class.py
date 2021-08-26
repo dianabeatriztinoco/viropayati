@@ -8,6 +8,7 @@ class YogaClass(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     taughtBy = db.Column(db.Integer, db.ForeignKey('teachers.id'))
+    pic = db.Column(db.String, nullable=False)
     title = db.Column(db.String(40), nullable=False)
     description = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer, nullable=False)
@@ -21,10 +22,10 @@ class YogaClass(db.Model, UserMixin):
     # yogaTeachers = db.relationship('User', secondary=teachers, back_populates='userTeachers')
     # users = db.relationship('User', back_populates="yogaClasses")
     
-
     def to_dict(self):
         return {
             'id': self.id,
+            'pic': self.pic,
             'title': self.title,
             'description': self.description,
             'price': self.price,
@@ -32,7 +33,7 @@ class YogaClass(db.Model, UserMixin):
             'city': self.city,
             'state': self.state,
             'postal_code': self.postal_code,
-            'teacher_id': self.teacher_id,
+            'teacher_id': self.taughtBy,
             'created_at': self.created_at
         }
 

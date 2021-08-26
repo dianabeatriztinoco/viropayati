@@ -1,6 +1,15 @@
 .footer__container {
+    border-top: 1px solid rgb(211, 211, 211);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
+.gitHubIcon {
+    height: 50px;
+}
+
+.gitHub {
+   margin-top: 30px;
 }

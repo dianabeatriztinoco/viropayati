@@ -1,9 +1,16 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
+import yogaClasses from './yogaClass';
+import teachers from './teacher';
+import users from './user'
+
 
 const rootReducer = combineReducers({
   session,
+  yogaClasses,
+  teachers, 
+  users
 });
 
 

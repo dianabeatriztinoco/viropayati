@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     margin-top: 60px;
+    
 }
 
 .splashPageTxt {
@@ -15,6 +16,7 @@
     margin-top: 60px;
     font-family: cursive;
     font-size: xx-large;
+    margin-bottom: 80px;
   
 }
 

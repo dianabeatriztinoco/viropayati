@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import SplashPage from './components/splashPage/SplashPage';
 import HomePage from './components/homePage/HomePage';
 import Footer from './components/footer/Footer';
+import YogaClasses from './components/yogaClasses/YogaClasses';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -30,7 +31,6 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Footer />
       <Switch>
       <Route path='/' exact={true}>
        <SplashPage />
@@ -47,6 +47,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <Route path='/yogaClasses' exact={true}>
+          <YogaClasses />
+        </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
@@ -57,6 +60,7 @@ function App() {
           <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

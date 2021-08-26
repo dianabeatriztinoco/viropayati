@@ -3,13 +3,13 @@ from app.models import db, YogaClass
 
 def seed_classes():
     class1 = YogaClass(
-        title='Vynasa Power Flow', description='description', price=20, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=1)
+        title='Vynasa Power Flow', description='description', price=20, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=1, pic='https://i.imgur.com/VzSYqfi.png')
     class2 = YogaClass(
-        title='Gentle Yoga',  description='description', price=10, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=2)
+        title='Gentle Yoga',  description='description', price=10, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=2, pic='https://i.imgur.com/GKR2l89.png')
     class3 = YogaClass(
-        title='Heart Opening Hatha', description='description', price=5, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=3)
+        title='Heart Opening Hatha', description='description', price=5, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=3, pic='https://i.imgur.com/AlZ7yZd.jpg')
     class4 = YogaClass(
-        title='Self Love Yoga',  description='description', price=0, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=4)
+        title='Self Love Yoga',  description='description', price=0, address='123 Main st.', city='New Orleans', state='LA', postal_code=70114, taughtBy=4, pic='https://i.imgur.com/AzLZApV.jpg')
     
     db.session.add(class1)
     db.session.add(class2)
