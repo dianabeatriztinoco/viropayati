@@ -12,6 +12,7 @@ import SplashPage from './components/splashPage/SplashPage';
 import HomePage from './components/homePage/HomePage';
 import Footer from './components/footer/Footer';
 import YogaClasses from './components/yogaClasses/YogaClasses';
+import YogaDetails from './components/yogaDetails/YogaDetails';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -50,13 +51,16 @@ function App() {
         <Route path='/yogaClasses' exact={true}>
           <YogaClasses />
         </Route>
+        <Route path='/yogaClasses/:classId' exact={true}>
+          <YogaDetails />
+        </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
+        <ProtectedRoute path='/homepage' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>

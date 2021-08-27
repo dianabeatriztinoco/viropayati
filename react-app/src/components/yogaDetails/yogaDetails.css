@@ -1,0 +1,19 @@
+.yogaClassDetailImage {
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.yogaDetailContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.updateDelete{
+    display: flex;
+    justify-content: center;
+    
+}

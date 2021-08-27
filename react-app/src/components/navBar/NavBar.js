@@ -2,10 +2,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
-import DemoLogin from '../auth/DemoLogin'
+import DemoLoginStudent from '../auth/DemoLoginStudent'
+import DemoLoginTeacher from '../auth/DemoLoginTeacher';
 import './navBar.css'
 import { useSelector } from 'react-redux';
 import viropayati_logo from '../../assets/viropayati_logo.png'
+
+
 
 
 const NavBar = ({setAuthenticated}) => {
@@ -76,7 +79,10 @@ else {
           </NavLink>
         </li> */}
         <div className='demoDiv'>
-          <DemoLogin/>
+        
+          <DemoLoginStudent/>
+          <DemoLoginTeacher/>
+         
         </div>
         </div>
         {/* <div>

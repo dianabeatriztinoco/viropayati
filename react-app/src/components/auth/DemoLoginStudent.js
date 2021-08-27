@@ -1,22 +1,25 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { loginDemo } from '../../store/session';
+import { loginDemoStudent } from '../../store/session';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './demoLogin.css'
 
-const DemoLoginButton = () => {
+const DemoLoginStudent = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const onDemoLogin = async (e) => {
-    await dispatch(loginDemo());
+    await dispatch(loginDemoStudent());
     history.push("/")
   };
 
   return (
+    <Link to='/homepage'>
     <button onClick={onDemoLogin} className="demo-button" >
-      Demo 
+      Demo Student
     </button>
+    </Link>
   );
 };
 
-export default DemoLoginButton;
+export default DemoLoginStudent;

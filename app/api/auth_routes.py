@@ -74,13 +74,24 @@ def sign_up():
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-@auth_routes.route('/demo', methods=['GET','POST'])
-def demo_login():
+@auth_routes.route('/demoStudent', methods=['GET','POST'])
+def demoStudent_login():
     '''
     Logs in demo user
 
     '''
     demo_user = User.query.filter(User.email == 'demoStudent@aa.io').first()
+    login_user(demo_user)
+    return demo_user.to_dict()
+
+
+@auth_routes.route('/demoTeacher', methods=['GET','POST'])
+def demoTeacher_login():
+    '''
+    Logs in demo user
+
+    '''
+    demo_user = User.query.filter(User.email == 'demoTeacher@aa.io').first()
     login_user(demo_user)
     return demo_user.to_dict()
 

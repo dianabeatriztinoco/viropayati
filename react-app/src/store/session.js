@@ -12,7 +12,14 @@ const removeUser = () => ({
   type: REMOVE_USER,
 })
 
-const demoLogin = (demoUser) => {
+const studentDemoLogin = (demoUser) => {
+  return {
+    type: DEMO_LOGIN, 
+    payload: demoUser
+  }
+}
+
+const teacherDemoLogin = (demoUser) => {
   return {
     type: DEMO_LOGIN, 
     payload: demoUser
@@ -64,15 +71,28 @@ export const login = (email, password) => async (dispatch) => {
 
 }
 
-export const loginDemo = () => async (dispatch) => {
+export const loginDemoStudent = () => async (dispatch) => {
 
-  const response = await fetch('/api/auth/demo', {
+  const response = await fetch('/api/auth/demoStudent', {
     method: 'POST',
   });
 
  if(response.ok){
    const data = await response.json()
-  dispatch(demoLogin(data));
+  dispatch(studentDemoLogin(data));
+  return response;
+ }
+}
+
+export const loginDemoTeacher = () => async (dispatch) => {
+
+  const response = await fetch('/api/auth/demoTeacher', {
+    method: 'POST',
+  });
+
+ if(response.ok){
+   const data = await response.json()
+  dispatch(teacherDemoLogin(data));
   return response;
  }
 }

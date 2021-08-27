@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { logout } from '../../store/session';
+import { Link } from 'react-router-dom';
 import './logoutButton.css'
 
 const LogoutButton = () => {
@@ -11,7 +12,13 @@ const LogoutButton = () => {
     await dispatch(logout());
   };
 
-  return <button className='logout-button' onClick={onLogout}>Logout</button>;
+  return (
+
+  <Link to='/'>
+  <button className='logout-button' onClick={onLogout}>Logout</button>;
+  </Link>
+
+  )
 };
 
 export default LogoutButton;

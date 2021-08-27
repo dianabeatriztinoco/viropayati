@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getAllClasses } from '../../store/yogaClass';
 import { getAllTeachers } from '../../store/teacher';
 import { getAllUsers } from '../../store/user';
+import { Link } from 'react-router-dom';
 import './yogaClasses.css'
 
 const YogaClasses = () => {
@@ -24,7 +25,7 @@ const YogaClasses = () => {
     }, [])
 
 
-   if(sessionUser){
+   
 
     return (
         <>
@@ -34,8 +35,9 @@ const YogaClasses = () => {
                 {yogaClasses?.yoga_classes.map((yogaClass)=>(
                     <div className="classContainer">
                     <div className="style">{yogaClass.title}</div>
-                   
+                    <Link to={`/yogaClasses/${yogaClass.id}`}>
                     <img className='yogaClassImage' src={yogaClass.pic} />
+                    </Link>
                   
                     {/* {yogaClass.address} */}
                     {/* {yogaClass.city} */}
@@ -51,8 +53,13 @@ const YogaClasses = () => {
 
                    yogaClass.teacher_id === teacher.id && teacher.userId === user.id ?  (
                        <>
+                       <div className="date">{yogaClass.classDate}</div>
                        <div className="teacher">taught by {user.fullname}</div>
-                       {/* <button className="bookClassButton"> book class </button> */}
+                       <Link to={`/yogaClasses/${yogaClass.id}`}>
+                       {/* <div className="buttonContainer"> */}
+                       {/* <button className="bookClassButton"> more info </button> */}
+                       </Link>
+                       {/* </div> */}
                        </>
                         
                     ) 
@@ -72,12 +79,7 @@ const YogaClasses = () => {
         </div>
         </>
     )
-    }
-    else {
-        return (
-            <div  className='yogaClassContainer'>non signed in user</div>
-        )
-    }
+   
 }
 
 export default YogaClasses 

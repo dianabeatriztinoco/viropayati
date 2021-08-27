@@ -1,9 +1,10 @@
 
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import HomePage from '../homePage/HomePage';
 import { useSelector } from 'react-redux';
 import './splashPage.css'
-import HomePage from '../homePage/HomePage';
 
 const splashImage = 'https://i.imgur.com/Cyy2hjR.jpg'
 
@@ -27,7 +28,7 @@ const SplashPage = () => {
     else {
         return (
             <div>
-                <HomePage />
+                <HomePage/>
             </div>
         )
     }
