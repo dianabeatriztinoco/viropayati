@@ -27,7 +27,7 @@ const YogaDetails = () => {
         dispatch(getAllTeachers())
         dispatch(getAllUsers())
     }, [])
-    if(sessionUser.isTeacher === false){
+    if(sessionUser?.isTeacher === false){
 
     return (
     <>
@@ -49,8 +49,9 @@ const YogaDetails = () => {
 }
 else {
     return (
-
+           
             <>
+             <div>this page is being read</div>
                 {yogaClasses?.yoga_classes.map((yogaClass)=>(
                     
                  yogaClass.id === +classId ? (

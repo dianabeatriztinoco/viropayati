@@ -13,6 +13,7 @@ import HomePage from './components/homePage/HomePage';
 import Footer from './components/footer/Footer';
 import YogaClasses from './components/yogaClasses/YogaClasses';
 import YogaDetails from './components/yogaDetails/YogaDetails';
+import YogaClassForm from './components/yogaClassForm/YogaClassForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route path='/yogaClasses/:classId' exact={true}>
           <YogaDetails />
+        </Route>
+        <Route path='/newClass' exact={true}>
+          <YogaClassForm />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
