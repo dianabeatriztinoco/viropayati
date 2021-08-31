@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux'
 import "./editYogaClass.css"
 
 const EditYogaClass = ({ yogaClass, hideForm }) => {
+
+  console.log(yogaClass)
    
     const [editDescription, setEditDescription] = useState(yogaClass.description)
     const dispatch = useDispatch()
@@ -18,7 +20,7 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
         }
 
         await dispatch(updatedYogaClass(payload))
-
+      
         hideForm()
     }
 
