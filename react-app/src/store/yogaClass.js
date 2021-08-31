@@ -88,7 +88,7 @@ export const createNewYogaClass = (classDate, image, title , description, price,
     }
 }
 
-export const updateYogaClass = (yogaClass) => async dispatch => {
+export const updatedYogaClass = (yogaClass) => async dispatch => {
     const {id, description} = yogaClass
 
     const res = await fetch(`/api/yoga_classes/${id}/`, {
@@ -121,7 +121,7 @@ export default function yogaClasses(state=initialState, action){
         }
         case UPDATE_YOGA_CLASS: {
 
-            const updatedState = {action.payload}
+            const updatedState = { ...state, [action.yogaClass.id]: action.yogaClass }
             return updatedState
             
         }

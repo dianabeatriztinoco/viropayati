@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { updateYogaClass } from "../../store/yogaClass";
+import { updatedYogaClass } from "../../store/yogaClass";
 import { useDispatch } from 'react-redux'
 import "./editYogaClass.css"
 
@@ -17,7 +17,7 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
             description: editDescription,
         }
 
-        await dispatch(updateYogaClass(payload))
+        await dispatch(updatedYogaClass(payload))
 
         hideForm()
     }
