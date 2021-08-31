@@ -7,6 +7,7 @@ import { getAllClasses } from '../../store/yogaClass';
 import { getAllTeachers } from '../../store/teacher';
 import { getAllUsers } from '../../store/user';
 import { deleteSelectedYogaClass } from '../../store/yogaClass';
+import EditYogaClass from '../editYogaClass/EditYogaClass';
 import { Link } from 'react-router-dom';
 import './yogaDetails.css'
 
@@ -36,11 +37,11 @@ const YogaDetails = () => {
 
       let handelUpdate = null;
 
-    //   if (showEditCaption) {
-    //     handelUpdate = (
-    //     //   <EditCaption yogaClass={yogaClass} hideForm={() => setShowEditCaption(null)} />
-    //     //)
-    //   }
+      if (showEditCaption) {
+        handelUpdate = (
+          <EditYogaClass yogaClass={yogaClass} hideForm={() => setShowEditCaption(null)} />
+        )
+      }
     
   
 

@@ -8,7 +8,7 @@ const getTeachers = (teachers) => ({
 const initialState = {teachers:null}; 
 
 export const getAllTeachers = () => async dispatch => {
-    const response  = await fetch('/api/teachers');
+    const response  = await fetch('/api/teachers/');
     if (response.ok){
         const teachers = await response.json()
         dispatch(getTeachers(teachers))

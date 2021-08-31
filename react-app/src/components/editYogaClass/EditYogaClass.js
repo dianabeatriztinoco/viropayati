@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { updateCaption } from "../../store/post";
+import { updateYogaClass } from "../../store/yogaClass";
 import { useDispatch } from 'react-redux'
 import "./editYogaClass.css"
 
 const EditYogaClass = ({ yogaClass, hideForm }) => {
-    // const [editCaption, setEditCaption] = useState(post.caption)
+   
     const [editDescription, setEditDescription] = useState(yogaClass.description)
     const dispatch = useDispatch()
 
@@ -13,14 +13,11 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
         e.preventDefault()
 
         const payload = {
-            id: post.id,
-            caption: editDescription,
-            pic_url: yogaClass.pic_url,
-            user_id: postClass.user_id
-
+            id: yogaClass.id,
+            description: editDescription,
         }
 
-        await dispatch(update(payload))
+        await dispatch(updateYogaClass(payload))
 
         hideForm()
     }
@@ -30,15 +27,15 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
       <>
         <form className="edit-form" onSubmit={handleSubmit}>
           <input
-            className="edit-input-form"
-            name="caption"
-            placeholder="Caption Edit"
-            value={editCaption}
+            className="editDescriptionForm"
+            name="description"
+            placeholder="Edit Description"
+            value={editDescription}
             onChange={(e) => setEditDescription(e.target.value)}
           ></input>
          
             <button className="update-button" type="submit">
-              Update Caption
+              Update Description
             </button>
             <button className="cancel-edit-button" onClick={hideForm}>
               Cancel

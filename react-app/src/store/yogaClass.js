@@ -28,7 +28,7 @@ const updateYogaClass = (yogaClass) => ({
 const initialState = {classes:null}; 
 
 export const getAllClasses = () => async dispatch => {
-    const response  = await fetch('/api/yoga_classes');
+    const response  = await fetch('/api/yoga_classes/');
     if (response.ok){
         const yogaClasses = await response.json()
         dispatch(getClasses(yogaClasses))
@@ -38,7 +38,7 @@ export const getAllClasses = () => async dispatch => {
 
 export const deleteSelectedYogaClass = (id) => async dispatch => {
 
-    const response = await fetch(`/api/yoga_classes/${id}`, {
+    const response = await fetch(`/api/yoga_classes/${id}/`, {
         method: 'DELETE'
     })
 
@@ -53,7 +53,7 @@ export const deleteSelectedYogaClass = (id) => async dispatch => {
 
 export const createNewYogaClass = (classDate, image, title , description, price, address, city, state, postalCode) => async dispatch => {
 
-    const response = await fetch(`/api/yoga_classes/new`, {
+    const response = await fetch(`/api/yoga_classes/new/`, {
 
 
         method: 'POST',
@@ -88,6 +88,21 @@ export const createNewYogaClass = (classDate, image, title , description, price,
     }
 }
 
+export const updateYogaClass = (yogaClass) => async dispatch => {
+    const {id, description} = yogaClass
+
+    const res = await fetch(`/api/yoga_classes/${id}/`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(yogaClass)
+    })
+    if (res.ok) {
+        const editYogaClass = await res.json();
+        dispatch(updateYogaClass(editYogaClass))
+        return editYogaClass
+    }
+}
+
 export default function yogaClasses(state=initialState, action){
     switch(action.type){
         case GET_YOGA_CLASSES: {
@@ -103,7 +118,12 @@ export default function yogaClasses(state=initialState, action){
 
             delete afterState[action.id]
             return afterState
+        }
+        case UPDATE_YOGA_CLASS: {
 
+            const updatedState = {action.payload}
+            return updatedState
+            
         }
         default: 
         return state
