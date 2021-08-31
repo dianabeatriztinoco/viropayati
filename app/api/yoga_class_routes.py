@@ -14,7 +14,7 @@ def yoga_classes():
     return {'yoga_classes': [yoga_class.to_dict() for yoga_class in yoga_classes]}
 
 
-@yoga_class_routes.route('/<int:id>', methods=['GET'])
+@yoga_class_routes.route('/<int:id>/', methods=['GET'])
 @login_required
 def yoga_class(id):
     yoga_class = YogaClass.query.get(id)
@@ -25,7 +25,7 @@ def yoga_class(id):
     # return jsonify('delete succesful')
 
 
-@yoga_class_routes.route('/<int:id>', methods=['DELETE'])
+@yoga_class_routes.route('/<int:id>/', methods=['DELETE'])
 @login_required
 def delete_class(id):
     yoga_class = YogaClass.query.get(id)
@@ -36,7 +36,7 @@ def delete_class(id):
     return jsonify('delete succesful')
 
 
-@yoga_class_routes.route('/new', methods=['POST'])
+@yoga_class_routes.route('/new/', methods=['POST'])
 @login_required
 def create_class():
     user = current_user
@@ -74,7 +74,7 @@ def create_class():
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-@yoga_class_routes.route('/<int:id>', methods=['PUT'])
+@yoga_class_routes.route('/update/<int:id>/', methods=['PUT'])
 @login_required
 def update_caption(id):
     yoga_class = YogaClass.query.get(id)

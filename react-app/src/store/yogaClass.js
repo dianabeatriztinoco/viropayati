@@ -21,7 +21,7 @@ const createYogaClass = (yogaClass) => ({
 
 const updateYogaClass = (yogaClass) => ({
     type: UPDATE_YOGA_CLASS, 
-    payload: yogaClass
+    yogaClass
 })
 
 
@@ -53,6 +53,8 @@ export const deleteSelectedYogaClass = (id) => async dispatch => {
 
 export const createNewYogaClass = (classDate, image, title , description, price, address, city, state, postalCode) => async dispatch => {
 
+    console.log(classDate)
+
     const response = await fetch(`/api/yoga_classes/new/`, {
 
 
@@ -69,6 +71,8 @@ export const createNewYogaClass = (classDate, image, title , description, price,
         })
      
     });
+
+  
 
 
     if (response.ok) {
@@ -91,7 +95,7 @@ export const createNewYogaClass = (classDate, image, title , description, price,
 export const updatedYogaClass = (yogaClass) => async dispatch => {
     const {id, description} = yogaClass
 
-    const res = await fetch(`/api/yoga_classes/${id}/`, {
+    const res = await fetch(`/api/yoga_classes/update/${id}/`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(yogaClass)

@@ -52,7 +52,7 @@ function App() {
         <Route path='/yogaClasses' exact={true}>
           <YogaClasses />
         </Route>
-        <Route path='/yogaClasses/:classId' exact={true}>
+        <Route path='/yogaClasses/:classId/' exact={true}>
           <YogaDetails />
         </Route>
         <Route path='/newClass' exact={true}>

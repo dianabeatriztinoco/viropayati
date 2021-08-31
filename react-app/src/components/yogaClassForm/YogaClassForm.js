@@ -28,8 +28,9 @@ const YogaClassForm = () => {
      e.preventDefault()
 
      const data = await dispatch(createNewYogaClass(classDate, image, title, description, price, address, city, state, postalCode))
-    
+
      if (data) {
+       console.log(classDate)
        setErrors(data)
      }
     
