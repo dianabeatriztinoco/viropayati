@@ -15,7 +15,7 @@ const YogaClasses = () => {
     const yogaClasses = useSelector(state => state.yogaClasses.classes)
     const allUsers = useSelector(state => state.users.users)
     const teachers = useSelector(state => state.teachers.teachers)
-    console.log( allUsers)
+    
   
 
     useEffect(()=>{
