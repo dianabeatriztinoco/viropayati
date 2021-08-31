@@ -30,8 +30,8 @@ def yoga_class(id):
 def delete_class(id):
     yoga_class = YogaClass.query.get(id)
    
-    # db.session.delete(yoga_class)
-    # db.session.commit()
+    db.session.delete(yoga_class)
+    db.session.commit()
 
     return jsonify('delete succesful')
 
@@ -40,22 +40,29 @@ def delete_class(id):
 @login_required
 def create_class():
     user = current_user
+
+
+    # teacher = Teacher.to_dict()
+    # teacher = Teacher.query.filter({'userId': 2})
+    # teacher = Teacher.query.all()
+    # for teach in teacher: 
+    
     form = YogaClassForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         data = form.data
-        print('xxxxxxxxxxxxxxxxxxxxxxx', data)
+       
         yoga_class = YogaClass(
-            taught_by=user.id,
-            class_date=data['classDate'],
-            class_pic=data['classPic'],
+            taughtBy=user.id,
+            classDate=data['class_date'],
+            pic=data['class_pic'],
             title=data['title'],
             description=data['description'],
             price=data['price'],
             address=data['address'],
             city=data['city'],
             state=data['state'],
-            postalCode=data['postalCode'],
+            postal_code=data['postalCode'],
             created_at=datetime.now()
         )
         print(yoga_class)
@@ -65,3 +72,18 @@ def create_class():
         return yoga_class.to_dict()
   
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+@yoga_class_routes.route('/<int:id>', methods=['PUT'])
+@login_required
+def update_caption(id):
+    yoga_class = YogaClass.query.get(id)
+    form = YogaClassForm()
+
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        data = form.data
+        yoga_class.description = data['description']
+
+    db.session.commit()
+    return yoga_class.to_dict()

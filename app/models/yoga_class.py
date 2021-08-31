@@ -8,8 +8,8 @@ class YogaClass(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     taughtBy = db.Column(db.Integer, db.ForeignKey('teachers.id'))
-    classDate = db.Column(db.String, nullable=False)
-    pic = db.Column(db.String, nullable=False)
+    classDate = db.Column(db.String(40), nullable=False)
+    pic = db.Column(db.String(255), nullable=False)
     title = db.Column(db.String(40), nullable=False)
     description = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer, nullable=False)

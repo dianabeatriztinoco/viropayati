@@ -1,8 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField
-from wtforms.fields.core import IntegerField
+from wtforms.fields.core import DateField, IntegerField
 from wtforms.fields.simple import FileField
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms.validators import DataRequired, Email, Regexp, ValidationError
 
 
 # def user_exists(form, field):
@@ -22,13 +22,17 @@ from wtforms.validators import DataRequired, Email, ValidationError
 
 
 class YogaClassForm(FlaskForm):
-    class_date = StringField('classDate', validators=[DataRequired()])
-    title = StringField('title', validators=[DataRequired()])
-    class_pic = StringField('classPic', validators=[DataRequired()])
-    description = StringField('description', validators=[DataRequired()])
-    price = StringField('price', validators=[DataRequired()])
-    address = StringField('address', validators=[DataRequired()])
-    city = StringField('city', validators=[DataRequired()])
-    state = StringField('state', validators=[DataRequired()])
-    postalCode = StringField('postalCode', validators=[DataRequired()])
+    class_date = StringField(u'Class Date')
+    print('XXXXXXXXXXXXXX',  class_date)
+    class_pic = StringField(u'Class Pic')
+    title = StringField(u'Title')
+    print('XXXXXXXXXXXXXX', title)
+    description = StringField(u'Description')
+    price = StringField(u'Price')
+    address = StringField(u'Address')
+    city = StringField(u'City')
+    state = StringField(u'State')
+    postalCode = StringField(u'Postal Code')
  
+    def updateYogaForm(self, newDescription):
+        self.description = newDescription

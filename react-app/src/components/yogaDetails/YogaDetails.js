@@ -2,24 +2,46 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { getAllClasses } from '../../store/yogaClass';
 import { getAllTeachers } from '../../store/teacher';
 import { getAllUsers } from '../../store/user';
+import { deleteSelectedYogaClass } from '../../store/yogaClass';
 import { Link } from 'react-router-dom';
 import './yogaDetails.css'
 
 
 const YogaDetails = () => {
+
+    const { yogaClassId } = useParams();
+
+    const history = useHistory()
     const {classId} = useParams()
     const dispatch = useDispatch()
+
+    const [showEditCaption, setShowEditCaption] = useState(null)
 
     const sessionUser = useSelector(state => state.session.user)
     console.log(sessionUser)
     const yogaClasses = useSelector(state => state.yogaClasses.classes)
     const allUsers = useSelector(state => state.users.users)
     const teachers = useSelector(state => state.teachers.teachers)
- 
+
+    const handleDelete = async () => {
+        let deletedClass = await dispatch(deleteSelectedYogaClass(classId))
+        if (deletedClass) {
+         history.push('/')
+        }
+      }
+
+      let handelUpdate = null;
+
+    //   if (showEditCaption) {
+    //     handelUpdate = (
+    //     //   <EditCaption yogaClass={yogaClass} hideForm={() => setShowEditCaption(null)} />
+    //     //)
+    //   }
+    
   
 
     useEffect(()=>{
@@ -63,19 +85,21 @@ else {
                         </div>
                          <div>
                              {teachers?.teachers.map((teacher)=>(
-                                 yogaClass.teacher_id === teacher.id ? (
+                                 sessionUser.id === teacher.userId && teacher.id === yogaClass.teacher_id ? (
                                      
-                                    <div className="updateDelete">
+                                     
+                                     <div className="updateDelete">
                                       
-                                    {allUsers?.users.map((user)=>(
+                                  
                                         
-                                        teacher.userId === user.id ? (
-                                            <div>
+                                       
+                                            
+                                         <div>
                                                 <button>update</button>
-                                                <button>delete</button>
+                                                <button onClick={handleDelete}>delete</button>
                                             </div>
-                                        )
-                                   : false  ))}
+                                         
+                                 
                                        
                                             
                                     </div>

@@ -1,0 +1,57 @@
+.yogaClassForm {
+    display: flex;
+    justify-content: center;
+}
+
+.classDate {
+    display: flex;
+    flex-direction: column;
+}
+
+.uploadImage {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+.price {
+    display: flex;
+    flex-direction: column;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+}
+.city {
+    display: flex;
+    flex-direction: column;
+}
+
+.state {
+    display: flex;
+    flex-direction: column;
+}
+
+.postalCode {
+    display: flex;
+    flex-direction: column;
+}
+
+.yogaFormButton {
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    margin-top: 10px;
+   
+}

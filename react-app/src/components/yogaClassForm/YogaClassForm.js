@@ -9,6 +9,7 @@ import './yogaClassForm.css'
 
 const YogaClassForm = () => {
 
+    const history = useHistory()
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
     const [classDate, setClassDate] = useState('');
@@ -21,10 +22,18 @@ const YogaClassForm = () => {
     const [state, setState] = useState('');
     const [postalCode, setPostalCode] = useState('');
 
+ 
+
     const onCreateYogaClass = async (e) => {
      e.preventDefault()
+
+     const data = await dispatch(createNewYogaClass(classDate, image, title, description, price, address, city, state, postalCode))
     
-    dispatch(createNewYogaClass(classDate, title, image, description, price, address, city, state, postalCode))
+     if (data) {
+       setErrors(data)
+     }
+    
+     history.push('/')
 
    
   };
@@ -73,8 +82,8 @@ const YogaClassForm = () => {
     
 
   return (
-
-    <form onSubmit={onCreateYogaClass}>
+    <div className="yogaClassForm">
+    <form onSubmit={onCreateYogaClass} method="POST">
     <div>
       {errors.map((error, ind) => (
         <div key={ind}>{error}</div>
@@ -84,7 +93,8 @@ const YogaClassForm = () => {
       <label>Class Date</label>
       <input
         type='text'
-        name='classDate'
+        className="classDate"
+        name='class_date'
         onChange={updateClassDate}
         value={classDate}
         required={true}
@@ -94,7 +104,8 @@ const YogaClassForm = () => {
       <label>Upload Image</label>
       <input
         type='text'
-        name='classPic'
+        className="uploadImage"
+        name='class_pic'
         onChange={updateImage}
         value={image}
         required={true}
@@ -105,6 +116,7 @@ const YogaClassForm = () => {
       <label>Title</label>
       <input
         type='text'
+        className="title"
         name='title'
         onChange={updateTitle}
         value={title}
@@ -116,6 +128,7 @@ const YogaClassForm = () => {
       <label>Description</label>
       <input
         type='text'
+        className="description"
         name='description'
         onChange={updateDescription}
         value={description}
@@ -128,6 +141,7 @@ const YogaClassForm = () => {
       <label>Price</label>
       <input
         type='number'
+        className="price"
         name='price'
         onChange={updatePrice}
         value={price}
@@ -140,6 +154,7 @@ const YogaClassForm = () => {
       <label>Address</label>
       <input
         type='text'
+        className="address"
         name='address'
         onChange={updateAddress}
         value={address}
@@ -152,6 +167,7 @@ const YogaClassForm = () => {
       <label>City</label>
       <input
         type='text'
+        className="city"
         name='city'
         onChange={updateCity}
         value={city}
@@ -164,6 +180,7 @@ const YogaClassForm = () => {
       <label>State</label>
       <input
         type='text'
+        className="state"
         name='state'
         onChange={updateState}
         value={state}
@@ -176,6 +193,7 @@ const YogaClassForm = () => {
       <label>Postal Code</label>
       <input
         type='text'
+        className="postalCode"
         name='postalCode'
         onChange={updatePostalCode}
         value={postalCode}
@@ -184,8 +202,9 @@ const YogaClassForm = () => {
         // required={true}
       ></input>
     </div>
-    <button type='submit'>Create</button>
+    <button className="yogaFormButton" type='submit'>Create</button>
   </form>
+  </div>
 
   )
 };
