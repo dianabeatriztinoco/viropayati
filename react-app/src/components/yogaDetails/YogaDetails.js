@@ -28,6 +28,8 @@ const YogaDetails = () => {
     const allUsers = useSelector(state => state.users.users)
     const teachers = useSelector(state => state.teachers.teachers)
 
+    const yogaClass = yogaClasses?.find((yogaClass) => yogaClass.id === +yogaClassId);
+    
     const handleDelete = async () => {
         let deletedClass = await dispatch(deleteSelectedYogaClass(classId))
         if (deletedClass) {
