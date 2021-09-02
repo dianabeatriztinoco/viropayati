@@ -51,9 +51,9 @@ export const deleteSelectedYogaClass = (id) => async dispatch => {
 
 }
 
-export const createNewYogaClass = (classDate, image, title , description, price, address, city, state, postalCode) => async dispatch => {
+export const createNewYogaClass = (taughtBy, classDate, image, title , description, price, address, city, state, postalCode) => async dispatch => {
 
-    console.log(classDate)
+   console.log(classDate, taughtBy)
 
     const response = await fetch(`/api/yoga_classes/new/`, {
 
@@ -66,7 +66,7 @@ export const createNewYogaClass = (classDate, image, title , description, price,
         },
         body: JSON.stringify({
 
-        classDate: classDate, image, title, description, price, address, city , state, postalCode
+        taughtBy,classDate, image, title, description, price, address, city , state, postalCode
 
         })
      

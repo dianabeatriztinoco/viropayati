@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.models import YogaClass, db
+from app.models import YogaClass, Teacher, db
 from flask_login import current_user, login_required
 from ..forms.yoga_form import YogaClassForm
 from .auth_routes import validation_errors_to_error_messages
@@ -43,7 +43,7 @@ def create_class():
 
 
     # teacher = Teacher.to_dict()
-    # teacher = Teacher.query.filter({'userId': 2})
+    # teacher = Teacher.query.filter({'userId': {user.id}})
     # teacher = Teacher.query.all()
     # for teach in teacher: 
     
@@ -53,7 +53,7 @@ def create_class():
         data = form.data
        
         yoga_class = YogaClass(
-            taughtBy=user.id,
+            taughtBy=data['taughtBy'],
             classDate=data['class_date'],
             pic=data['class_pic'],
             title=data['title'],

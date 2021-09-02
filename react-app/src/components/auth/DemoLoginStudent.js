@@ -7,10 +7,10 @@ import './demoLogin.css'
 
 const DemoLoginStudent = () => {
   const dispatch = useDispatch()
-  const history = useHistory()
+  // const history = useHistory()
   const onDemoLogin = async (e) => {
     await dispatch(loginDemoStudent());
-    history.push("/")
+    // history.push("/homepage")
   };
 
   return (

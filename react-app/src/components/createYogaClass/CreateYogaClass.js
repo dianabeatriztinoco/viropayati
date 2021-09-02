@@ -11,7 +11,7 @@ const CreateYogaClassForm = () => {
   return (
 
   <Link to='/newClass'>
-  <button className='logout-button'>Create Yoga Class</button>;
+
   </Link>
 
   )

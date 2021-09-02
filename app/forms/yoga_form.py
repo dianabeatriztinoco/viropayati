@@ -22,11 +22,10 @@ from wtforms.validators import DataRequired, Email, Regexp, ValidationError
 
 
 class YogaClassForm(FlaskForm):
+    taughtBy = IntegerField('Teacher Id')
     class_date = StringField(u'Class Date')
-    print('XXXXXXXXXXXXXX',  class_date)
     class_pic = StringField(u'Class Pic')
     title = StringField(u'Title')
-    print('XXXXXXXXXXXXXX', title)
     description = StringField(u'Description')
     price = StringField(u'Price')
     address = StringField(u'Address')

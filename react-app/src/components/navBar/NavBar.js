@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import DemoLoginStudent from '../auth/DemoLoginStudent'
 import DemoLoginTeacher from '../auth/DemoLoginTeacher';
@@ -8,6 +9,9 @@ import './navBar.css'
 import { useSelector } from 'react-redux';
 import viropayati_logo from '../../assets/viropayati_logo.png'
 import CreateYogaClassForm from '../createYogaClass/CreateYogaClass';
+import LoginFormModal from '../LoginFormModal';
+import SignUpFormModal from '../SignUpFormModal';
+import YogaClassFromModal from '../CreateClassModal';
 
 
 
@@ -17,16 +21,16 @@ const NavBar = ({setAuthenticated}) => {
   const sessionUser = useSelector(state => state.session.user)
 
   // const viropayatiLogo = 'https://i.imgur.com/a/LRtoMCZ.png'
-  if(sessionUser && sessionUser.isTeacher === false) {
+  // if(sessionUser && sessionUser.isTeacher === false) {
 
-  return (
-    <nav>
-      <div className="navBarContainer">
-        <div className='viropayatiLogo'>
-          <NavLink to='/splash' exact={true} activeClassName='active'>
-            <img src={viropayati_logo}></img>
-          </NavLink>
-        </div>
+  // return (
+  //   <nav>
+  //     <div className="navBarContainer">
+  //       <div className='viropayatiLogo'>
+  //         <Link to='/' exact={true} activeClassName='active'>
+  //           <img src={viropayati_logo}></img>
+  //         </Link>
+  //       </div>
         {/* <div>
           <NavLink to='/login' exact={true} activeClassName='active'>
             Login
@@ -45,13 +49,13 @@ const NavBar = ({setAuthenticated}) => {
         {/* <div>
           <DemoLogin/>
         </div> */}
-        <div className='logOutDiv'>
-          <LogoutButton setAuthenticated={setAuthenticated} />
-        </div>
-      </div>
-    </nav>
-  );
-}
+//         <div className='logOutDiv'>
+//           <LogoutButton setAuthenticated={setAuthenticated} />
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// }
 
 if(sessionUser && sessionUser.isTeacher === true) {
 
@@ -59,7 +63,7 @@ if(sessionUser && sessionUser.isTeacher === true) {
     <nav>
       <div className="navBarContainer">
         <div className='viropayatiLogo'>
-          <NavLink to='/splash' exact={true} activeClassName='active'>
+          <NavLink to='/' exact={true} activeClassName='active'>
             <img src={viropayati_logo}></img>
           </NavLink>
         </div>
@@ -82,6 +86,7 @@ if(sessionUser && sessionUser.isTeacher === true) {
           <DemoLogin/>
         </div> */}
         <div className='logOutDiv'>
+          <YogaClassFromModal />
           <CreateYogaClassForm />
         </div>
         <div className='logOutDiv'>
@@ -99,20 +104,22 @@ else {
     <nav>
       <div className="navBarContainer">
         <div className='viropayatiLogo'>
-          <NavLink to='/' exact={true} activeClassName='active'>
+          <Link to='/' exact={true} activeClassName='active'>
             <img src={viropayati_logo}></img>
-          </NavLink>
+          </Link>
         </div>
         <div className="authContainer">
         <div>
-          <NavLink className='loginDiv' to='/login' exact={true} activeClassName='active'>
+          <LoginFormModal />
+          {/* <NavLink className='loginDiv' to='/login' exact={true} activeClassName='active'>
             <button className='loginDiv-Button'>Login</button>
-          </NavLink>
+          </NavLink> */}
         </div>
         <div >
-          <NavLink className='signupDiv' to='/sign-up' exact={true} activeClassName='active'>
+          <SignUpFormModal />
+          {/* <NavLink className='signupDiv' to='/sign-up' exact={true} activeClassName='active'>
            <button className='signupDiv-Button'> Sign Up </button>
-          </NavLink>
+          </NavLink> */}
         </div>
         {/* <li>
           <NavLink to='/users' exact={true} activeClassName='active'>

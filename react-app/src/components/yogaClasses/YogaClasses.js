@@ -55,6 +55,7 @@ const YogaClasses = () => {
                        <>
                        <div className="date">{yogaClass.classDate}</div>
                        <div className="teacher">taught by {user.fullname}</div>
+                       <div className="date">{yogaClass.description}</div>
                        <Link to={`/yogaClasses/${yogaClass.id}`}>
                        {/* <div className="buttonContainer"> */}
                        {/* <button className="bookClassButton"> more info </button> */}

@@ -43,30 +43,30 @@ function App() {
       <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
-        <Route path='/login' exact={true}>
+        {/* <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
-        </Route>
+        </Route> */}
         <Route path='/yogaClasses' exact={true}>
           <YogaClasses />
         </Route>
         <Route path='/yogaClasses/:classId/' exact={true}>
           <YogaDetails />
         </Route>
-        <Route path='/newClass' exact={true}>
+        {/* <Route path='/newClass' exact={true}>
           <YogaClassForm />
-        </Route>
+        </Route> */}
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/homepage' exact={true} >
+        <Route path='/homepage' exact={true} >
           <h1>My Home Page</h1>
-        </ProtectedRoute>
+        </Route>
       </Switch>
       <Footer />
     </BrowserRouter>
