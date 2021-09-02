@@ -28,7 +28,12 @@ const SplashPage = () => {
     else {
         return (
             <div>
-                <HomePage/>
+               <div className="splashImageDiv">
+        <Link className = 'splashPageTxtLink' to='/homepage'><img src={splashImage} className="splashImage"></img></Link>
+        </div>
+        <div className='splashPageTxt'>
+           <Link className ='splashPageTxtLink' to='/homepage'> be here now... </Link>
+        </div>
             </div>
         )
     }
