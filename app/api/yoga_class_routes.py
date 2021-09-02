@@ -54,8 +54,8 @@ def create_class():
        
         yoga_class = YogaClass(
             taughtBy=data['taughtBy'],
-            classDate=data['class_date'],
-            pic=data['class_pic'],
+            classDate=data['classDate'],
+            pic=data['pic'],
             title=data['title'],
             description=data['description'],
             price=data['price'],

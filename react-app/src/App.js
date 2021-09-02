@@ -40,9 +40,9 @@ function App() {
         <Route path='/homepage' exact={true}>
        <HomePage />
         </Route>
-      <Route path='/login' exact={true}>
+      {/* <Route path='/login' exact={true}>
           <LoginForm />
-        </Route>
+        </Route> */}
         {/* <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
@@ -64,9 +64,6 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <Route path='/homepage' exact={true} >
-          <h1>My Home Page</h1>
-        </Route>
       </Switch>
       <Footer />
     </BrowserRouter>

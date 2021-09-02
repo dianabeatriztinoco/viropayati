@@ -22,6 +22,7 @@ const YogaDetails = () => {
   const [showYogaClasses, setShowYogaClasses] = useState();
 
   const sessionUser = useSelector((state) => state.session.user);
+  
   const yogaClasses = useSelector((state) => state.yogaClasses.classes);
 
   // const [yogaArr] = yogaClasses.yoga_classes
@@ -108,7 +109,7 @@ const YogaDetails = () => {
     return (
       <>
         <div>this page is being read</div>
-        {yogaClasses?.yoga_classes.map((yogaClass) =>
+        {yogaClasses?.yoga_classes?.map((yogaClass) =>
           yogaClass.id === +classId ? (
             <div>
               <div className="yogaDetailContainer">
@@ -116,8 +117,8 @@ const YogaDetails = () => {
               </div>
               <div>{yogaClass.description}</div>
               <div>
-                {teachers?.teachers.map((teacher) =>
-                  sessionUser.id === teacher.userId &&
+                {teachers?.teachers?.map((teacher) =>
+                  sessionUser?.id === teacher.userId &&
                   teacher.id === yogaClass.teacher_id ? (
                     <div className="updateDelete">
                       <div>

@@ -89,6 +89,12 @@ if(sessionUser && sessionUser.isTeacher === true) {
           <YogaClassFromModal />
           <CreateYogaClassForm />
         </div>
+        <div className="viewAllClasses"> 
+        <Link to='/yogaClasses'>
+  <button className='logout-button' >View All Classes</button>;
+  </Link>
+
+        </div>
         <div className='logOutDiv'>
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div>

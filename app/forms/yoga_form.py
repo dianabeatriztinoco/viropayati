@@ -23,15 +23,15 @@ from wtforms.validators import DataRequired, Email, Regexp, ValidationError
 
 class YogaClassForm(FlaskForm):
     taughtBy = IntegerField('Teacher Id')
-    class_date = StringField(u'Class Date')
-    class_pic = StringField(u'Class Pic')
+    classDate = StringField(u'classDate')
+    pic = StringField(u'pic')
     title = StringField(u'Title')
     description = StringField(u'Description')
     price = StringField(u'Price')
     address = StringField(u'Address')
     city = StringField(u'City')
     state = StringField(u'State')
-    postalCode = StringField(u'Postal Code')
+    postalCode = StringField(u'postalCode')
  
     def updateYogaForm(self, newDescription):
         self.description = newDescription

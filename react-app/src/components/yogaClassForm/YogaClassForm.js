@@ -2,20 +2,22 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
-import { createNewYogaClass } from '../../store/yogaClass';
+import yogaClasses, { createNewYogaClass } from '../../store/yogaClass';
 import { getAllClasses } from '../../store/yogaClass';
 import { getAllTeachers } from '../../store/teacher';
 import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import YogaClassFromModal from '../CreateClassModal';
 import './yogaClassForm.css'
 
-const YogaClassForm = () => {
+const YogaClassForm = ({setShowModal}) => {
 
 
     const history = useHistory()
     const dispatch = useDispatch()
 
     const [errors, setErrors] = useState([])
+    
     const [classDate, setClassDate] = useState('');
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
@@ -40,24 +42,6 @@ const YogaClassForm = () => {
  const teachers = useSelector(state=>state.teachers.teachers)
 
 
-
-    const onCreateYogaClass = async (e) => {
-    
-  
-     e.preventDefault()
-
-     const data = await dispatch(createNewYogaClass(taughtBy, classDate, image, title, description, price, address, city, state, postalCode))
-
-     if (data) {
-      
-       setErrors(data)
-     }
-    else{
-    return  <Redirect to='/' />
-    }
-   
-  };
-
  const teacher =  teachers?.teachers?.map((teacher)=>{
 
     return teacher 
@@ -67,11 +51,9 @@ const YogaClassForm = () => {
   const selectedTeacher = teacher?.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
   const [taughtBy] = useState(selectedTeacher?.id)
   
-
-
+ 
 
     const updateClassDate = (e) => {
-        console.log(e.target.value)
         setClassDate(e.target.value);
        
       };
@@ -109,15 +91,31 @@ const YogaClassForm = () => {
         setPostalCode(e.target.value);
       };
 
-      const updateTaughtBy = (e) => {
-
-      
-      }
-
-
-     
-      
+      // const upDateSetSubmitted = (e) => {
+      //   setSubmitted(true)
+      // }
     
+      // if(onCreateYogaClass){
+      //   return <Redirect to='/'/>
+      // }
+
+
+      const onCreateYogaClass = async (e) => {
+  
+  
+        e.preventDefault()
+       
+        const data = await dispatch(createNewYogaClass(taughtBy, classDate, image, title, description, price, address, city, state, postalCode))
+       
+   
+        if (data) {
+         
+          setErrors(data)
+          
+        }
+       
+        return setShowModal(false)
+     };
 
   return (
     <div className="yogaClassFormOne">
@@ -152,7 +150,7 @@ const YogaClassForm = () => {
         // className="classDate"
         name='class_date'
         placeholder="Class Date"
-        onChange={updateClassDate}
+        onChange={(e) => setClassDate(e.target.value)}
         value={classDate}
         required={true}
       ></input>
@@ -164,7 +162,7 @@ const YogaClassForm = () => {
         // className="uploadImage"
         name='class_pic'
         placeholder="Upload Image"
-        onChange={updateImage}
+        onChange={(e) => setImage(e.target.value)}
         value={image}
         required={true}
       
@@ -275,6 +273,8 @@ const YogaClassForm = () => {
   </div>
 
   )
+
+ 
 };
 
 export default YogaClassForm;
