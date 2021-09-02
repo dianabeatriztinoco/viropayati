@@ -1,16 +1,19 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { createNewYogaClass } from '../../store/yogaClass';
 import { getAllClasses } from '../../store/yogaClass';
+import { getAllTeachers } from '../../store/teacher';
 import { Link } from 'react-router-dom';
 import './yogaClassForm.css'
 
 const YogaClassForm = () => {
 
+
     const history = useHistory()
     const dispatch = useDispatch()
+
     const [errors, setErrors] = useState([])
     const [classDate, setClassDate] = useState('');
     const [title, setTitle] = useState('');
@@ -21,16 +24,31 @@ const YogaClassForm = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [postalCode, setPostalCode] = useState('');
+    
 
- 
+
+    
+
+    const sessionUser = useSelector(state => state.session.user)
+    
+
+ useEffect(()=>{
+   dispatch(getAllTeachers())
+ }, [])
+
+ const teachers = useSelector(state=>state.teachers.teachers)
+
+
 
     const onCreateYogaClass = async (e) => {
+    
+  
      e.preventDefault()
 
-     const data = await dispatch(createNewYogaClass(classDate, image, title, description, price, address, city, state, postalCode))
+     const data = await dispatch(createNewYogaClass(taughtBy, classDate, image, title, description, price, address, city, state, postalCode))
 
      if (data) {
-       console.log(classDate)
+       console.log(classDate, taughtBy)
        setErrors(data)
      }
     
@@ -39,9 +57,19 @@ const YogaClassForm = () => {
    
   };
 
+ const teacher =  teachers?.teachers?.map((teacher)=>{
+
+    return teacher 
+
+  })
+
+  const selectedTeacher = teacher?.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
+  const [taughtBy] = useState(selectedTeacher.id)
+ 
 
 
     const updateClassDate = (e) => {
+        console.log(e.target.value)
         setClassDate(e.target.value);
        
       };
@@ -79,6 +107,13 @@ const YogaClassForm = () => {
         setPostalCode(e.target.value);
       };
 
+      const updateTaughtBy = (e) => {
+
+      
+      }
+
+
+     
       
     
 
@@ -90,6 +125,20 @@ const YogaClassForm = () => {
         <div key={ind}>{error}</div>
       ))}
     </div>
+    <div>
+     {teachers?.teachers?.map((teacher)=> (
+       teacher.userId === sessionUser.id ? 
+      <input
+        type='hidden'
+        className="taughtBy"
+        name='taughtBy'
+        value={taughtBy}
+        required={true}
+      ></input>
+      
+      : null ))}
+    </div>
+     
     <div>
       <label>Class Date</label>
       <input

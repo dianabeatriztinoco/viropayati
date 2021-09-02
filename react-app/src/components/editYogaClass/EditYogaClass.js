@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { updatedYogaClass } from "../../store/yogaClass";
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import "./editYogaClass.css"
 
 const EditYogaClass = ({ yogaClass, hideForm }) => {
@@ -9,6 +10,7 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
    
     const [editDescription, setEditDescription] = useState(yogaClass.description)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const handleSubmit = async (e) => {
 
@@ -22,6 +24,7 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
         await dispatch(updatedYogaClass(payload))
       
         hideForm()
+        history.push('/yogaClasses')
     }
 
 

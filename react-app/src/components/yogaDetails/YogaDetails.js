@@ -34,7 +34,7 @@ const YogaDetails = () => {
   const handleDelete = async () => {
     let deletedClass = await dispatch(deleteSelectedYogaClass(classId));
     if (deletedClass) {
-      history.push("/");
+      history.push("/yogaClasses");
     }
   };
 
