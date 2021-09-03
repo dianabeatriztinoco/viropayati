@@ -53,6 +53,19 @@ def upgrade():
     sa.ForeignKeyConstraint(['taughtBy'], ['teachers.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+
+    op.create_table('classBookings',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('classId', sa.Integer(), nullable=True),
+    sa.Column('userId', sa.Integer(), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
+    sa.ForeignKeyConstraint(['classId'], ['yogaClasses.id'], ),
+    sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+
+
+
     # ### end Alembic commands ###
 
 
@@ -61,4 +74,5 @@ def downgrade():
     op.drop_table('yogaClasses')
     op.drop_table('teachers')
     op.drop_table('users')
+    op.drop_table('classBookings')
     # ### end Alembic commands ###
