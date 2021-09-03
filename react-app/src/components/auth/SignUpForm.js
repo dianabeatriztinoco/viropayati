@@ -6,6 +6,8 @@ import './signUpForm.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
+  const [isTeacher, setIsTeacher] = useState(false)
+  const [fullname, setFullName] = useState('')
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,11 +18,18 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(isTeacher, fullname, username, email, password));
       if (data) {
         setErrors(data)
       }
     }
+  };
+
+  const updateFullName = (e) => {
+    setFullName(e.target.value);
+  };
+  const updateIsTeacher = (e) => {
+    setIsTeacher(e.target.value);
   };
 
   const updateUsername = (e) => {
@@ -52,6 +61,27 @@ const SignUpForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
+      
+        
+        <div className="input">
+        <label>Are you a Teacher?</label>
+        <input
+          type='checkbox'
+          name='teacher'
+          onChange={updateIsTeacher}
+          value={isTeacher}
+        ></input>
+        </div>
+        <div className="input">
+        <input
+          type='text'
+          name='fullname'
+          onChange={updateFullName}
+          placeholder="fullname"
+          value={fullname}
+        ></input>
+        </div>
+      
       <div className="input">
         {/* <label>User Name</label> */}
         <input

@@ -1,5 +1,7 @@
 from flask_wtf import FlaskForm
+from sqlalchemy.sql.sqltypes import Boolean
 from wtforms import StringField
+from wtforms.fields.core import BooleanField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import User
 
@@ -21,7 +23,12 @@ def username_exists(form, field):
 
 
 class SignUpForm(FlaskForm):
+    isteacher = BooleanField('isteacher')
+    fullname = StringField('fullname', validators=[DataRequired()])
     username = StringField(
         'username', validators=[DataRequired(), username_exists])
     email = StringField('email', validators=[DataRequired(), user_exists])
     password = StringField('password', validators=[DataRequired()])
+    isteacher = BooleanField('isteacher')
+
+
