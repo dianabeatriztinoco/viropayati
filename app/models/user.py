@@ -25,6 +25,7 @@ class User(db.Model, UserMixin):
 
     # yogaClasses = db.relationship('YogaClass', back_populates="users")
     teachers = db.relationship('Teacher', back_populates='users')
+    classBookings = db.relationship('YogaClassBooking', back_populates='users')
     # userTeachers = db.relationship('YogaClass', secondary=teachers, back_populates='yogaTeachers')
     
     

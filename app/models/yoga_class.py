@@ -20,6 +20,7 @@ class YogaClass(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.now)
 
     yogaTeachers = db.relationship('Teacher', back_populates='yogaClasses')
+    yogaClasses = db.relationship('YogaClassBooking', back_populates='yogaClasses')
     # yogaTeachers = db.relationship('User', secondary=teachers, back_populates='userTeachers')
     # users = db.relationship('User', back_populates="yogaClasses")
     

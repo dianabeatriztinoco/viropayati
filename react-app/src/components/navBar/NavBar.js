@@ -102,6 +102,50 @@ if(sessionUser && sessionUser.isTeacher === true) {
     </nav>
   );
 }
+if(sessionUser && sessionUser.isTeacher === false) {
+
+  return (
+    <nav>
+      <div className="navBarContainer">
+        <div className='viropayatiLogo'>
+          <NavLink to='/' exact={true} activeClassName='active'>
+            <img src={viropayati_logo}></img>
+          </NavLink>
+        </div>
+        {/* <div>
+          <NavLink to='/login' exact={true} activeClassName='active'>
+            Login
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to='/sign-up' exact={true} activeClassName='active'>
+            Sign Up
+          </NavLink>
+        </div> */}
+        {/* <li>
+          <NavLink to='/users' exact={true} activeClassName='active'>
+            Users
+          </NavLink>
+        </li> */}
+        {/* <div>
+          <DemoLogin/>
+        </div> */}
+        <div className='logOutDiv'>
+        
+        </div>
+        <div className="viewAllClasses"> 
+        <Link to='/yogaClasses'>
+  <button className='logout-button' >View All Classes</button>;
+  </Link>
+
+        </div>
+        <div className='logOutDiv'>
+          <LogoutButton setAuthenticated={setAuthenticated} />
+        </div>
+      </div>
+    </nav>
+  );
+}
 
 
 else {

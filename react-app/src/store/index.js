@@ -4,13 +4,15 @@ import session from './session'
 import yogaClasses from './yogaClass';
 import teachers from './teacher';
 import users from './user'
+import bookings from './yogaClassBookings'
 
 
 const rootReducer = combineReducers({
   session,
   yogaClasses,
   teachers, 
-  users
+  users, 
+  bookings
 });
 
 
