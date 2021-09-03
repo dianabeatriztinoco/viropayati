@@ -23,7 +23,7 @@ def username_exists(form, field):
 
 
 class SignUpForm(FlaskForm):
-    isteacher = BooleanField('isteacher')
+    isTeacher = BooleanField('isteacher')
     fullname = StringField('fullname', validators=[DataRequired()])
     username = StringField(
         'username', validators=[DataRequired(), username_exists])
