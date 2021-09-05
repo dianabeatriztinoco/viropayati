@@ -8,7 +8,7 @@ function YogaClassFromModal() {
 
   return (
     <>
-      <button className='loginDiv-Button' onClick={() => setShowModal(true)}>Create Class</button>
+      <button className='loginDiv-Button' onClick={() => setShowModal(true)}>Host a Class!</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <YogaClassFrom setShowModal={setShowModal}/>

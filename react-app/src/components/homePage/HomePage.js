@@ -11,14 +11,19 @@ const HomePage = () => {
      <>
      <div className='homePageButtonContainer'>
         <div className="availableClassesDiv">
+             <div className="classText">Available Classes 
             <Link className="availableClassesLink" to='/yogaClasses'>
-                <button className='availableClassesButton'>Available Classes</button>
+              
+                    <img className='availableClassesButton'src="https://cdn.beyogi.com/wp-content/uploads/2019/12/Feat-Images-Hanna-750x400-9.png"/>
             </Link>
+            </div>
         </div>
         <div className="teacherReviewsDiv">
+        <div className="classText">Teacher Reviews 
             <Link className="teacherReviewsLink" to='/teacherReviews'>
-                <button className='teacherReviewsButton'>Teacher Reviews</button>
+                <img className='teacherReviewsButton' src='https://cdn.beyogi.com/wp-content/uploads/2021/08/Feat-Images-Hanna-750x400-11.png'/>
             </Link>
+            </div>
         </div>
         </div>
      </>
