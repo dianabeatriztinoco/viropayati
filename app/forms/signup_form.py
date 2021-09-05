@@ -2,7 +2,8 @@ from flask_wtf import FlaskForm
 from sqlalchemy.sql.sqltypes import Boolean
 from wtforms import StringField
 from wtforms.fields.core import BooleanField
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms.validators import DataRequired, Email, ValidationError, email_validator
+
 from app.models import User
 
 
