@@ -151,10 +151,10 @@ const YogaDetails = () => {
     <img className="yogaClassDetailImage" src={selectedYogaClass?.pic} />
     </div>
     <div>
-      <div>{selectedYogaClass.description}</div>
+      <div>{selectedYogaClass?.description}</div>
     </div>
    
-    {userClass.classId === selectedYogaClass.id ?
+    {userClass?.classId === selectedYogaClass?.id ?
     <>
     <div className="alreadyBooked"> booked </div>
     <button  className="bookClassButton"> cancel </button>

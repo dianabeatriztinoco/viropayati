@@ -6,7 +6,6 @@ import './signUpForm.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  console.log(errors)
   const [isTeacher, setIsTeacher] = useState(false)
   const [fullname, setFullName] = useState('')
   const [username, setUsername] = useState('');
@@ -18,16 +17,22 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    
     if (password === repeatPassword) {
+      
       const data = await dispatch(signUp(isTeacher, fullname, username, email, password));
-     if (data) {
+
+    if (data) {
 
         setErrors(data)
-      }
-      else {
-       setErrors(['Passwords do not match'])
+        
       }
     }
+      else {
+        console.log(true)
+       setErrors(['Passwords do not match!'])
+      }
+    
   };
 
   const updateFullName = (e) => {

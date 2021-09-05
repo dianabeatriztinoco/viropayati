@@ -15,7 +15,6 @@ const YogaClassForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
 
   const [errors, setErrors] = useState([]);
-  console.log(errors);
   const [classDate, setClassDate] = useState("");
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
@@ -121,7 +120,11 @@ const YogaClassForm = ({ setShowModal }) => {
         <form onSubmit={onCreateYogaClass} method="POST">
         <div>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <ul>
+          
+            <li key={ind}>{error}</li>
+            
+          </ul>
         ))}
       </div>
           <div className="input">
