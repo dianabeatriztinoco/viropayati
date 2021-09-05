@@ -20,7 +20,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
-    isTeacher = db.Column(db.Boolean, default=True, nullable=True)
+    isTeacher = db.Column(db.Boolean, default=False, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.now,)
 
     # yogaClasses = db.relationship('YogaClass', back_populates="users")

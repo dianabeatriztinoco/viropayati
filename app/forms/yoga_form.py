@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.fields.core import DateField, IntegerField
+from wtforms.fields.html5 import URLField
 from wtforms.fields.simple import FileField
-from wtforms.validators import DataRequired, Email, Regexp, ValidationError
+from wtforms.validators import DataRequired, Email, Regexp, ValidationError, URL
 
 
 # def user_exists(form, field):
@@ -13,25 +14,24 @@ from wtforms.validators import DataRequired, Email, Regexp, ValidationError
 #         raise ValidationError('Email address is already in use.')
 
 
-# def username_exists(form, field):
-#     # Checking if username is already in use
-#     username = field.data
-#     user = User.query.filter(User.username == username).first()
-#     if user:
-#         raise ValidationError('Username is already in use.')
+# def proper_url_format(form, field):
+#     # checking url format
+#     pic = field.data
+#     if pic:
+#         raise ValidationError('Please Enter A Valid URL Format')
 
 
 class YogaClassForm(FlaskForm):
-    taughtBy = IntegerField('Teacher Id')
-    classDate = StringField(u'classDate')
-    pic = StringField(u'pic')
-    title = StringField(u'Title')
-    description = StringField(u'Description')
-    price = StringField(u'Price')
-    address = StringField(u'Address')
-    city = StringField(u'City')
-    state = StringField(u'State')
-    postalCode = StringField(u'postalCode')
+    taughtBy = IntegerField('Teacher Id', validators=[DataRequired()])
+    classDate = StringField('classDate',  validators=[DataRequired(), Regexp('\d{2}[-/]\d{2}[-/]\d{4}', message=('Enter Proper Date FOrmat mm/dd/yyyy'))])
+    pic = StringField('pic',  validators=[DataRequired(), URL(message='Please Enter A Valid URL Format for Upload Image')])
+    title = StringField('Title')
+    description = StringField('description',  validators=[DataRequired()])
+    price = StringField('Price',  validators=[DataRequired()])
+    address = StringField('Address',  validators=[DataRequired()])
+    city = StringField('City',  validators=[DataRequired()])
+    state = StringField('State',  validators=[DataRequired()])
+    postalCode = StringField('postalCode',  validators=[DataRequired()])
  
     def updateYogaForm(self, newDescription):
         self.description = newDescription

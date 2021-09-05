@@ -22,6 +22,7 @@ const createYogaClass = (yogaClass) => ({
 const updateYogaClass = (yogaClass) => ({
     type: UPDATE_YOGA_CLASS, 
     yogaClass
+    
 })
 
 
@@ -92,19 +93,29 @@ export const createNewYogaClass = (taughtBy, classDate, pic, title , description
     }
 }
 
-export const updatedYogaClass = (yogaClass) => async dispatch => {
-    const {id, description} = yogaClass
+export const updatedYogaClass = (yogaClass, id) => async dispatch => {
+  
+   
+//    const {id, description} = yogaClass
+   
+    console.log(yogaClass, 'lasjdfl;asjfkjas;ljf;laskjdf;l')
 
     const res = await fetch(`/api/yoga_classes/update/${id}/`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(yogaClass)
+        body: JSON.stringify(
+            yogaClass
+        )
+    
     })
+    console.log(res)
     if (res.ok) {
         const editYogaClass = await res.json();
+        console.log(editYogaClass)
         dispatch(updateYogaClass(editYogaClass))
         return editYogaClass
     }
+   
 }
 
 export default function yogaClasses(state=initialState, action){
@@ -126,6 +137,7 @@ export default function yogaClasses(state=initialState, action){
         case UPDATE_YOGA_CLASS: {
 
             const updatedState = { ...state, [action.yogaClass.id]: action.yogaClass }
+            console.log(updatedState)
             return updatedState
             
         }

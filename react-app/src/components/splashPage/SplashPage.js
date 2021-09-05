@@ -21,6 +21,10 @@ const SplashPage = () => {
         </div>
         <div className='splashPageTxt'>
            <Link className ='splashPageTxtLink' to='/homepage'> be here now... </Link>
+           
+           <div> about viropayati</div>
+           <div> </div>
+           
         </div>
         </>
     )

@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import User
 
 
+
 def user_exists(form, field):
     # Checking if user exists
     email = field.data
@@ -22,13 +23,13 @@ def username_exists(form, field):
         raise ValidationError('Username is already in use.')
 
 
+
 class SignUpForm(FlaskForm):
-    isTeacher = BooleanField('isteacher')
+    isTeacher = BooleanField('isTeacher', validators=[DataRequired()])
     fullname = StringField('fullname', validators=[DataRequired()])
-    username = StringField(
-        'username', validators=[DataRequired(), username_exists])
-    email = StringField('email', validators=[DataRequired(), user_exists])
-    password = StringField('password', validators=[DataRequired()])
+    username = StringField('username', validators=[DataRequired(), username_exists])
+    email = StringField('email', validators=[DataRequired(), user_exists, Email()])
+    password = StringField('password', validators=[DataRequired()]) 
     isteacher = BooleanField('isteacher')
 
 

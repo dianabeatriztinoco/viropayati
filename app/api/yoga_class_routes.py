@@ -77,13 +77,25 @@ def create_class():
 @yoga_class_routes.route('/update/<int:id>/', methods=['PUT'])
 @login_required
 def update_caption(id):
-    yoga_class = YogaClass.query.get(id)
+    print('XXXXXXXXXXXXXXX', id)
     form = YogaClassForm()
-
+    
     form['csrf_token'].data = request.cookies['csrf_token']
+    
     if form.validate_on_submit():
+        yoga_class = YogaClass.query.get_or_404(id)
         data = form.data
+        yoga_class.taughtBy = data['taughtBy'],
+        yoga_class.classDate = data['classDate'],
+        yoga_class.pic = data['pic'],
+        yoga_class.title = data['title'],
         yoga_class.description = data['description']
-
-    db.session.commit()
-    return yoga_class.to_dict()
+        yoga_class.price = data['price'],
+        yoga_class.address = data['address'],
+        yoga_class.city = data['city'],
+        yoga_class.state = data['state'],
+        yoga_class.postal_code = data['postalCode'],
+        db.session.commit()
+        return {'updated_yoga_class' : yoga_class.to_dict()}
+    return {'errors': validation_errors_to_error_messages(form.errors)}
+  

@@ -113,7 +113,7 @@ export const logout = () => async (dispatch) => {
 
 
 export const signUp = (isTeacher, fullname, username, email, password) => async (dispatch) => {
-
+console.log(isTeacher)
 
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
@@ -128,6 +128,7 @@ export const signUp = (isTeacher, fullname, username, email, password) => async 
       password,
     }),
   });
+  
   
   if (response.ok) {
     const data = await response.json();

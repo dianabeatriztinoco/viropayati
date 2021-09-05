@@ -6,6 +6,7 @@ import './signUpForm.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
+  console.log(errors)
   const [isTeacher, setIsTeacher] = useState(false)
   const [fullname, setFullName] = useState('')
   const [username, setUsername] = useState('');
@@ -19,8 +20,12 @@ const SignUpForm = () => {
     e.preventDefault();
     if (password === repeatPassword) {
       const data = await dispatch(signUp(isTeacher, fullname, username, email, password));
-      if (data) {
+     if (data) {
+
         setErrors(data)
+      }
+      else {
+       setErrors(['Passwords do not match'])
       }
     }
   };
@@ -29,7 +34,7 @@ const SignUpForm = () => {
     setFullName(e.target.value);
   };
   const updateIsTeacher = (e) => {
-    setIsTeacher(e.target.value);
+    setIsTeacher(true);
   };
 
   const updateUsername = (e) => {
@@ -69,7 +74,8 @@ const SignUpForm = () => {
           type='checkbox'
           name='teacher'
           onChange={updateIsTeacher}
-          value={isTeacher}
+          checked={isTeacher}
+         
         ></input>
         </div>
         <div className="input">
@@ -79,6 +85,7 @@ const SignUpForm = () => {
           onChange={updateFullName}
           placeholder="fullname"
           value={fullname}
+          required={true}
         ></input>
         </div>
       
@@ -90,6 +97,7 @@ const SignUpForm = () => {
           onChange={updateUsername}
           placeholder="username"
           value={username}
+          required={true}
         ></input>
       </div>
       <div className="input">
@@ -100,6 +108,7 @@ const SignUpForm = () => {
           onChange={updateEmail}
           placeholder="email"
           value={email}
+          required={true}
         ></input>
       </div>
       <div className="input">
@@ -110,6 +119,7 @@ const SignUpForm = () => {
           onChange={updatePassword}
           placeholder="password"
           value={password}
+          required={true}
         ></input>
       </div>
       <div className="input">
@@ -118,7 +128,7 @@ const SignUpForm = () => {
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
-          placeholder="repeat password"
+          placeholder="confirm password"
           value={repeatPassword}
           required={true}
         ></input>

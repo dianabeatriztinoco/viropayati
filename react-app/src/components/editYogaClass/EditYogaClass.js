@@ -8,20 +8,35 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
 
   console.log(yogaClass)
    
-    const [editDescription, setEditDescription] = useState(yogaClass.description)
+    const [editDescription, setEditDescription] = useState(yogaClass?.description)
+
+    console.log(editDescription)
+
     const dispatch = useDispatch()
     const history = useHistory()
 
     const handleSubmit = async (e) => {
-
+    
         e.preventDefault()
-
+        
         const payload = {
-            id: yogaClass.id,
+
+            id: yogaClass?.id,
+            taughtBy : yogaClass.teacher_id,
+            classDate : yogaClass.classDate, 
+            pic: yogaClass.pic, 
+            title: yogaClass.title, 
+            price: yogaClass.price, 
+            address: yogaClass.address,
+            city: yogaClass.city, 
+            state: yogaClass.state, 
+            postalCode: yogaClass.postal_code, 
             description: editDescription,
         }
 
-        await dispatch(updatedYogaClass(payload))
+        console.log(payload)
+
+        await dispatch(updatedYogaClass(payload, yogaClass.id))
       
         hideForm()
         history.push('/yogaClasses')

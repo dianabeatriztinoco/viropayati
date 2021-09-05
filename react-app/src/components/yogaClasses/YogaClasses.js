@@ -31,9 +31,9 @@ const YogaClasses = () => {
         <>
         <div className='yogaClassContainer'>
           
-            <div className="yogaClassDisplay">
+            <div className="yogaClassDisplay" >
                 {yogaClasses?.yoga_classes.map((yogaClass)=>(
-                    <div className="classContainer">
+                    <div className="classContainer" key={yogaClass.id}>
                     <div className="style">{yogaClass.title}</div>
                     <Link to={`/yogaClasses/${yogaClass.id}`}>
                     <img className='yogaClassImage' src={yogaClass.pic} />
@@ -48,11 +48,11 @@ const YogaClasses = () => {
                     {/* {yogaClass.title} */}
 
                    {teachers?.teachers.map((teacher)=> (
-                       <>
+                       <React.Fragment key={teacher.id}>
                        {allUsers?.users.map((user)=>(
-
+                           
                    yogaClass.teacher_id === teacher.id && teacher.userId === user.id ?  (
-                       <>
+                    <React.Fragment key={user.id}>
                        <div className="date">{yogaClass.classDate}</div>
                        <div className="teacher">taught by {user.fullname}</div>
                        <div className="date">{yogaClass.description}</div>
@@ -61,7 +61,7 @@ const YogaClasses = () => {
                        {/* <button className="bookClassButton"> more info </button> */}
                        </Link>
                        {/* </div> */}
-                       </>
+                       </ React.Fragment>
                         
                     ) 
 
@@ -69,7 +69,7 @@ const YogaClasses = () => {
 
                     : null ))}
                    
-                            </>
+                            </ React.Fragment>
                      ))}
                    
                     </div>
