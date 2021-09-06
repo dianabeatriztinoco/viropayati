@@ -11,7 +11,7 @@ class YogaClass(db.Model, UserMixin):
     classDate = db.Column(db.String(40), nullable=False)
     pic = db.Column(db.String(255), nullable=False)
     title = db.Column(db.String(40), nullable=False)
-    description = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(1000), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     address = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(100), nullable=False)
