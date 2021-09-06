@@ -25,16 +25,24 @@ const SignUpForm = () => {
     if (data) {
 
         setErrors(data)
+       
         
       }
     }
       else {
-        console.log(true)
+      
        setErrors(['Passwords do not match!'])
       }
     
   };
 
+  const errorDisplay = errors.find((error, ind) => error[ind])
+  console.log(errorDisplay)
+  // const errorDisplay = (err) => {
+ 
+  //   return errors.find((error, ind) => error.includes(err))
+  
+  // }
   const updateFullName = (e) => {
     setFullName(e.target.value);
   };
@@ -66,14 +74,17 @@ const SignUpForm = () => {
     <div className="signUpForm">
     <div className="input">SIGN-UP</div>
     <form  onSubmit={onSignUp}>
-      <div>
+     
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div>
+          
+          <li key={ind}>{error}</li> 
+          </div>
         ))}
-      </div>
-      
+        
         
         <div className="input">
+           
         <label>Are you a Teacher?</label>
         <input
           type='checkbox'
@@ -82,13 +93,17 @@ const SignUpForm = () => {
           checked={isTeacher}
          
         ></input>
+       
+   
         </div>
+       
         <div className="input">
+        {/* <label>{errorDisplay('fullname')}</label> */}
         <input
           type='text'
           name='fullname'
           onChange={updateFullName}
-          placeholder="fullname"
+          placeholder="first last"
           value={fullname}
           required={true}
         ></input>
@@ -96,6 +111,7 @@ const SignUpForm = () => {
       
       <div className="input">
         {/* <label>User Name</label> */}
+        {/* <li key={ind}>{error}</li> */}
         <input
           type='text'
           name='username'
@@ -107,6 +123,7 @@ const SignUpForm = () => {
       </div>
       <div className="input">
         {/* <label>Email</label> */}
+        {/* <li key={ind}>{error}</li> */}
         <input
           type='text'
           name='email'
@@ -118,6 +135,7 @@ const SignUpForm = () => {
       </div>
       <div className="input">
         {/* <label>Password</label> */}
+       {/* <li key={ind}>{error}</li> */}
         <input
           type='password'
           name='password'
@@ -129,6 +147,8 @@ const SignUpForm = () => {
       </div>
       <div className="input">
         {/* <label>Repeat Password</label> */}
+        {/* <li key={ind}>{error}</li> */}
+        {/* <label>{errorDisplay}</label> */}
         <input
           type='password'
           name='repeat_password'
@@ -141,9 +161,12 @@ const SignUpForm = () => {
       <div className="input">
       <button  type='submit'>Sign Up</button>
       </div>
+      
     </form>
+
     </div>
   );
+  
 };
 
 export default SignUpForm;

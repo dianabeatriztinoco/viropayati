@@ -30,16 +30,21 @@ const YogaClasses = () => {
     return (
         <>
         <div className='yogaClassContainer'>
-          
+        <div className="discover">Discover your practice...</div> 
             <div className="yogaClassDisplay" >
+                
                 {yogaClasses?.yoga_classes.map((yogaClass)=>(
                     <div className="classContainer" key={yogaClass.id}>
-                    <div className="style">{yogaClass.title}</div>
+                    
                     <Link to={`/yogaClasses/${yogaClass.id}`}>
                     <img className='yogaClassImage' src={yogaClass.pic} />
                     </Link>
+                    <div className="style">{yogaClass.title}</div>
                   
-                    {/* {yogaClass.address} */}
+                    {/* <div className= 'address'>{yogaClass.address} </div> */}
+                    <div className= 'address'>{yogaClass.city}, {yogaClass.state} </div>
+
+                 
                     {/* {yogaClass.city} */}
                     {/* {yogaClass.state} */}
                     {/* {yogaClass.postal_code} */}
@@ -55,7 +60,7 @@ const YogaClasses = () => {
                     <React.Fragment key={user.id}>
                        <div className="date">{yogaClass.classDate}</div>
                        <div className="teacher">taught by {user.fullname}</div>
-                       <div className="date">{yogaClass.description}</div>
+                       <div className="price">${yogaClass.price}.00</div>
                        <Link to={`/yogaClasses/${yogaClass.id}`}>
                        {/* <div className="buttonContainer"> */}
                        {/* <button className="bookClassButton"> more info </button> */}

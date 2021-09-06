@@ -2,7 +2,12 @@
     margin-bottom: 900px;
 
 }
-
+.discover {
+    margin-top: 10px;
+    font-family: cursive;
+    font-size: 30px;
+    color: sandybrown
+}
 .yogaClassDisplay {
     display: flex;
     flex-direction: row;
@@ -19,33 +24,37 @@
 .yogaClassImage {
     height: 400px;
     width: 400px;
-    border-radius: 30px;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    margin-right: 20px;
+    /* border-radius: 30px; */
+    margin-bottom: 10px;
+    margin-top: 25px;
+    margin-right: 30px;
+    margin-left: 30px;
 }
 .date{
     font-family: cursive;
+    
+    
 }
 .style {
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    font-family: cursive;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.price {
+font-family: cursive;
+font-size: large;
+font-weight: 100px;
+color: rgb(244, 116, 70);
+}
+.address {
     font-family: cursive;
 }
-
 .teacher {
     font-family: cursive;
 }
 
-.bookClassButton {
-    margin-top: 10px;
-    border-radius: 5px;
-    height: 30px;
-    width: 350px;
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-radius: 5px;
-    margin-right: 35px;
-}
+
 
 .buttonContainer {
     display: flex;

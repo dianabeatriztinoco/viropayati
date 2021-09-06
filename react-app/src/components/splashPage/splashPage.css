@@ -1,12 +1,14 @@
 .splashImage {
     height: auto;
-    width: 2000px;
+    width: 100%;
 }
 
 .splashImageDiv {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     margin-top: 60px;
+    width: 100%;
     
 }
 

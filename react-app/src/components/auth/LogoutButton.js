@@ -15,7 +15,7 @@ const LogoutButton = () => {
   return (
 
   <Link to='/'>
-  <button className='logout-button' onClick={onLogout}>Logout</button>;
+  <button className='logout-button' onClick={onLogout}>Logout</button>
   </Link>
 
   )

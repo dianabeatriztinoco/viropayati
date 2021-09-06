@@ -10,9 +10,11 @@ function YogaClassFromModal() {
     <>
       <button className='loginDiv-Button' onClick={() => setShowModal(true)}>Host a Class!</button>
       {showModal && (
+        <div className="createYogaClassModal">
         <Modal onClose={() => setShowModal(false)}>
           <YogaClassFrom setShowModal={setShowModal}/>
         </Modal>
+        </div>
       )}
     </>
   );

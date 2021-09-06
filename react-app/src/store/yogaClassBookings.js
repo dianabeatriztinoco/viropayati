@@ -1,5 +1,5 @@
 const GET_YOGA_CLASS_BOOKINGS = 'yogaClassBookings/GET_YOGA_CLASS_BOOKINGS'; 
-// const DELETE_CLASS_BOOKINGS = 'yogaClasses/DELETE_CLASS';
+const DELETE_CLASS_BOOKINGS = 'yogaClasses/DELETE_CLASS';
 const CREATE_YOGA_CLASS_BOOKING = 'yogaClassBookings/CREATE_YOGA_CLASS_BOOKING';
 // const UPDATE_YOGA_CLASS = 'yogaClasses/UPDATE_YOGA_CLASS'
 
@@ -9,14 +9,14 @@ const getBookings = (bookings) => ({
     payload: bookings 
 }); 
 
-// const deleteYogaClass = (yogaClass) => ({
-//     type: DELETE_CLASS,
-//     payload: yogaClass
-// })
+const deleteYogaClassBooking = (yogaClass) => ({
+    type: DELETE_CLASS_BOOKINGS,
+    payload: yogaClass
+})
 
-const createYogaClassBooking = (userId, classId) => ({
+const createYogaClassBooking = (yogaClass) => ({
     type: CREATE_YOGA_CLASS_BOOKING,
-    payload: userId, classId
+    payload: yogaClass
     
 })
 
@@ -37,24 +37,24 @@ export const getAllBookings = () => async dispatch => {
     }
 }
 
-// export const deleteSelectedYogaClass = (id) => async dispatch => {
-
-//     const response = await fetch(`/api/yoga_classes/${id}/`, {
-//         method: 'DELETE'
-//     })
+export const deleteSelectedYogaClassBooking = (id) => async dispatch => {
+    console.log(id)
+    const response = await fetch(`/api/yoga_class_bookings/${id}/`, {
+        method: 'DELETE'
+    })
 
   
-//     if (response.ok){
-//         const deleted = await response.json()
-//         dispatch(deleteYogaClass(id))
-//         return deleted
-//     }
+    if (response.ok){
+        const deleted = await response.json()
+        dispatch(deleteYogaClassBooking(id))
+        return deleted
+    }
 
-// }
+}
 
-export const createYogaBooking = (userId, selectedYogaClassId) => async dispatch => {
-
-    console.log(userId, selectedYogaClassId)
+export const createYogaBooking = (yogaClass) => async dispatch => {
+   
+    console.log(yogaClass)
     const response = await fetch(`/api/yoga_class_bookings/new/`, {
 
 
@@ -64,12 +64,12 @@ export const createYogaBooking = (userId, selectedYogaClassId) => async dispatch
             'Content-Type': 'application/json'
           
         },
-        body: JSON.stringify({
+        body: JSON.stringify(
 
-        userId: userId, classId: selectedYogaClassId 
+        yogaClass
 
 
-        })
+        )
         
      
     });
@@ -78,8 +78,8 @@ export const createYogaBooking = (userId, selectedYogaClassId) => async dispatch
 
     if (response.ok) {
        
-        const {data} = await response.json();
-        console.log(data)
+        const data = await response.json();     
+       
        dispatch(createYogaClassBooking(data))
 
 
@@ -115,15 +115,17 @@ export default function yogaClassBookings(state=initialState, action){
         }
         case CREATE_YOGA_CLASS_BOOKING: {
 
-            return {...state}
+         return {...state, [action.yogaClass]: [action.yogaClass]}
+
+            //return {...state}
           
         }
-        // case DELETE_CLASS: {
-        //     let afterState = { ...state }
+        case DELETE_CLASS_BOOKINGS: {
+            let afterState = { ...state }
 
-        //     delete afterState[action.id]
-        //     return afterState
-        // }
+            delete afterState[action.id]
+            return afterState
+        }
         // case UPDATE_YOGA_CLASS: {
 
         //     const updatedState = { ...state, [action.yogaClass.id]: action.yogaClass }

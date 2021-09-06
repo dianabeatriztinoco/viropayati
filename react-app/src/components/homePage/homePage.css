@@ -1,22 +1,29 @@
 .homePageButtonContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     margin-top: 50px;
     margin-bottom: 456px;
     font-family: cursive;
+    width: 100%;
     font-size: 30px;
+   
 }
 .classText {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    width: auto;
 }   
 .availableClassesDiv{
-   margin-right: 200px;
+  
+   width: 100%
 }
 
 .teacherReviewsDiv {
+    width: 100%
 
 }
 
@@ -36,8 +43,8 @@
 
 .availableClassesButton{
 border-radius: 5px;
-height: 400px;
-width: 700px;
+height: auto;
+width: 100%;
 background-color: rgb(217, 240, 208);
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 border-radius: 5px;
@@ -45,8 +52,8 @@ border-radius: 5px;
 
 .teacherReviewsButton {
     border-radius: 5px;
-    height: 400px;
-    width: 700px;
+    height: auto;
+    width: 100%;
     background-color: rgb(217, 240, 208);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 5px;

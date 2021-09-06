@@ -1,0 +1,32 @@
+
+.editDescriptionForm{
+    margin-top: 60px;
+    height: 200px;
+    width: 250px;
+}
+.updateAndCancelButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.update-button {
+    margin: 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: auto;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cancel-edit-button {
+    margin: 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+

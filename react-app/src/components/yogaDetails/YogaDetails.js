@@ -8,17 +8,19 @@ import { getAllClasses, updatedYogaClass } from "../../store/yogaClass";
 import { getAllTeachers } from "../../store/teacher";
 import { getAllUsers } from "../../store/user";
 import { deleteSelectedYogaClass } from "../../store/yogaClass";
+import { deleteSelectedYogaClassBooking } from "../../store/yogaClassBookings";
 import EditYogaClass from "../editYogaClass/EditYogaClass";
 import { Link } from "react-router-dom";
 import "./yogaDetails.css";
 
 const YogaDetails = () => {
   const yogaClassId = +useParams().classId;
-  console.log(yogaClassId)
-  
+
+
 
   const history = useHistory();
-  const { classId } = useParams();
+  // const { classId } = useParams();
+  // console.log(classId)
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state.session.user);
@@ -26,7 +28,9 @@ const YogaDetails = () => {
   const [showEditDescription, setShowEditDescription] = useState(null);
   const [showYogaClasses, setShowYogaClasses] = useState();
   const [userId] = useState(sessionUser?.id)
+ 
   const [selectedYogaClassId] = useState(yogaClassId)
+
   const bookings = useSelector((state) => state.bookings)
 
   const booking =  bookings?.bookings?.yoga_class_bookings?.map((booking)=>{
@@ -34,16 +38,21 @@ const YogaDetails = () => {
     return booking 
 
   })
+  
+  
 
  
   const userClasses = []
 
-  const bookedClass = booking?.find(selectedClass => {
-   if(selectedClass.userId === +sessionUser?.id){
+  const bookeddClass = booking?.find(selectedClass => {
+   if(selectedClass?.userId === +sessionUser?.id){
     userClasses.push(selectedClass, sessionUser.id)
    }
     })
-   
+
+   console.log(userClasses)
+  const bookedClass = booking?.find(selectedClass => selectedClass?.userId === sessionUser?.id)
+  console.log(bookedClass)
 
 
 
@@ -55,13 +64,22 @@ const YogaDetails = () => {
   //  const yogaClass = yogaArr?.find((yogaClass) => yogaClass.id === +yogaClassId);
   const allUsers = useSelector((state) => state.users.users);
   const teachers = useSelector((state) => state.teachers.teachers);
+ 
 
   const handleDelete = async () => {
-    let deletedClass = await dispatch(deleteSelectedYogaClass(classId));
+    let deletedClass = await dispatch(deleteSelectedYogaClass(yogaClassId));
     if (deletedClass) {
       history.push("/yogaClasses");
     }
   };
+
+  const handleDeleteBooking = async () => {
+    console.log(bookedClass)
+    let deletedBooking = await dispatch(deleteSelectedYogaClassBooking(bookedClass?.id))
+    if(deletedBooking) {
+      history.push(`/yogaClasses/`)
+    }
+  }
 
   // const handleUpdate = async () => <div> </div>;
   //   let handelUpdate = null;
@@ -115,72 +133,118 @@ const YogaDetails = () => {
   }, []);
 
   const handleCreateBooking = async () => {
-
-   let bookedClass = await dispatch(createYogaBooking(userId, selectedYogaClassId));
-
-   return (
-     <>
-     <form onchange={bookedClass} method='POST'>
-     <input type='hidden' value={userId}></input>
-     <input type='hidden' value={selectedYogaClassId}></input>
-     </form>
-     </>
+    const payload = {
+      userId, selectedYogaClassId
+    }
+    history.push(`/yogaClasses/`)
+    await dispatch(createYogaBooking(payload));
+   
+  
+   
+  //  return (
+  //    <>
+  //    <form onchange={bookedClass} method='POST'>
+  //    <input type='hidden' value={userId}></input>
+  //    <input type='hidden' value={selectedYogaClassId}></input>
+  //    </form>
+  //    </>
     
-   )
+  //  )
+
   }
 
-  const selectedYogaClass = yogaClasses?.yoga_classes?.find((yogaClass) => yogaClass.id === +classId ) 
+  const selectedYogaClass = yogaClasses?.yoga_classes?.find((yogaClass) => yogaClass.id === yogaClassId ) 
   const userClass = userClasses.find((selectedUserClass) => selectedUserClass.classId === selectedUserClass.id && sessionUser.id === selectedUserClass.userId  )
-  const selectedYogaTeacher = teachers?.teachers?.find((teacher) => teacher.userId === sessionUser?.id && selectedYogaClass?.teacher_id === teacher.id)
- 
+  const selectedYogaTeacher = teachers?.teachers?.find((teacher) => teacher?.userId === sessionUser?.id && selectedYogaClass?.teacher_id === teacher.id)
 
 
 
 
-  if (sessionUser?.isTeacher === false) {
+  if (sessionUser?.isTeacher === false ) {
 
-   const selectedYogaClass = yogaClasses?.yoga_classes?.find((yogaClass) => yogaClass.id === +classId ) 
+   const selectedYogaClass = yogaClasses?.yoga_classes?.find((yogaClass) => yogaClass.id === yogaClassId ) 
    console.log(selectedYogaClass)
-   const userClass = userClasses.find((selectedUserClass) => selectedUserClass.classId === selectedUserClass.id && sessionUser.id === selectedUserClass.userId  )
-    console.log(userClass)
+   const userClass = userClasses?.find((selectedUserClass) => selectedUserClass.classId === yogaClassId)
+   console.log(userClass)
+   
+   //selectedUserClass.classId === selectedUserClass.id && sessionUser.id === selectedUserClass.userId  )
+   //console.log(userClass)
+   
+   
 
-   return (
+     return (
 
+    <div className="yogaStudentDeets">
+    <div className="yogaDetailContainerStudent">
     <div className="yogaDetailContainer">
     <div>
     <img className="yogaClassDetailImage" src={selectedYogaClass?.pic} />
     </div>
+    <div className="mainClassDetails">
+      <div className='classDetailsTitle'>{selectedYogaClass?.title}</div>
+        <div className='classDetails'>{selectedYogaClass?.description}</div>
+        <div className='classDetailsPrice'>${selectedYogaClass?.price}.00</div>
+        
+        
+      </div>
+      </div>
+      </div>
     <div>
-      <div>{selectedYogaClass?.description}</div>
-    </div>
-   
-    {userClass?.classId === selectedYogaClass?.id ?
-    <>
-    <div className="alreadyBooked"> booked </div>
-    <button  className="bookClassButton"> cancel </button>
-   
-    </>
- :   <div className="buttonContainer">
-     <button onClick={handleCreateBooking} className="bookClassButton"> Book Class </button>
-    </div>} 
-    </div>
+      
+     {userClass ? (
     
+    <>
+    <div  className="bookAndCancelButton">
+      <div className="cancelDiv">
+    <div className="alreadyBooked"> You're already booked! </div>
+    <div className="cancelButton">
+      <div className="buttonCancel">
+    <button  onClick={handleDeleteBooking} className="bookClassButton"> Cancel? </button>
+    </div>
+    </div>
+    </div>
+   </div>
+    </>
+    
+    ) : null 
+     }
+    {!userClass ? 
+    
+    <div className="buttonContainer"> 
+    <button onClick={handleCreateBooking} className="bookClassButton"> Book Class </button>
+    </div>
+   
+     
+    : null }
+   
+    
+    </div>
+    </div>
   )}
 
   else {
+
     return (
       <>
-      <div className="yogaDetailContainer">
+      <div className="yogaDetailContainerTeacher">
+      <div className="test">
       <div>
       <img className="yogaClassDetailImage" src={selectedYogaClass?.pic} />
+      
+          
       </div>
-      <div>
-        <div>{selectedYogaClass?.description}</div>
+      
+      <div className="mainClassDetails">
+      <div className='classDetailsTitle'>{selectedYogaClass?.title}</div>
+        <div className='classDetails'>{selectedYogaClass?.description}</div>
+        <div className='classDetailsPrice'>${selectedYogaClass?.price}.00</div>
+       
+        
       </div>
-      </div>
-      {selectedYogaTeacher?.id === selectedYogaClass?.teacher_id ? 
+     
+     
     <>
-      <div className="updateDelete">
+    
         <div>
         <div className="edit-post"
         hidden={
@@ -188,21 +252,39 @@ const YogaDetails = () => {
           selectedYogaTeacher?.id === selectedYogaClass?.teacher_id
           ? false : true
           }>
-
-          <button onClick= {async () => await setShowEditDescription(selectedYogaClass?.id)}>update</button>
-          <button onClick={handleDelete}>delete</button>
           {showEditDescription ? edit : ""}
 
         </div>
         </div>
+        </>  
+
         </div>
-    </>  
-    : null }
+        
+       
+       
+
+        {selectedYogaTeacher?.id === selectedYogaClass?.teacher_id ? 
+        <div className="buttonDivs">
+    <button className='editButtons'onClick = {async () => await setShowEditDescription(selectedYogaClass?.id)}>Update</button>
+    <button className='editButtons'onClick={handleDelete}>delete</button>
+    </div>
+       : null }
+   
+    
+    
+    </div>
+    {/* <div className="updateDelete">
+    <button className='editButtons'onClick = {async () => await setShowEditDescription(selectedYogaClass?.id)}>Update</button>
+    <button className='editButtons'onClick={handleDelete}>delete</button>
+    </div> */}
+     
       </>
+      
 
     )
 
   }
 }
+
 export default YogaDetails;
 

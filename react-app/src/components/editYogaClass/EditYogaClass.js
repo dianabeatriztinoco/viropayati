@@ -46,20 +46,22 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
     return (
       <>
         <form className="edit-form" onSubmit={handleSubmit}>
-          <input
+          <textarea
             className="editDescriptionForm"
+            type='textarea'
             name="description"
             placeholder="Edit Description"
             value={editDescription}
             onChange={(e) => setEditDescription(e.target.value)}
-          ></input>
-         
+          ></textarea>
+            <div className="updateAndCancelButton">
             <button className="update-button" type="submit">
               Update Description
             </button>
             <button className="cancel-edit-button" onClick={hideForm}>
               Cancel
             </button>
+            </div>
           
         </form>
       </>

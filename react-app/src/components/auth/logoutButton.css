@@ -2,11 +2,12 @@
         border-radius: 5px;
         height: 40px;
         width: 70px;
-        background-color: rgb(217, 240, 208);
+        background-color: rgb(229, 233, 212);
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .logOutDiv {
+
     margin-top: 30px;
     margin-right: 20px;
 }

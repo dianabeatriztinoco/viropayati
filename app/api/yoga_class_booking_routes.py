@@ -25,15 +25,15 @@ def yoga_class_bookings():
 #     # return jsonify('delete succesful')
 
 
-# @yoga_class_routes.route('/<int:id>/', methods=['DELETE'])
-# @login_required
-# def delete_class(id):
-#     yoga_class = YogaClass.query.get(id)
+@yoga_class_booking_routes.route('/<int:id>/', methods=['DELETE'])
+@login_required
+def delete_booking(id):
+    yoga_class_booking = YogaClassBooking.query.get(id)
    
-#     db.session.delete(yoga_class)
-#     db.session.commit()
+    db.session.delete(yoga_class_booking)
+    db.session.commit()
 
-#     return jsonify('delete succesful')
+    return jsonify('delete succesful')
 
 
 @yoga_class_booking_routes.route('/new/', methods=['POST'])
@@ -48,7 +48,7 @@ def create_class_booking():
     
         yoga_class_booking = YogaClassBooking(
            userId=data['userId'],
-           classId=data['classId']
+           classId=data['selectedYogaClassId']
         )
         print(yoga_class_booking)
         db.session.add(yoga_class_booking)

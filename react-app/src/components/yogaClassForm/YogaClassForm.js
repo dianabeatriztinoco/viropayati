@@ -108,8 +108,9 @@ const YogaClassForm = ({ setShowModal }) => {
       setErrors(data);
       
     } else {
-
-    return setShowModal(false);
+    history.push(`/homepage/`)
+     setShowModal(false);
+     
     }
   };
 
@@ -195,7 +196,7 @@ const YogaClassForm = ({ setShowModal }) => {
           <div className="input">
             <label>Price</label>
             <input
-              type="number"
+              type="text"
               // className="price"
               name="price"
               placeholder="Price"

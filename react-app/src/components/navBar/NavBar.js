@@ -61,10 +61,10 @@ if(sessionUser && sessionUser.isTeacher === true) {
 
   return (
     <nav>
-      <div className="navBarContainer">
+      <div className="navBarContainerWithLogo">
         <div className='viropayatiLogo'>
           <NavLink to='/' exact={true} activeClassName='active'>
-            <img src={viropayati_logo}></img>
+            <img className="logo" src={viropayati_logo}></img>
           </NavLink>
         </div>
         {/* <div>
@@ -85,20 +85,25 @@ if(sessionUser && sessionUser.isTeacher === true) {
         {/* <div>
           <DemoLogin/>
         </div> */}
-        <div className='logOutDiv'>
+       <div className="navBarContainer">
+        
+        <div className="createClassModal">
           <YogaClassFromModal />
-          <CreateYogaClassForm />
+          {/* <CreateYogaClassForm /> */}
+          </div>
         </div>
         <div className="viewAllClasses"> 
         <Link to='/yogaClasses'>
-  <button className='logout-button' >View All Classes</button>;
+  <button className='viewAllClassesButton' >View All Classes</button>
   </Link>
 
         </div>
+       
         <div className='logOutDiv'>
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div>
       </div>
+      
     </nav>
   );
 }
@@ -106,10 +111,11 @@ if(sessionUser && sessionUser.isTeacher === false) {
 
   return (
     <nav>
-      <div className="navBarContainer">
+       <div className="navBarContainerWithLogo">
+     
         <div className='viropayatiLogo'>
           <NavLink to='/' exact={true} activeClassName='active'>
-            <img src={viropayati_logo}></img>
+            <img className="logo" src={viropayati_logo}></img>
           </NavLink>
         </div>
         {/* <div>
@@ -133,15 +139,19 @@ if(sessionUser && sessionUser.isTeacher === false) {
         <div className='logOutDiv'>
         
         </div>
+        <div className="navBarContainer">
         <div className="viewAllClasses"> 
+        
         <Link to='/yogaClasses'>
-  <button className='logout-button' >View All Classes</button>;
+  <button className='viewAllClassesButton' >View All Classes</button>
   </Link>
 
         </div>
+       
         <div className='logOutDiv'>
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div>
+      </div>
       </div>
     </nav>
   );
@@ -152,12 +162,14 @@ else {
 
   return (
     <nav>
-      <div className="navBarContainer">
+      <div className="navBarContainerWithLogo">
+      
         <div className='viropayatiLogo'>
           <Link to='/' exact={true} activeClassName='active'>
-            <img src={viropayati_logo}></img>
+            <img className="logo" src={viropayati_logo}></img>
           </Link>
         </div>
+        <div className="navBarContainer">
         <div className="authContainer">
         <div>
           <LoginFormModal />
@@ -187,6 +199,7 @@ else {
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div> */}
       </div>
+    </div>
     </nav>
   );
 }
