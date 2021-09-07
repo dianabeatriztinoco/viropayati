@@ -24,11 +24,11 @@ Viropayati is a site where students can book yoga classes and teachers can host 
 
 ## Welcome View 
 
-![welcome]
+![welcome](hompage.png)
 
 ## Home View
 
-![homepage]
+![homepage](userPage.png)
 
 ## Technical Details
 
