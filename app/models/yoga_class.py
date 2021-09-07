@@ -7,7 +7,7 @@ class YogaClass(db.Model, UserMixin):
     __tablename__ = 'yogaClasses'
 
     id = db.Column(db.Integer, primary_key=True)
-    taughtBy = db.Column(db.Integer, db.ForeignKey('teachers.id'))
+    taughtBy = db.Column(db.Integer, db.ForeignKey('teachers.id'), nullable=False)
     classDate = db.Column(db.String(40), nullable=False)
     pic = db.Column(db.String(255), nullable=False)
     title = db.Column(db.String(40), nullable=False)

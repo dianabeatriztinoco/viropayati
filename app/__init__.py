@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.yoga_class_routes import yoga_class_routes
 from .api.teacher_routes import teacher_routes
 from .api.yoga_class_booking_routes import yoga_class_booking_routes
+from .api.reviews_routes import reviews_routes
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(yoga_class_routes, url_prefix='/api/yoga_classes')
 app.register_blueprint(teacher_routes, url_prefix='/api/teachers')
 app.register_blueprint(yoga_class_booking_routes, url_prefix='/api/yoga_class_bookings')
+app.register_blueprint(reviews_routes, url_prefix='/api/reviews')
 db.init_app(app)
 Migrate(app, db)
 

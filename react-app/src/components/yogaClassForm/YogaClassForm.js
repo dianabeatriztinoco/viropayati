@@ -26,7 +26,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const [postalCode, setPostalCode] = useState("");
 
   const sessionUser = useSelector((state) => state.session.user);
-
+  console.log(sessionUser)
   useEffect(() => {
     dispatch(getAllTeachers());
   }, []);
@@ -37,10 +37,12 @@ const YogaClassForm = ({ setShowModal }) => {
     return teacher;
   });
 
-  const selectedTeacher = teacher?.find(
-    (oneTeacher) => oneTeacher.userId === sessionUser.id
-  );
-  const [taughtBy] = useState(selectedTeacher?.id);
+  // oneTeacher?.userId === sessionUser?.id
+  //console.log(oneTeacher?.userId === sessionUser?.id)
+  const selectedTeacher = teacher?.find((oneTeacher) => console.log(oneTeacher.userId));
+
+  const [taughtBy] = useState(selectedTeacher?.id)
+  console.log(taughtBy)
 
   const updateClassDate = (e) => {
     setClassDate(e.target.value);

@@ -85,7 +85,7 @@ const SignUpForm = () => {
         
         <div className="input">
            
-        <label>Are you a Teacher?</label>
+        <label className="areYouTeacher"> Are you a Teacher?  </label>
         <input
           type='checkbox'
           name='teacher'

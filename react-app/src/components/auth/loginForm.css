@@ -10,16 +10,38 @@
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
-    background-image: linear-gradient(-225deg, #f3f5e0 30%, #ffb8c9 50%)
-    
+    background-image: linear-gradient(-225deg, #f3f5e0 30%, #ffb8c9 50%);
+    margin-bottom: 10px;
+    font-family: cursive;
 }
 
 .input {
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+.signUpOptionContainer{
+    display: flex;
+    flex-direction: column;
+   
+}
+.borderDiv {
+    border: solid rgb(186, 185, 185) 1px;
 }
 
+.loginText {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.signUpModal {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
 
 /* .login{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

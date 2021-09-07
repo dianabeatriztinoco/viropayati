@@ -12,6 +12,7 @@ class Teacher(db.Model, UserMixin):
     bio = db.Column(db.String(100), nullable=False)
 
     users = db.relationship('User', back_populates='teachers')
+    reviews = db.relationship('Review', back_populates='teachers')
     yogaClasses = db.relationship('YogaClass', back_populates='yogaTeachers')
     # users = db.relationship('User', back_populates="yogaClasses")
     

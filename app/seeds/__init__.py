@@ -3,6 +3,7 @@ from .users import seed_users, undo_users
 from .yoga_classes import seed_classes, undo_classes
 from .teachers import seed_teachers, undo_teachers
 from .class_bookings import seed_YogaClassBookings, undo_YogaClassBookings
+from .reviews import seed_Reviews, undo_Reviews
 
 
 # Creates a seed group to hold our commands
@@ -17,6 +18,7 @@ def seed():
     seed_teachers()
     seed_classes()
     seed_YogaClassBookings()
+    seed_Reviews()
     
     # Add other seed functions here
 
@@ -28,4 +30,5 @@ def undo():
     undo_teachers()
     undo_classes()
     undo_YogaClassBookings()
+    undo_Reviews()
     # Add other undo functions here

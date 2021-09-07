@@ -6,6 +6,7 @@ import { getAllClasses } from '../../store/yogaClass';
 import { getAllTeachers } from '../../store/teacher';
 import { getAllUsers } from '../../store/user';
 import { Link } from 'react-router-dom';
+
 import './yogaClasses.css'
 
 const YogaClasses = () => {
@@ -24,7 +25,7 @@ const YogaClasses = () => {
         dispatch(getAllUsers())
     }, [])
 
-
+   
    
 
     return (

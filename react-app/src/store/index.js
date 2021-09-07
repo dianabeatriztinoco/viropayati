@@ -5,6 +5,7 @@ import yogaClasses from './yogaClass';
 import teachers from './teacher';
 import users from './user'
 import bookings from './yogaClassBookings'
+import TeacherReviews from './reviews'
 
 
 const rootReducer = combineReducers({
@@ -12,7 +13,9 @@ const rootReducer = combineReducers({
   yogaClasses,
   teachers, 
   users, 
-  bookings
+  bookings,
+  TeacherReviews
+
 });
 
 

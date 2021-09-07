@@ -11,6 +11,7 @@ import { deleteSelectedYogaClass } from "../../store/yogaClass";
 import { deleteSelectedYogaClassBooking } from "../../store/yogaClassBookings";
 import EditYogaClass from "../editYogaClass/EditYogaClass";
 import { Link } from "react-router-dom";
+
 import "./yogaDetails.css";
 
 const YogaDetails = () => {
@@ -157,7 +158,7 @@ const YogaDetails = () => {
   const userClass = userClasses.find((selectedUserClass) => selectedUserClass.classId === selectedUserClass.id && sessionUser.id === selectedUserClass.userId  )
   const selectedYogaTeacher = teachers?.teachers?.find((teacher) => teacher?.userId === sessionUser?.id && selectedYogaClass?.teacher_id === teacher.id)
 
-
+ 
 
 
   if (sessionUser?.isTeacher === false ) {
@@ -248,7 +249,7 @@ const YogaDetails = () => {
         <div>
         <div className="edit-post"
         hidden={
-          sessionUser.id === selectedYogaTeacher?.userId &&
+          sessionUser?.id === selectedYogaTeacher?.userId &&
           selectedYogaTeacher?.id === selectedYogaClass?.teacher_id
           ? false : true
           }>
