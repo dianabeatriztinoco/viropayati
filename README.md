@@ -24,11 +24,11 @@ Viropayati is a site where students can book yoga classes and teachers can host 
 
 ## Welcome View 
 
-![welcome]
+![welcome](hompage.png)
 
 ## Home View
 
-![homepage]
+![homepage](userPage.png)
 
 ## Technical Details
 
@@ -38,12 +38,11 @@ Viropayati's backend is built using Flask and frontend is built using React-Redu
 
 - Signup, Login, DemoStudent and DemoTeacher 
 - Create Class/Edit Class/Delete Class/Read Class/Update 
-- Book and Unbook a Class 
+- Book, Unbook a Class and see booked classes. 
 
 ## Structure Overview 
 
-
-
+Backend was built with python and the frontend was build with react redux. Restful convention was followed for API routes. 
 
 
 
