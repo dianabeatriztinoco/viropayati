@@ -21,7 +21,7 @@ const YogaDetails = () => {
 
   const history = useHistory();
   // const { classId } = useParams();
-  // console.log(classId)
+
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state.session.user);
@@ -51,16 +51,15 @@ const YogaDetails = () => {
    }
     })
 
-   console.log(userClasses)
+
   const bookedClass = booking?.find(selectedClass => selectedClass?.userId === sessionUser?.id)
-  console.log(bookedClass)
+
 
 
 
   const yogaClasses = useSelector((state) => state.yogaClasses.classes);
 
-  // const [yogaArr] = yogaClasses.yoga_classes
-  //    console.log(yogaArr)
+
   // const yogaClassArray = Object.values(yogaClasses)
   //  const yogaClass = yogaArr?.find((yogaClass) => yogaClass.id === +yogaClassId);
   const allUsers = useSelector((state) => state.users.users);
@@ -75,7 +74,7 @@ const YogaDetails = () => {
   };
 
   const handleDeleteBooking = async () => {
-    console.log(bookedClass)
+
     let deletedBooking = await dispatch(deleteSelectedYogaClassBooking(bookedClass?.id))
     if(deletedBooking) {
       history.push(`/yogaClasses/`)
@@ -89,7 +88,7 @@ const YogaDetails = () => {
 
   //     const handleYogaUpdate = async()=>{
   //     const [yogaArr] = yogaClasses.yoga_classes
-  //     console.log(yogaArr)
+
   //     const yogaClass = yogaArr.find((yogaClass) => yogaClass.id === +yogaClassId)
 
   //     }
@@ -164,12 +163,12 @@ const YogaDetails = () => {
   if (sessionUser?.isTeacher === false ) {
 
    const selectedYogaClass = yogaClasses?.yoga_classes?.find((yogaClass) => yogaClass.id === yogaClassId ) 
-   console.log(selectedYogaClass)
+ 
    const userClass = userClasses?.find((selectedUserClass) => selectedUserClass.classId === yogaClassId)
-   console.log(userClass)
+
    
    //selectedUserClass.classId === selectedUserClass.id && sessionUser.id === selectedUserClass.userId  )
-   //console.log(userClass)
+
    
    
 

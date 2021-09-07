@@ -6,11 +6,11 @@ import "./editYogaClass.css"
 
 const EditYogaClass = ({ yogaClass, hideForm }) => {
 
-  console.log(yogaClass)
+
    
     const [editDescription, setEditDescription] = useState(yogaClass?.description)
 
-    console.log(editDescription)
+ 
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -34,7 +34,6 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
             description: editDescription,
         }
 
-        console.log(payload)
 
         await dispatch(updatedYogaClass(payload, yogaClass.id))
       

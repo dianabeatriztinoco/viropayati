@@ -145,7 +145,9 @@ if(sessionUser && sessionUser.isTeacher === false) {
         <Link to='/yogaClasses'>
   <button className='viewAllClassesButton' >View All Classes</button>
   </Link>
-
+  <Link to='/bookedClasses'>
+    <button className="viewAllClassesButton"> Booked Classes </button>
+        </Link>
         </div>
        
         <div className='logOutDiv'>

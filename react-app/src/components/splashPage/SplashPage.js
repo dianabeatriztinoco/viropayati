@@ -1,9 +1,12 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import HomePage from '../homePage/HomePage';
 import { useSelector } from 'react-redux';
+import { createNewYogaTeacher } from '../../store/teacher';
 import './splashPage.css'
 
 const splashImage = 'https://i.imgur.com/Cyy2hjR.jpg'
@@ -11,7 +14,12 @@ const splashImage = 'https://i.imgur.com/Cyy2hjR.jpg'
 
 const SplashPage = () => {
 
+    const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
+
+    useEffect(()=>{
+        dispatch(createNewYogaTeacher(sessionUser?.id))
+    }, [])
 
     if (!sessionUser) {
     return (
@@ -21,8 +29,9 @@ const SplashPage = () => {
         </div>
         <div className='splashPageTxt'>
            <Link className ='splashPageTxtLink' to='/homepage'> be here now... </Link>
-           
-           <div> about viropayati</div>
+           <div>
+           <div> </div>
+           </div>
            <div> </div>
            
         </div>

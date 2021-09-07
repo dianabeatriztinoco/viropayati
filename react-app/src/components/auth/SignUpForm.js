@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import { useHistory } from "react-router-dom";
+import { createNewYogaTeacher } from '../../store/teacher';
+import { createNewYogaClass } from '../../store/yogaClass';
 import './signUpForm.css'
 
 const SignUpForm = () => {
@@ -15,18 +18,20 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
+  const sessionUser = useSelector((state) => state.session.user)
+  const history = useHistory()
+
   const onSignUp = async (e) => {
     e.preventDefault();
     
-    if (password === repeatPassword) {
+
+    if (password === repeatPassword && isTeacher === true) {
       
       const data = await dispatch(signUp(isTeacher, fullname, username, email, password));
-
+      history.push('/homePage')
     if (data) {
-
         setErrors(data)
-       
-        
+        history.push('/homePage')
       }
     }
       else {
@@ -37,7 +42,7 @@ const SignUpForm = () => {
   };
 
   const errorDisplay = errors.find((error, ind) => error[ind])
-  console.log(errorDisplay)
+
   // const errorDisplay = (err) => {
  
   //   return errors.find((error, ind) => error.includes(err))
@@ -66,7 +71,13 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
-  if (user) {
+  if (user && isTeacher === true) {
+
+  
+    return <Redirect to='/homepage' />;
+  } 
+
+  if (user && isTeacher === false){
     return <Redirect to='/' />;
   }
 

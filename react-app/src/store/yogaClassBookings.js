@@ -38,7 +38,7 @@ export const getAllBookings = () => async dispatch => {
 }
 
 export const deleteSelectedYogaClassBooking = (id) => async dispatch => {
-    console.log(id)
+
     const response = await fetch(`/api/yoga_class_bookings/${id}/`, {
         method: 'DELETE'
     })
@@ -54,7 +54,8 @@ export const deleteSelectedYogaClassBooking = (id) => async dispatch => {
 
 export const createYogaBooking = (yogaClass) => async dispatch => {
    
-    console.log(yogaClass)
+
+    
     const response = await fetch(`/api/yoga_class_bookings/new/`, {
 
 

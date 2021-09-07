@@ -8,6 +8,7 @@ import { getAllTeachers } from "../../store/teacher";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import YogaClassFromModal from "../CreateClassModal";
+
 import "./yogaClassForm.css";
 
 const YogaClassForm = ({ setShowModal }) => {
@@ -26,7 +27,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const [postalCode, setPostalCode] = useState("");
 
   const sessionUser = useSelector((state) => state.session.user);
-  console.log(sessionUser)
+
   useEffect(() => {
     dispatch(getAllTeachers());
   }, []);
@@ -38,11 +39,11 @@ const YogaClassForm = ({ setShowModal }) => {
   });
 
   // oneTeacher?.userId === sessionUser?.id
-  //console.log(oneTeacher?.userId === sessionUser?.id)
-  const selectedTeacher = teacher?.find((oneTeacher) => console.log(oneTeacher.userId));
+
+  const selectedTeacher = teacher?.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
 
   const [taughtBy] = useState(selectedTeacher?.id)
-  console.log(taughtBy)
+
 
   const updateClassDate = (e) => {
     setClassDate(e.target.value);
@@ -105,7 +106,7 @@ const YogaClassForm = ({ setShowModal }) => {
         postalCode
       )
     );
-      console.log(data)
+    
     if (data) {
       setErrors(data);
       

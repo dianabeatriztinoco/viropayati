@@ -50,7 +50,7 @@ def create_class_booking():
            userId=data['userId'],
            classId=data['selectedYogaClassId']
         )
-        print(yoga_class_booking)
+ 
         db.session.add(yoga_class_booking)
         db.session.commit()
         return yoga_class_booking.to_dict()

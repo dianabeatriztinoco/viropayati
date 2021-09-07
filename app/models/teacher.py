@@ -9,7 +9,7 @@ class Teacher(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'))
-    bio = db.Column(db.String(100), nullable=False)
+    bio = db.Column(db.String(100))
 
     users = db.relationship('User', back_populates='teachers')
     reviews = db.relationship('Review', back_populates='teachers')

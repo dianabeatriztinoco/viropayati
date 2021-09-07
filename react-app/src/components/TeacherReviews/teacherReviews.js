@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import YogaClassFromModal from "../CreateClassModal";
 import { getAllReviews } from "../../store/reviews";
 import { getAllUsers } from "../../store/user";
+import './teacherReview.css'
 
 //import "./yogaClassForm.css";
 
@@ -20,7 +21,7 @@ const sessionUser = useSelector(state => state.session.user)
   // const yogaClasses = useSelector(state => state.yogaClasses.classes)
 const allUsers = useSelector(state => state.users.users)
 const teachers = useSelector(state => state.teachers.teachers)
-console.log(teachers)
+
 const yogaTeacherArray = []
 const yogaTeachers = allUsers?.users?.find((yogaTeacher) => { if (yogaTeacher?.isTeacher === true){
 
@@ -28,7 +29,7 @@ const yogaTeachers = allUsers?.users?.find((yogaTeacher) => { if (yogaTeacher?.i
 }} ) 
 
 // const teacher = yogaTeacherArray.map((teacher) => teacher)
-// console.log(teacher)
+
   
 
 
@@ -44,16 +45,8 @@ useEffect(()=>{
 
   return (
     <>
-    <div>
-      {yogaTeacherArray?.map((teacher) => 
-
-       
-
-<div></div>       
-
-    
-
-      )}
+    <div className="teacherText">
+          Coming soon! 
       </div>
     </>
   );

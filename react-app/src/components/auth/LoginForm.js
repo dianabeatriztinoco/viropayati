@@ -5,6 +5,7 @@ import SignUpFormModal from '../../components/SignUpFormModal'
 import { login } from '../../store/session';
 import DemoLoginStudent from './DemoLoginStudent';
 import DemoLoginTeacher from './DemoLoginTeacher';
+import { useHistory } from "react-router-dom";
 import './loginForm.css'
 
 const LoginForm = () => {
@@ -13,12 +14,16 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory()
+
 
   const onLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
+    history.push('/homePage')
     if (data) {
       setErrors(data);
+      history.push('/homePage')
     }
   };
 

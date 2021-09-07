@@ -8,6 +8,7 @@ import './demoLogin.css'
 const DemoLoginTeacher = () => {
   const dispatch = useDispatch()
   // const history = useHistory()
+  
   const onDemoLogin = async (e) => {
     await dispatch(loginDemoTeacher());
     // history.push("/")

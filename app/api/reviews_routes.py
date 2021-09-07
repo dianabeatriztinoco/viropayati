@@ -65,7 +65,7 @@ def reviews():
 #             postal_code=data['postalCode'],
 #             created_at=datetime.now()
 #         )
-#         print(yoga_class)
+#     
 
 #         db.session.add(yoga_class)
 #         db.session.commit()
@@ -77,7 +77,7 @@ def reviews():
 # @yoga_class_routes.route('/update/<int:id>/', methods=['PUT'])
 # @login_required
 # def update_caption(id):
-#     print('XXXXXXXXXXXXXXX', id)
+
 #     form = YogaClassForm()
     
 #     form['csrf_token'].data = request.cookies['csrf_token']

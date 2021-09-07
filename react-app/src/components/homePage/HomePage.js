@@ -1,16 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from "react";
 import LoginFormModal from '../LoginFormModal'
+
 import './homePage.css'
+import { createNewYogaClass } from '../../store/yogaClass';
 
 const splashImage = 'https://i.imgur.com/Cyy2hjR.jpg'
 
 
 const HomePage = () => {
+
+    const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
- if(sessionUser){   
+
   
+
+ if(sessionUser){   
+
+
 
  return (
      <>

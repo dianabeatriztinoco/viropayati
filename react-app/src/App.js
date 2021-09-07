@@ -16,6 +16,7 @@ import YogaDetails from './components/yogaDetails/YogaDetails';
 import YogaClassForm from './components/yogaClassForm/YogaClassForm';
 import LoginFormModal from './components/LoginFormModal';
 import TeacherReviews from './components/TeacherReviews/teacherReviews';
+import BookedClasses from './components/BookedClasses/bookedClasses';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -51,6 +52,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route> */}
+        <Route path='/bookedClasses' exact={true}>
+          <BookedClasses />
+        </Route>
         <Route path='/yogaClasses' exact={true}>
           <YogaClasses />
         </Route>

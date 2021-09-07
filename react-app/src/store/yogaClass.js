@@ -54,7 +54,7 @@ export const deleteSelectedYogaClass = (id) => async dispatch => {
 
 export const createNewYogaClass = (taughtBy, classDate, pic, title , description, price, address, city, state, postalCode) => async dispatch => {
 
-   console.log("XXXXXXXXXXXXXXXXXXXXXX", title, classDate)
+
 
     const response = await fetch(`/api/yoga_classes/new/`, {
 
@@ -77,9 +77,9 @@ export const createNewYogaClass = (taughtBy, classDate, pic, title , description
 
 
     if (response.ok) {
-        console.log(response)
+   
         const data = await response.json();
-        console.log(data)
+
        dispatch(createYogaClass(data))
 
 
@@ -98,7 +98,7 @@ export const updatedYogaClass = (yogaClass, id) => async dispatch => {
    
 //    const {id, description} = yogaClass
    
-    console.log(yogaClass, 'lasjdfl;asjfkjas;ljf;laskjdf;l')
+
 
     const res = await fetch(`/api/yoga_classes/update/${id}/`, {
         method: 'PUT',
@@ -108,10 +108,10 @@ export const updatedYogaClass = (yogaClass, id) => async dispatch => {
         )
     
     })
-    console.log(res)
+  
     if (res.ok) {
         const editYogaClass = await res.json();
-        console.log(editYogaClass)
+
         dispatch(updateYogaClass(editYogaClass))
         return editYogaClass
     }
@@ -137,7 +137,7 @@ export default function yogaClasses(state=initialState, action){
         case UPDATE_YOGA_CLASS: {
 
             const updatedState = { ...state, [action.yogaClass.id]: action.yogaClass }
-            console.log(updatedState)
+     
             return updatedState
             
         }
