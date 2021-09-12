@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from "react";
+import { getAllTeachers } from "../../store/teacher";
 import LoginFormModal from '../LoginFormModal'
 
 import './homePage.css'
@@ -16,6 +17,9 @@ const HomePage = () => {
     const sessionUser = useSelector(state => state.session.user)
 
   
+    useEffect(() => {
+        dispatch(getAllTeachers());
+      }, []);
 
  if(sessionUser){   
 

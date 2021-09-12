@@ -16,6 +16,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
 
   const [errors, setErrors] = useState([]);
+  const [taughtBy, setTaughtBy] = useState()
   const [classDate, setClassDate] = useState("");
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
@@ -25,7 +26,6 @@ const YogaClassForm = ({ setShowModal }) => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [postalCode, setPostalCode] = useState("");
-
   const sessionUser = useSelector((state) => state.session.user);
 
   useEffect(() => {
@@ -38,11 +38,10 @@ const YogaClassForm = ({ setShowModal }) => {
     return teacher;
   });
 
+
   // oneTeacher?.userId === sessionUser?.id
 
-  const selectedTeacher = teacher?.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
-
-  const [taughtBy] = useState(selectedTeacher?.id)
+  const selectedTeacher = teacher.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
 
 
   const updateClassDate = (e) => {
@@ -79,7 +78,15 @@ const YogaClassForm = ({ setShowModal }) => {
 
   const updatePostalCode = (e) => {
     setPostalCode(e.target.value);
+  
   };
+
+const updateTaughtBy = () => {
+  setTaughtBy(selectedTeacher.userId);
+}
+
+
+
 
   // const upDateSetSubmitted = (e) => {
   //   setSubmitted(true)
@@ -90,6 +97,7 @@ const YogaClassForm = ({ setShowModal }) => {
   // }
 
   const onCreateYogaClass = async (e) => {
+    setTaughtBy(selectedTeacher.userId)
     e.preventDefault();
 
     const data = await dispatch(
@@ -132,17 +140,17 @@ const YogaClassForm = ({ setShowModal }) => {
         ))}
       </div>
           <div className="input">
-            {teachers?.teachers?.map((teacher) =>
-              teacher.userId === sessionUser.id ? (
+            {/* {teachers?.teachers?.map((teacher) =>
+              teacher.userId === sessionUser.id ? ( */}
                 <input
                   type="hidden"
                   name="taughtBy"
-                  placeholder="Class Date"
                   value={taughtBy}
+                 onChange={(updateTaughtBy)}
                   required={true}
                 ></input>
-              ) : null
-            )}
+             {/* ) : null */}
+           {/* )} */}
           </div>
 
           <div className="input">
