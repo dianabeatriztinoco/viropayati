@@ -34,15 +34,18 @@ const YogaClassForm = ({ setShowModal }) => {
 
   const teachers = useSelector((state) => state.teachers.teachers);
 
+
   const teacher = teachers?.teachers?.map((teacher) => {
     return teacher;
   });
+  console.log(teacher)
+
 
 
   // oneTeacher?.userId === sessionUser?.id
 
   const selectedTeacher = teacher.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
-
+console.log(selectedTeacher)
 
   const updateClassDate = (e) => {
     setClassDate(e.target.value);
@@ -88,6 +91,7 @@ const updateTaughtBy = () => {
 
 
 
+
   // const upDateSetSubmitted = (e) => {
   //   setSubmitted(true)
   // }
@@ -99,7 +103,7 @@ const updateTaughtBy = () => {
   const onCreateYogaClass = async (e) => {
     setTaughtBy(selectedTeacher.userId)
     e.preventDefault();
-
+    console.log(taughtBy)
     const data = await dispatch(
       createNewYogaClass(
         taughtBy,
@@ -146,7 +150,7 @@ const updateTaughtBy = () => {
                   type="hidden"
                   name="taughtBy"
                   value={taughtBy}
-                 onChange={(updateTaughtBy)}
+                 onChange={() => updateTaughtBy()}
                   required={true}
                 ></input>
              {/* ) : null */}
