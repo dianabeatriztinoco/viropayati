@@ -16,10 +16,9 @@ const SplashPage = () => {
 
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
-
-    useEffect(()=>{
-        dispatch(createNewYogaTeacher(sessionUser?.id))
-    }, [])
+    console.log(sessionUser)
+    dispatch(createNewYogaTeacher(sessionUser?.id))
+  
 
     if (!sessionUser) {
     return (

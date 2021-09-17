@@ -16,7 +16,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
 
   const [errors, setErrors] = useState([]);
-  const [taughtBy, setTaughtBy] = useState()
+
   const [classDate, setClassDate] = useState("");
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
@@ -46,6 +46,9 @@ const YogaClassForm = ({ setShowModal }) => {
 
   const selectedTeacher = teacher.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
 console.log(selectedTeacher)
+
+const [taughtBy] = useState(selectedTeacher.userId)
+console.log(taughtBy)
 
   const updateClassDate = (e) => {
     setClassDate(e.target.value);
@@ -84,9 +87,9 @@ console.log(selectedTeacher)
   
   };
 
-const updateTaughtBy = () => {
-  setTaughtBy(selectedTeacher.userId);
-}
+// const updateTaughtBy = () => {
+//   setTaughtBy(selectedTeacher.userId);
+// }
 
 
 
@@ -101,7 +104,7 @@ const updateTaughtBy = () => {
   // }
 
   const onCreateYogaClass = async (e) => {
-    setTaughtBy(selectedTeacher.userId)
+
     e.preventDefault();
     console.log(taughtBy)
     const data = await dispatch(
@@ -150,7 +153,7 @@ const updateTaughtBy = () => {
                   type="hidden"
                   name="taughtBy"
                   value={taughtBy}
-                 onChange={() => updateTaughtBy()}
+                 onChange={taughtBy}
                   required={true}
                 ></input>
              {/* ) : null */}

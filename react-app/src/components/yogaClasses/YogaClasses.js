@@ -15,7 +15,18 @@ const YogaClasses = () => {
     const sessionUser = useSelector(state => state.session.user)
     const yogaClasses = useSelector(state => state.yogaClasses.classes)
     const allUsers = useSelector(state => state.users.users)
+    console.log(allUsers)
+    // const userObjects = Object.values(allUsers)
+    //console.log(userObjects)
     const teachers = useSelector(state => state.teachers.teachers)
+    console.log(teachers)
+   
+    // const teacherObjects =  Object.values(teachers)
+   const selectedTeacher = allUsers?.users.find((user) => teachers?.teachers.map((oneTeacher) => oneTeacher.userId === user.id))
+    
+    //teachers.teachers.map((oneTeacher) => oneTeacher.userId === user.id));
+   // console.log(selectedTeacher)
+
     
   
 

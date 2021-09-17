@@ -35,10 +35,10 @@ const SignUpForm = () => {
       }
     }
       else {
-      f
+      
        setErrors(['Passwords do not match!'])
       }
-    h
+    
   };
 
   const errorDisplay = errors.find((error, ind) => error[ind])
