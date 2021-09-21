@@ -24,15 +24,18 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     
-
+ 
     if (password === repeatPassword && isTeacher === true) {
       
       const data = await dispatch(signUp(isTeacher, fullname, username, email, password));
-      history.push('/homePage')
-    if (data) {
+      
+      if (data) {
         setErrors(data)
-        history.push('/homePage')
+        history.push('/')
       }
+     else {
+       history.push('/homepage')
+     }
     }
       else {
       
