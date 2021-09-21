@@ -6,7 +6,7 @@ from .auth_routes import validation_errors_to_error_messages
 from datetime import datetime
 
 reviews_routes = Blueprint('reviews', __name__)
-f
+
 
 @reviews_routes.route('/', methods=['GET'])
 def reviews():
