@@ -26,7 +26,9 @@ const YogaClassForm = ({ setShowModal }) => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [postalCode, setPostalCode] = useState("");
+
   const sessionUser = useSelector((state) => state.session.user);
+  console.log(sessionUser)
 
   useEffect(() => {
     dispatch(getAllTeachers());

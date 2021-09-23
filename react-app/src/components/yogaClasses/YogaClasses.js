@@ -13,16 +13,31 @@ const YogaClasses = () => {
     const dispatch = useDispatch()
 
     const sessionUser = useSelector(state => state.session.user)
+    console.log(sessionUser.id)
     const yogaClasses = useSelector(state => state.yogaClasses.classes)
+    console.log(yogaClasses)
     const allUsers = useSelector(state => state.users.users)
     console.log(allUsers)
     // const userObjects = Object.values(allUsers)
     //console.log(userObjects)
     const teachers = useSelector(state => state.teachers.teachers)
-    console.log(teachers)
    
     // const teacherObjects =  Object.values(teachers)
-   const selectedTeacher = allUsers?.users.find((user) => teachers?.teachers.map((oneTeacher) => oneTeacher.userId === user.id))
+   const selectedTeacher = teachers?.teachers.map((teacher)=>{
+       
+      const oneTeacher = allUsers?.users.find((user) => user.id === teacher.userId )
+     
+      return oneTeacher
+   })
+   
+   console.log(selectedTeacher)
+  
+
+   
+   
+   
+   //teachers?.teachers.map((oneTeacher) => oneTeacher.userId === user.id))
+ 
     
     //teachers.teachers.map((oneTeacher) => oneTeacher.userId === user.id));
    // console.log(selectedTeacher)
@@ -64,9 +79,11 @@ const YogaClasses = () => {
                     {/* {yogaClass.description} */}
                     {/* {yogaClass.title} */}
 
-                   {teachers?.teachers.map((teacher)=> (
+                   {teachers?.teachers.map((teacher)=> j
+                   
+                   (
                        <React.Fragment key={teacher.id}>
-                       {allUsers?.users.map((user)=>(
+                      {allUsers?.users.map((user)=> (
                            
                    yogaClass.teacher_id === teacher.id && teacher.userId === user.id ?  (
                     <React.Fragment key={user.id}>
