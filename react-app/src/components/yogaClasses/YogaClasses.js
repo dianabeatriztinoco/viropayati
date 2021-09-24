@@ -97,8 +97,8 @@ const YogaClasses = () => {
                        {/* </div> */}
                        </ React.Fragment>
                         
-                    ) 
-
+                    ) f
+f
                     
 
                     : null ))}
