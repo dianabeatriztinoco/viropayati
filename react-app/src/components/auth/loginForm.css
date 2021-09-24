@@ -21,6 +21,22 @@
     padding-top: 5px;
     margin-bottom: 20px;
 }
+
+.inputEmail {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.inputPassword {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
 .signUpOptionContainer{
     display: flex;
     flex-direction: column;
@@ -43,53 +59,18 @@
     padding-bottom: 15px;
 }
 
-/* .login{
+.inputEmail:hover {
+    background-color: rgb(220, 249, 227);
+}
+.inputPassword:hover {
+    background-color: rgb(220, 249, 227);
+}
+
+.loginButton {
+    background-color: rgb(217, 240, 208);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-left: 100px;
-    margin-bottom: 20px;
-}
-
-.loginEmail {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
- 
-.emailInput {
-
-    width: 250px;
-    height: 30px;
-   
-  
-   
-
-}
-
-.passwordInput {
-    width: 250px;
-    height: 30px;
-  
-}
-
-.loginPassword{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-}
-
-.submit {
-    /* display: inline-block; */
-    /* color: #252537;
-    width: 100px;
-    height: 30px;
-    background: #fff;
     border-radius: 5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 20px;
-    /* margin: 30px auto; */
-    /* letter-spacing: 0.05em; */
-/* }   */
+    height: 40px;
+    width: 70px;
+
+}

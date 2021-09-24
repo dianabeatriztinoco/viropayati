@@ -32,25 +32,29 @@
 }
 .date{
     font-family: cursive;
+    margin-left: 25px;
     
     
 }
 .style {
-    /* margin-top: 10px; */
+    margin-left: 27px;
     font-family: cursive;
     font-size: x-large;
     font-weight: bolder;
 }
 .price {
+margin-left: 27px;    
 font-family: cursive;
 font-size: large;
 font-weight: 100px;
 color: rgb(244, 116, 70);
 }
 .address {
+    margin-left: 27px;
     font-family: cursive;
 }
 .teacher {
+    margin-left: 27px;
     font-family: cursive;
 }
 

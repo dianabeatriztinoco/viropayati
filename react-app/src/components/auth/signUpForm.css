@@ -23,6 +23,68 @@
     justify-content: center;
     padding-top: 10px;
 }
+
+.firstNameInput {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.lastNameInput {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.signUpEmailInput {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.signUpPasswordInput {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.firstNameInput:hover {
+    background-color: rgb(220, 249, 227);
+}
+
+.lastNameInput:hover {
+    background-color: rgb(220, 249, 227);
+
+}
+
+.signUpEmailInput:hover {
+    background-color: rgb(220, 249, 227);
+
+}
+
+.signUpPasswordInput:hover {
+    background-color: rgb(220, 249, 227);
+
+}
+
+.signUpFormButton {
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+
+}
 /* .inputs {
     margin-left: 50px;
   

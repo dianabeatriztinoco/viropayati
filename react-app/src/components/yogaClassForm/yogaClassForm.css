@@ -16,52 +16,84 @@
     padding: 2%;
     background-image: linear-gradient(-225deg, #f3f5e0 30%,  #ffb8c9 50%)
 }
-
-.input {
+.createClass {
     display: flex;
     justify-content: center;
+    font-size: x-large;
+    font-family: cursive;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.inputCreateClass {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: x-small;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     padding-top: 10px;
+    font-family: cursive;
 }
 .classDate {
+    border-radius: 20px;
     display: flex;
     justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
 .uploadImage {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .title {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .description {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.price {
+.priceForm {
+    border-radius: 20px;
     display: flex;
+   
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.address {
-    display: flex;
-    flex-direction: column;
+.addressForm {
+    border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .city {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .state {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .postalCode {
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .yogaFormButton {
@@ -74,3 +106,33 @@
     margin-top: 10px;
    
 }
+
+.classDate:hover {
+    background-color: rgb(220, 249, 227);
+}
+
+.uploadImage:hover {
+    background-color: rgb(220, 249, 227);
+}
+.title:hover {
+    background-color: rgb(220, 249, 227);
+}
+.description:hover {
+    background-color: rgb(220, 249, 227);
+}
+.priceForm:hover {
+    background-color: rgb(220, 249, 227);
+}
+.addressForm:hover {
+    background-color: rgb(220, 249, 227);
+}
+.city:hover {
+    background-color: rgb(220, 249, 227);
+}
+.state:hover {
+    background-color: rgb(220, 249, 227);
+}
+.postalCode:hover {
+    background-color: rgb(220, 249, 227);
+}
+

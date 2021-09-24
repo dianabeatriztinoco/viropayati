@@ -101,6 +101,7 @@ const SignUpForm = () => {
            
         <label className="areYouTeacher"> Are you a Teacher?  </label>
         <input
+         
           type='checkbox'
           name='teacher'
           onChange={updateIsTeacher}
@@ -115,6 +116,7 @@ const SignUpForm = () => {
         {/* <label>{errorDisplay('fullname')}</label> */}
         <input
           type='text'
+          className="firstNameInput"
           name='fullname'
           onChange={updateFullName}
           placeholder="first last"
@@ -128,6 +130,7 @@ const SignUpForm = () => {
         {/* <li key={ind}>{error}</li> */}
         <input
           type='text'
+          className="lastNameInput"
           name='username'
           onChange={updateUsername}
           placeholder="username"
@@ -140,6 +143,7 @@ const SignUpForm = () => {
         {/* <li key={ind}>{error}</li> */}
         <input
           type='text'
+          className="signUpEmailInput"
           name='email'
           onChange={updateEmail}
           placeholder="email"
@@ -153,6 +157,7 @@ const SignUpForm = () => {
         <input
           type='password'
           name='password'
+          className="signUpPasswordInput"
           onChange={updatePassword}
           placeholder="password"
           value={password}
@@ -165,6 +170,7 @@ const SignUpForm = () => {
         {/* <label>{errorDisplay}</label> */}
         <input
           type='password'
+          className="signUpPasswordInput"
           name='repeat_password'
           onChange={updateRepeatPassword}
           placeholder="confirm password"
@@ -173,7 +179,7 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div className="input">
-      <button  type='submit'>Sign Up</button>
+      <button  className='signUpFormButton' type='submit'>Sign Up</button>
       </div>
       
     </form>

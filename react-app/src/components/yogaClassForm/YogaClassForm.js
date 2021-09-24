@@ -137,7 +137,7 @@ console.log(taughtBy)
   return (
     <div className="yogaClassFormOne">
       <div className="yogaClassForm">
-        <div className="input">Create Class</div>
+        
         <form onSubmit={onCreateYogaClass} method="POST">
         <div>
         {errors.map((error, ind) => (
@@ -148,7 +148,8 @@ console.log(taughtBy)
           </ul>
         ))}
       </div>
-          <div className="input">
+          <div className="createClass">
+            Host a Class!
             {/* {teachers?.teachers?.map((teacher) =>
               teacher.userId === sessionUser.id ? ( */}
                 <input
@@ -162,64 +163,64 @@ console.log(taughtBy)
            {/* )} */}
           </div>
 
-          <div className="input">
-            <label>Class Date</label>
+          <div className="inputCreateClass">
+            <label>Class Date:</label>
 
             <input
               type="text"
-              // className="classDate"
+              className="classDate"
               name="class_date"
-              placeholder="Class Date"
+              placeholder="mm/dd/yyyy"
               onChange={(e) => setClassDate(e.target.value)}
               value={classDate}
               required={true}
             ></input>
           </div>
-          <div className="input">
-            <label>Upload Image</label>
+          <div className="inputCreateClass">
+            <label>Upload Image:</label>
             <input
               type="text"
-              // className="uploadImage"
+              className="uploadImage"
               name="class_pic"
-              placeholder="Upload Image"
+              placeholder="url"
               onChange={(e) => setImage(e.target.value)}
               value={image}
               required={true}
             ></input>
           </div>
-          <div className="input">
-            <label>Title</label>
+          <div className="inputCreateClass">
+            <label>Title:</label>
             <input
               type="text"
-              // className="title"
+              className="title"
               name="title"
-              placeholder="Title"
+              //placeholder="Title"
               onChange={updateTitle}
               value={title}
               required={true}
             ></input>
           </div>
-          <div className="input">
-            <label>Description</label>
-            <input
+          <div className="inputCreateClass">
+            <label>Description:</label>
+            <textarea
               type="text"
-              // className="description"
+              className="description"
               name="description"
-              placeholder="Description"
+              //placeholder="Description"
               onChange={updateDescription}
               value={description}
               required={true}
 
               // required={true}
-            ></input>
+            ></textarea>
           </div>
-          <div className="input">
-            <label>Price</label>
+          <div className="inputCreateClass">
+            <label>Price:</label>
             <input
               type="text"
-              // className="price"
+              className="priceForm"
               name="price"
-              placeholder="Price"
+              //placeholder="0.00"
               onChange={updatePrice}
               value={price}
               required={true}
@@ -227,13 +228,13 @@ console.log(taughtBy)
               // required={true}
             ></input>
           </div>
-          <div className="input">
-            <label>Address</label>
+          <div className="inputCreateClass">
+            <label>Address:</label>
             <input
               type="text"
-              // className="address"
+              className="addressForm"
               name="address"
-              placeholder="Address"
+             // placeholder="Address"
               onChange={updateAddress}
               value={address}
               required={true}
@@ -241,13 +242,13 @@ console.log(taughtBy)
               // required={true}
             ></input>
           </div>
-          <div className="input">
-            <label>City</label>
+          <div className="inputCreateClass">
+            <label>City:</label>
             <input
               type="text"
-              // className="city"
+              className="city"
               name="city"
-              placeholder="City"
+              //laceholder="City"
               onChange={updateCity}
               value={city}
               required={true}
@@ -255,13 +256,13 @@ console.log(taughtBy)
               // required={true}
             ></input>
           </div>
-          <div className="input">
-            <label>State</label>
+          <div className="inputCreateClass">
+            <label>State:</label>
             <input
               type="text"
-              // className="state"
+              className="state"
               name="state"
-              placeholder="State"
+              //placeholder="State"
               onChange={updateState}
               value={state}
               required={true}
@@ -269,12 +270,12 @@ console.log(taughtBy)
               // required={true}
             ></input>
           </div>
-          <div className="input">
-            <label>Postal Code</label>
+          <div className="inputCreateClass">
+            <label>Postal Code:</label>
             <input
               type="text"
-              // className="postalCode"
-              placeholder="Postal Code"
+              className="postalCode"
+              //placeholder="Postal Code"
               name="postalCode"
               onChange={updatePostalCode}
               value={postalCode}
@@ -283,7 +284,7 @@ console.log(taughtBy)
               // required={true}
             ></input>
           </div>
-          <div className="input">
+          <div className="inputCreateClass">
             <button className="yogaFormButton" type="submit">
               Create
             </button>

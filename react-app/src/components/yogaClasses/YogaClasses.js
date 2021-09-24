@@ -66,8 +66,9 @@ const YogaClasses = () => {
                     <Link to={`/yogaClasses/${yogaClass.id}`}>
                     <img className='yogaClassImage' src={yogaClass.pic} />
                     </Link>
+                   
                     <div className="style">{yogaClass.title}</div>
-                  
+                    
                     {/* <div className= 'address'>{yogaClass.address} </div> */}
                     <div className= 'address'>{yogaClass.city}, {yogaClass.state} </div>
 
@@ -78,8 +79,8 @@ const YogaClasses = () => {
                     {/* {yogaClass.price} */}
                     {/* {yogaClass.description} */}
                     {/* {yogaClass.title} */}
-
-                   {teachers?.teachers.map((teacher)=> j
+                   
+                   {teachers?.teachers.map((teacher)=> 
                    
                    (
                        <React.Fragment key={teacher.id}>
@@ -87,18 +88,23 @@ const YogaClasses = () => {
                            
                    yogaClass.teacher_id === teacher.id && teacher.userId === user.id ?  (
                     <React.Fragment key={user.id}>
+                        
+                        
                        <div className="date">{yogaClass.classDate}</div>
                        <div className="teacher">taught by {user.fullname}</div>
                        <div className="price">${yogaClass.price}.00</div>
+                       
                        <Link to={`/yogaClasses/${yogaClass.id}`}>
                        {/* <div className="buttonContainer"> */}
                        {/* <button className="bookClassButton"> more info </button> */}
                        </Link>
+                      
                        {/* </div> */}
                        </ React.Fragment>
+                       
                         
-                    ) f
-f
+                    ) 
+
                     
 
                     : null ))}
@@ -108,11 +114,14 @@ f
                    
                     </div>
                 ))}
+              
             </div>
             
           
         </div>
+        
         </>
+        
     )
    
 }

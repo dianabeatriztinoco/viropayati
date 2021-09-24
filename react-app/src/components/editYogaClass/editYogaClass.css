@@ -3,6 +3,7 @@
     margin-top: 60px;
     height: 200px;
     width: 250px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .updateAndCancelButton {
     display: flex;
