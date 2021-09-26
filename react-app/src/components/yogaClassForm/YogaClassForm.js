@@ -49,7 +49,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const selectedTeacher = teacher.find((oneTeacher) => oneTeacher.userId === sessionUser.id);
 console.log(selectedTeacher)
 
-const [taughtBy] = useState(selectedTeacher.userId)
+const [taughtBy] = useState(selectedTeacher.id)
 console.log(taughtBy)
 
   const updateClassDate = (e) => {

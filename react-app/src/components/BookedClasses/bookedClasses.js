@@ -34,14 +34,43 @@ const yogaTeachers = allUsers?.users?.find((yogaTeacher) => { if (yogaTeacher?.i
 // const teacher = yogaTeacherArray.map((teacher) => teacher)
 
 const bookedClasses = useSelector(state => state.bookings.bookings?.yoga_class_bookings)
-console.log(bookedClasses)
+
 
 const yogaClassDisplayed = []
-const studentClasses = bookedClasses?.find(classes => classes?.userId === sessionUser?.id)
+
+
+const studentClasses = bookedClasses?.map((yogaClass)=>{
+  
+  if (yogaClass.userId === sessionUser.id){
+    yogaClassDisplayed.push(yogaClass)
+  }
+  else {
+    return "No Classes Booked!"
+  }
+})
+
+//const yo = yogaClassDisplayed.map((yogaClassDisplayedObjects) => yogaClassDisplayedObjects)
+
 console.log(yogaClassDisplayed)
+
+
+
 const bookedYogaClass = useSelector(state => state.yogaClasses.classes?.yoga_classes)
-const displayedClasses = bookedYogaClass?.find(yogaClass => yogaClass?.id === studentClasses?.classId)
-console.log(displayedClasses)
+console.log(bookedYogaClass)
+
+const classDisplayedArray = []
+const displayedClasses = bookedYogaClass?.filter( yogaClass => 
+
+  {
+    console.log(yogaClass.id)
+    const yo = yogaClassDisplayed.map((obj) => {if(yogaClass.id === obj.classId){classDisplayedArray.push(yogaClass)}}   )
+ 
+  }) 
+
+classDisplayedArray.forEach(obj => console.log(obj))
+
+console.log(classDisplayedArray)
+
 
 useEffect(()=>{
   dispatch(getAllBookings())
@@ -59,33 +88,42 @@ const handleDeleteBooking = async () => {
     }
   }
 
-if (displayedClasses){
+if (classDisplayedArray){
   return (
+    
     <>
     <div className="bookedClassText">
           Your Classes 
           </div>
           <div>
           <div className="yogaStudentDeets">
+           
     <div className="yogaDetailContainerStudent">
-    <div className="yogaDetailContainer">
-    <div>
-    <img className="yogaClassDetailImage" src={displayedClasses?.pic} />
-    </div>
-    <div className="mainClassDetails">
-      <div className='classDetailsTitle'>{displayedClasses?.title}</div>
-        <div className='classDetails'>{displayedClasses?.description}</div>
-        <div className='classDetailsPrice'>${displayedClasses?.price}.00</div>
-       
-        
-        
-      </div>
-      </div>
-      </div>
-      </div>
-      <div className="buttonBookedCancel">
+
+{classDisplayedArray.map(obj => ( 
+        <div className="yogaDetailContainer">
+          
+        <div>
+        <img className="yogaClassDetailImage" src={obj?.pic} />
+        {console.log(obj.classId)}
+        </div>
+        <div className="mainClassDetails">
+          <div className='classDetailsTitle'>{obj?.title}</div>
+            <div className='classDetails'>{obj?.description}</div>
+            <div className='classDetailsPrice'>${obj?.price}.00</div>
+            <div className="buttonBookedCancel">
     <button  onClick={handleDeleteBooking} className="bookClassButton"> Cancel? </button>
     </div>
+            
+            
+          </div>
+          </div>
+      
+      ))}
+      </div>
+     
+      </div>
+     
       </div>
     </>
   );

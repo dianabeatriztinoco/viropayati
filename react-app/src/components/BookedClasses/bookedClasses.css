@@ -11,3 +11,9 @@
     justify-content: center;
     margin-bottom: 300px;
 }
+
+.yogaDetailContainerStudent {
+    display: flex;
+    flex-direction: column;
+  
+}

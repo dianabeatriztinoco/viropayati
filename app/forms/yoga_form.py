@@ -27,7 +27,7 @@ class YogaClassForm(FlaskForm):
     pic = StringField('pic',  validators=[DataRequired(), URL(message='Please Enter A Valid URL Format for Upload Image')])
     title = StringField('Title')
     description = StringField('description',  validators=[DataRequired()])
-    price = StringField('Price',  validators=[DataRequired()])
+    price = StringField('Price',   validators=[DataRequired()])
     address = StringField('Address',  validators=[DataRequired()])
     city = StringField('City',  validators=[DataRequired()])
     state = StringField('State',  validators=[DataRequired()])
