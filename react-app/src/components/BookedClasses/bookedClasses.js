@@ -51,12 +51,12 @@ const studentClasses = bookedClasses?.map((yogaClass)=>{
 
 //const yo = yogaClassDisplayed.map((yogaClassDisplayedObjects) => yogaClassDisplayedObjects)
 
-console.log(yogaClassDisplayed)
+
 
 
 
 const bookedYogaClass = useSelector(state => state.yogaClasses.classes?.yoga_classes)
-console.log(bookedYogaClass)
+
 
 const classDisplayedArray = []
 const displayedClasses = bookedYogaClass?.filter( yogaClass => 
@@ -69,7 +69,7 @@ const displayedClasses = bookedYogaClass?.filter( yogaClass =>
 
 classDisplayedArray.forEach(obj => console.log(obj))
 
-console.log(classDisplayedArray)
+
 
 
 useEffect(()=>{
@@ -80,18 +80,24 @@ useEffect(()=>{
 }, [])
 
  
-const handleDeleteBooking = async () => {
+// const handleDeleteBooking = async () => {
 
-    let deletedBooking = await dispatch(deleteSelectedYogaClassBooking(studentClasses?.id))
-    if(deletedBooking) {
-      history.push(`/yogaClasses/`)
-    }
-  }
+// const classBooked = bookedClasses.find((class) =>{class.userId === sessionUser.id})
+
+// console.log(classBooked)
+
+//     let deletedBooking = await dispatch(deleteSelectedYogaClassBooking(book.id))
+//     if(deletedBooking) {
+//       history.push(`/yogaClasses/`)
+//     }
+
+//   }
 
 if (classDisplayedArray){
   return (
     
     <>
+
     <div className="bookedClassText">
           Your Classes 
           </div>
@@ -105,14 +111,30 @@ if (classDisplayedArray){
           
         <div>
         <img className="yogaClassDetailImage" src={obj?.pic} />
-        {console.log(obj.classId)}
+       
         </div>
         <div className="mainClassDetails">
           <div className='classDetailsTitle'>{obj?.title}</div>
             <div className='classDetails'>{obj?.description}</div>
             <div className='classDetailsPrice'>${obj?.price}.00</div>
             <div className="buttonBookedCancel">
-    <button  onClick={handleDeleteBooking} className="bookClassButton"> Cancel? </button>
+      
+
+{bookedClasses.map((book) => (
+
+book.classId === obj.id && sessionUser.id === book.userId ? (
+
+    <button  onClick={() => 
+      {
+      dispatch(deleteSelectedYogaClassBooking(book.id))
+
+      return history.push('/yogaClasses')
+    
+    }} 
+    
+    className="bookClassButton"> Cancel? </button>
+)
+    : null ))}
     </div>
             
             
