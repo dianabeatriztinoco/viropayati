@@ -19,8 +19,15 @@
 
     font-family: cursive;
     font-size: xx-large;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
   
+}
+
+.splashPageTxtAbout {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-family: cursive;
 }
 
 .splashPageTxtLink {
