@@ -22,8 +22,8 @@ from wtforms.validators import DataRequired, Email, Regexp, ValidationError, URL
 
 
 class YogaClassForm(FlaskForm):
-    taughtBy = IntegerField('Teacher Id',  validators=[DataRequired()] )
-    classDate = StringField('classDate',  validators=[DataRequired(), Regexp('\d{2}[-/]\d{2}[-/]\d{4}', message=('Enter Proper Date Format mm/dd/yyyy'))])
+    taughtBy = IntegerField('Teacher Id',  validators=[DataRequired()])
+    classDate = StringField('classDate', validators=[DataRequired()])
     pic = StringField('pic',  validators=[DataRequired(), URL(message='Please Enter A Valid URL Format for Upload Image')])
     title = StringField('Title')
     description = StringField('description',  validators=[DataRequired()])
@@ -35,3 +35,6 @@ class YogaClassForm(FlaskForm):
  
     def updateYogaForm(self, newDescription):
         self.description = newDescription
+
+
+# Regexp('\d{4}[--]\d{2}[--]\d{2}', message=('Enter Proper Date Format mm/dd/yyyy'

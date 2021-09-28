@@ -9,15 +9,23 @@ import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import YogaClassFromModal from "../CreateClassModal";
 
+
 import "./yogaClassForm.css";
 
 const YogaClassForm = ({ setShowModal }) => {
+
+ const dateToday = new Date()
+ dateToday.setDate(dateToday.getDate() + 1)
+
+
+
   const history = useHistory();
   const dispatch = useDispatch();
 
   const [errors, setErrors] = useState([]);
 
   const [classDate, setClassDate] = useState("");
+  console.log(classDate)
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
@@ -28,8 +36,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const [postalCode, setPostalCode] = useState("");
 
   const sessionUser = useSelector((state) => state.session.user);
-  console.log(sessionUser)
-
+ 
   useEffect(() => {
     dispatch(getAllTeachers());
   }, []);
@@ -40,7 +47,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const teacher = teachers?.teachers?.map((teacher) => {
     return teacher;
   });
-  console.log(teacher)
+
 
 
 
@@ -50,7 +57,7 @@ const YogaClassForm = ({ setShowModal }) => {
 console.log(selectedTeacher)
 
 const [taughtBy] = useState(selectedTeacher.id)
-console.log(taughtBy)
+
 
   const updateClassDate = (e) => {
     setClassDate(e.target.value);
@@ -167,7 +174,8 @@ console.log(taughtBy)
             <label>Class Date:</label>
 
             <input
-              type="text"
+              type="date"
+              min = {dateToday.toISOString().split('T')[0]}
               className="classDate"
               name="class_date"
               placeholder="mm/dd/yyyy"

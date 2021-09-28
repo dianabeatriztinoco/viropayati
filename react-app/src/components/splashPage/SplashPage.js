@@ -16,8 +16,11 @@ const SplashPage = () => {
 
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser)
+   
+   
+   if(sessionUser?.isTeacher === true ) {
     dispatch(createNewYogaTeacher(sessionUser?.id))
+   }
   
 
     if (!sessionUser) {
@@ -45,6 +48,9 @@ const SplashPage = () => {
         </div>
         <div className='splashPageTxt'>
            <Link className ='splashPageTxtLink' to='/homepage'> be here now... </Link>
+        </div>
+        <div>
+            Viropayati is site where students and teachers can embark on the healing journey that is practicing/teaching yoga.
         </div>
             </div>
         )

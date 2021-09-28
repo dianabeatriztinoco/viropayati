@@ -37,6 +37,19 @@ const SignUpForm = () => {
        history.push('/homepage')
      }
     }
+
+    else if (password === repeatPassword && isTeacher === false) {
+
+    const data = await dispatch(signUp(isTeacher, fullname, username, email, password));
+
+    if (data) {
+      setErrors(data)
+      history.push('/')
+    }
+   else {
+     history.push('/homepage')
+   }
+  }
       else {
       
        setErrors(['Passwords do not match!'])
