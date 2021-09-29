@@ -26,16 +26,21 @@ const SplashPage = () => {
     if (!sessionUser) {
     return (
         <>
+        <div>
         <div className="splashImageDiv">
         <Link className = 'splashPageTxtLink' to='/homepage'><img src={splashImage} className="splashImage"></img></Link>
         </div>
         <div className='splashPageTxt'>
            <Link className ='splashPageTxtLink' to='/homepage'> be here now... </Link>
-           <div>
-           <div> </div>
            </div>
-           <div> </div>
+           <div className='splashPageTxtAbout'>
+           Vropayati is site where students and teachers can embark on the healing journey that is practicing/teaching yoga.
+        
+           </div>
+           <div> 
+         </div>
            
+       
         </div>
         </>
     )
@@ -49,8 +54,8 @@ const SplashPage = () => {
         <div className='splashPageTxt'>
            <Link className ='splashPageTxtLink' to='/homepage'> be here now... </Link>
         </div>
-        <div className='splashPageTxtAbout'>
-            Viropayati is site where students and teachers can embark on the healing journey that is practicing/teaching yoga.
+        <div cilassName='splashPageTxtAbout'>
+            Vropayati is site where students and teachers can embark on the healing journey that is practicing/teaching yoga.
         </div>
             </div>
         )
