@@ -140,16 +140,6 @@ const YogaDetails = () => {
     await dispatch(createYogaBooking(payload));
    
   
-   
-  //  return (
-  //    <>
-  //    <form onchange={bookedClass} method='POST'>
-  //    <input type='hidden' value={userId}></input>
-  //    <input type='hidden' value={selectedYogaClassId}></input>
-  //    </form>
-  //    </>
-    
-  //  )
 
   }
 
