@@ -55,7 +55,7 @@ const SplashPage = () => {
            <Link className ='splashPageTxtLink' to='/homepage'> be here now... </Link>
         </div>
         <div cilassName='splashPageTxtAbout'>
-            Vropayati is site where students and teachers can embark on the healing journey that is practicing/teaching yoga.
+            
         </div>
             </div>
         )
