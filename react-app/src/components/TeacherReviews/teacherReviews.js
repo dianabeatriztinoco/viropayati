@@ -7,7 +7,7 @@ import { getAllClasses } from "../../store/yogaClass";
 import { getAllTeachers } from "../../store/teacher";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-import YogaClassFromModal from "../CreateClassModal";
+import TeacherReviewFormModal from "../CreateTeacherReviewModal";
 import { getAllReviews } from "../../store/reviews";
 import { getAllUsers } from "../../store/user";
 import './teacherReview.css'
@@ -64,17 +64,22 @@ useEffect(()=>{
                <div className="teacherName">{oneTeacher.fullname}</div>
                </div>
           <img src={yogaAvatar} className="yogaAvatar"></img>
-          <div className="teacherReviewButtons">
-            <button>leave review</button>
-            <button>view reviews</button>
-          </div>
-          </div>
           
-          </Link>
-         
-         ))}
+    
           </div>
+          </Link>
+      
+         ))}
+
       </div>
+
+          
+      </div>
+      <div className="teacherReviewButtons">
+      <div><TeacherReviewFormModal /></div>
+      <button>view reviews</button>
+    </div>
+    
     </>
   );
 

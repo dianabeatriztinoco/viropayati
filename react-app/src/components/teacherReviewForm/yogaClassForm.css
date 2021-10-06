@@ -1,0 +1,138 @@
+.yogaClassFormOne {
+    display: flex;
+    justify-content: center;
+}
+
+.yogaClassForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    min-height: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #f3f5e0 30%,  #ffb8c9 50%)
+}
+.createClass {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    font-family: cursive;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.inputCreateClass {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: x-small;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10px;
+    font-family: cursive;
+}
+.classDate {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.uploadImage {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.title {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.description {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.priceForm {
+    border-radius: 20px;
+    display: flex;
+   
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.addressForm {
+    border-radius: 20px;
+     display: flex;
+     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.city {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.state {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.postalCode {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.yogaFormButton {
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    margin-top: 10px;
+   
+}
+
+.classDate:hover {
+    background-color: rgb(220, 249, 227);
+}
+
+.uploadImage:hover {
+    background-color: rgb(220, 249, 227);
+}
+.title:hover {
+    background-color: rgb(220, 249, 227);
+}
+.description:hover {
+    background-color: rgb(220, 249, 227);
+}
+.priceForm:hover {
+    background-color: rgb(220, 249, 227);
+}
+.addressForm:hover {
+    background-color: rgb(220, 249, 227);
+}
+.city:hover {
+    background-color: rgb(220, 249, 227);
+}
+.state:hover {
+    background-color: rgb(220, 249, 227);
+}
+.postalCode:hover {
+    background-color: rgb(220, 249, 227);
+}
+
