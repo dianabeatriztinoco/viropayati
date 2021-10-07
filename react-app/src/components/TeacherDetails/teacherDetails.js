@@ -22,7 +22,7 @@ const TeacherDetails = () => {
 
   const history = useHistory();
 
-  let why = 'I dont understand why this happening'
+
   // const { classId } = useParams();
 
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const TeacherDetails = () => {
   
   
 
- let cat = 0
+
   const userClasses = []
 
   const bookeddClass = booking?.find(selectedClass => {
