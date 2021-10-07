@@ -16,7 +16,9 @@ import YogaDetails from './components/yogaDetails/YogaDetails';
 import YogaClassForm from './components/yogaClassForm/YogaClassForm';
 import LoginFormModal from './components/LoginFormModal';
 import TeacherReviews from './components/TeacherReviews/teacherReviews';
+import TeacherReview from './components/TeacherReview/teacherReview';
 import BookedClasses from './components/BookedClasses/bookedClasses';
+import TeacherDetails from './components/TeacherDetails/teacherDetails';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -67,6 +69,10 @@ function App() {
         <Route path='/reviews' exact={true}>
         <TeacherReviews />
         </Route>
+  
+        <ProtectedRoute path='/teacherReview/:teacherId' exact={true} >
+          <TeacherDetails />
+        </ProtectedRoute>
         {/* <Route path='/newClass' exact={true}>
           <YogaClassForm />
         </Route> */}

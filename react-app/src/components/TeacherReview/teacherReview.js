@@ -1,24 +1,27 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import yogaClasses, { createNewYogaClass } from "../../store/yogaClass";
 import { getAllClasses } from "../../store/yogaClass";
 import { getAllTeachers } from "../../store/teacher";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-import TeacherReviewFormModal from "../CreateTeacherReviewModal";
+import YogaClassFromModal from "../CreateClassModal";
 import { getAllReviews } from "../../store/reviews";
 import { getAllUsers } from "../../store/user";
-import './teacherReview.css'
+import './teachReview.css'
 
 const yogaAvatar = 'https://i.pinimg.com/280x280_RS/8b/ee/7b/8bee7b7d668becb00bb3b2e3d5f2b307.jpg'
 
 //import "./yogaClassForm.css";
 
-const TeacherReviews = () => {
-  const dispatch = useDispatch()
+const TeacherReview = () => {
 
+const teacherId = +useParams().teacherId
+
+const dispatch = useDispatch()
+const [selectedYogaTeacher] = useState(teacherId)
 const sessionUser = useSelector(state => state.session.user)
   // const yogaClasses = useSelector(state => state.yogaClasses.classes)
 const allUsers = useSelector(state => state.users.users)
@@ -26,6 +29,7 @@ const allUsers = useSelector(state => state.users.users)
 //const TeacherUsers = allUsers?.users.find((user)=>user.isTeacher === true )
 //console.log(TeacherUsers)
 const teachers = useSelector(state => state.teachers.teachers)
+
 const reviews = useSelector(state=> state.TeacherReviews.reviews)
 console.log(reviews)
 
@@ -35,12 +39,11 @@ const yogaTeachers = allUsers?.users?.find((yogaTeacher) => { if (yogaTeacher?.i
   yogaTeacherArray.push(yogaTeacher)
 }} ) 
 
-const teacher = yogaTeacherArray.map((teacher) => teacher)
-
-
-
-console.log(yogaTeacherArray)
+// const teacher = yogaTeacherArray.map((teacher) => teacher)
+// console.log(yogaTeacherArray)
   
+
+
 
 
 useEffect(()=>{
@@ -49,40 +52,46 @@ useEffect(()=>{
   dispatch(getAllUsers())
 }, [])
 
- 
- 
 
 
-  return (
-    <>
-    <div className="teacherText">
-      <div className="teacherContainer">
-         {yogaTeacherArray.map((oneTeacher)=>(
-           <Link className="teacherReviewLink" to={`/teacherReview/${oneTeacher.id}`}>
-           <div className="teacherReviewContainer"> 
-             <div className="teacherNameContainer">
-               <div className="teacherName">{oneTeacher.fullname}</div>
-               </div>
-          <img src={yogaAvatar} className="yogaAvatar"></img>
+teachers?.teachers?.map((teacher) =>
+ {
+    if (teacher.userId === teacherId) {
+        return (
+
+            <div> yoooooooooooooo </div>
+
+        )
+    }
+})
+
+
+
+//   return (
+//     <>
+//     <div className="teacherText">
+//       <div className="teacherContainer">
+//          {yogaTeacherArray.map((oneTeacher)=>(
+//            <Link className="teacherReviewLink" >
+//            <div className="teacherReviewContainer"> 
+//              <div className="teacherNameContainer">
+//                <div className="teacherName">{oneTeacher.fullname}</div>
+//                </div>
+//           <img src={yogaAvatar} className="yogaAvatar"></img>
+//           <div className="teacherReviewButtons">
+//             <button>leave review</button>
+//             <button>view reviews</button>
+//           </div>
+//           </div>
           
-    
-          </div>
-          </Link>
-      
-         ))}
-
-      </div>
-
-          
-      </div>
-      <div className="teacherReviewButtons">
-      <div><TeacherReviewFormModal /></div>
-      <button>view reviews</button>
-    </div>
-    
-    </>
-  );
+//           </Link>
+         
+//          ))}
+//           </div>
+//       </div>
+//     </>
+//   );
 
 }
 
-export default TeacherReviews;
+export default TeacherReview;

@@ -4,6 +4,46 @@
     font-family: cursive;
     font-size: 50px;
     color: sandybrown;
-    margin-top: 400px;
-    height: 550px;
+    margin-top: 20px;
+  
+}
+
+.yogaAvatar {
+    border-radius: 50%;
+    height: 100px;
+    width: auto;
+    margin: 30px;
+
+}
+
+.teacherContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+    
+}
+
+.teacherReviewContainer {
+    border: 2px solid 
+}
+
+.teacherName {
+    font-size: small;
+}
+
+.teacherNameContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.teacherReviewLink {
+    text-decoration: none;
+    color: sandybrown;
+}
+
+.teacherReviewButtons{
+    display: flex;
+    flex-direction: row;
 }

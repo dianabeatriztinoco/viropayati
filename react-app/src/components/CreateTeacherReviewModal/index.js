@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import YogaClassFrom from '../yogaClassForm/YogaClassForm'
+import TeacherReviewForm from '../yogaClassForm/YogaClassForm'
 import './index.css'
 import { Modal } from '../../context/Modal'
 
-function YogaClassFromModal() {
+function TeacherReviewFormModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button className='loginDiv-Button' onClick={() => setShowModal(true)}>Host a Class!</button>
+      <button className='loginDiv-Button' onClick={() => setShowModal(true)}>Leave a Review!</button>
       {showModal && (
         <div className="createYogaClassModal">
         <Modal onClose={() => setShowModal(false)}>
-          <YogaClassFrom setShowModal={setShowModal}/>
+          <TeacherReviewForm setShowModal={setShowModal}/>
         </Modal>
         </div>
       )}
@@ -20,4 +20,4 @@ function YogaClassFromModal() {
   );
 }
 
-export default YogaClassFromModal
+export default TeacherReviewFormModal;

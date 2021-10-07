@@ -14,12 +14,15 @@ import { Link } from "react-router-dom";
 
 import "./yogaDetails.css";
 
-const YogaDetails = () => {
-  const yogaClassId = +useParams().classId;
+const TeacherDetails = () => {
+  const teacherId = useParams().teacherId;
+ 
 
 
 
   const history = useHistory();
+
+  let why = 'I dont understand why this happening'
   // const { classId } = useParams();
 
   const dispatch = useDispatch();
@@ -30,7 +33,7 @@ const YogaDetails = () => {
   const [showYogaClasses, setShowYogaClasses] = useState();
   const [userId] = useState(sessionUser?.id)
  
-  const [selectedYogaClassId] = useState(yogaClassId)
+  const [selectedTeacherId] = useState(teacherId)
 
   const bookings = useSelector((state) => state.bookings)
 
@@ -66,20 +69,20 @@ const YogaDetails = () => {
   const teachers = useSelector((state) => state.teachers.teachers);
  
 
-  const handleDelete = async () => {
-    let deletedClass = await dispatch(deleteSelectedYogaClass(yogaClassId));
-    if (deletedClass) {
-      history.push("/yogaClasses");
-    }
-  };
+  // const handleDelete = async () => {
+  //   let deletedClass = await dispatch(deleteSelectedYogaClass(yogaClassId));
+  //   if (deletedClass) {
+  //     history.push("/yogaClasses");
+  //   }
+  // };
 
-  const handleDeleteBooking = async () => {
+  // const handleDeleteBooking = async () => {
 
-    let deletedBooking = await dispatch(deleteSelectedYogaClassBooking(bookedClass?.id))
-    if(deletedBooking) {
-      history.push(`/yogaClasses/`)
-    }
-  }
+  //   let deletedBooking = await dispatch(deleteSelectedYogaClassBooking(bookedClass?.id))
+  //   if(deletedBooking) {
+  //     history.push(`/yogaClasses/`)
+  //   }
+  // }
 
   // const handleUpdate = async () => <div> </div>;
   //   let handelUpdate = null;
@@ -97,25 +100,22 @@ const YogaDetails = () => {
   //     )
   //   }
 
-  useEffect(()=>{
-      dispatch(getAllClasses())
-      dispatch(getAllBookings())
-  }, [])
+ 
 
-  let edit = null;
+  // let edit = null;
 
-  if (showEditDescription) {
-    yogaClasses?.yoga_classes.map((yogaClass) => {
-      if (yogaClass.id === +yogaClassId) {
-       edit = (
-          <React.Fragment key={yogaClass.id}>
-            <EditYogaClass
-              yogaClass={yogaClass}
-              hideForm={() => setShowEditDescription(null)}
-            />
-          </React.Fragment>
-        );
-      }
+  // if (showEditDescription) {
+  //   yogaClasses?.yoga_classes.map((yogaClass) => {
+  //     if (yogaClass.id === +yogaClassId) {
+  //      edit = (
+  //         <React.Fragment key={yogaClass.id}>
+  //           <EditYogaClass
+  //             yogaClass={yogaClass}
+  //             hideForm={() => setShowEditDescription(null)}
+  //           />
+  //         </React.Fragment>
+  //       );
+  //     }
 
       //   : null
 
@@ -123,8 +123,8 @@ const YogaDetails = () => {
 
       //     <EditYogaClass yogaClass={yogaClass} hideForm={() => setShowEditDescription(null)} />
       //   )
-    });
-  }
+  //   });
+  // }
 
   useEffect(() => {
     dispatch(getAllClasses());
@@ -276,5 +276,5 @@ const YogaDetails = () => {
   }
 }
 
-export default YogaDetails;
+export default TeacherDetails;
 

@@ -1,0 +1,114 @@
+.yogaClassDetailImage {
+    height: 400px;
+    width: 400px;
+    /* border-radius: 30px; */
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.mainClassDetails {
+    margin: 20px;
+}
+.classDetails {
+    margin-top: 10px;
+    font-family: cursive;
+}
+.classDetailsPrice {
+    font-family: cursive;
+    color: rgb(244, 116, 70);
+}
+
+.classDetailsTitle {
+    font-size: x-large;
+    border-bottom: solid grey;
+    font-family: cursive;
+
+}
+.buttonDivs{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+.test{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border: solid rgb(172, 176, 127);
+    width: 70%;
+    margin-left: 15%;
+
+}
+.yogaDetailContainerStudent {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    border: solid rgb(172, 176, 127);
+    width: 70%;
+    margin-left: 15%;
+}
+
+.yogaDetailContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.updateDelete{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.alreadyBooked {
+   font-family: cursive;
+   font-weight: bold;
+   font-size: x-large;
+    margin-top: 10px;
+}
+
+.buttonCancel {
+    display: flex;
+    justify-content: center;
+}
+
+.bookAndCancelButton {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+.cancelDiv {
+ display: flex;
+ flex-direction: column;
+}
+
+.bookClassButton {
+   
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 50px;
+    width: 70px;
+    font-weight: bold;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+
+.cancelButton {
+    margin: 5px;
+}
+
+.yogaStudentDeets {
+    padding-bottom: 5px;
+}
+.editButtons {
+
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+    background-color: rgb(217, 240, 208);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
