@@ -45,7 +45,7 @@ const TeacherDetails = () => {
   
   
 
- 
+ let cat = 0
   const userClasses = []
 
   const bookeddClass = booking?.find(selectedClass => {
