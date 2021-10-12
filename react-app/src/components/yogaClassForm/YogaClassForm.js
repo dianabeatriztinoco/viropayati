@@ -15,6 +15,7 @@ import "./yogaClassForm.css";
 const YogaClassForm = ({ setShowModal }) => {
 
  const dateToday = new Date()
+ 
  dateToday.setDate(dateToday.getDate() + 1)
 
 
@@ -23,9 +24,7 @@ const YogaClassForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
 
   const [errors, setErrors] = useState([]);
-
   const [classDate, setClassDate] = useState("");
-  console.log(classDate)
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
@@ -46,6 +45,7 @@ const YogaClassForm = ({ setShowModal }) => {
 
   const teacher = teachers?.teachers?.map((teacher) => {
     return teacher;
+
   });
 
 
