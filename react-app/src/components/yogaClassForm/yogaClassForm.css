@@ -96,15 +96,23 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
 .yogaFormButton {
-    border-radius: 5px;
-    height: 40px;
-    width: 70px;
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-radius: 5px;
-    margin-top: 10px;
-   
+    /* margin-left: .5rem;
+    margin-right: .5rem; */
+   margin-left: 100px;
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid #E8E8E8;
+    cursor: pointer;
+    color: white;
+    width: 100px;
+    font-size: large;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.yogaFormButton:hover {
+    color: rgb(244, 116, 70);
 }
 
 .classDate:hover {

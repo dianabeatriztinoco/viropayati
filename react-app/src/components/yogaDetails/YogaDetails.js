@@ -173,7 +173,7 @@ const YogaDetails = () => {
     <div className="mainClassDetails">
       <div className='classDetailsTitle'>{selectedYogaClass?.title}</div>
         <div className='classDetails'>{selectedYogaClass?.description}</div>
-        <div className='classDetailsPrice'>${selectedYogaClass?.price}.00</div>
+        <div className='classDetailsPrice'>{"$",selectedYogaClass?.price}.00</div>
         
         
       </div>
@@ -227,7 +227,7 @@ const YogaDetails = () => {
       <div className="mainClassDetails">
       <div className='classDetailsTitle'>{selectedYogaClass?.title}</div>
         <div className='classDetails'>{selectedYogaClass?.description}</div>
-        <div className='classDetailsPrice'>${selectedYogaClass?.price}.00</div>
+        <div className='classDetailsPrice'>{"$",selectedYogaClass?.price}.00</div>
        
         
       </div>

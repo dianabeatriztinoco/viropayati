@@ -9,9 +9,11 @@
     font-size: large;
     font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
+.logout-button:hover {
+    color: rgb(200, 203, 166);
+}
 
 .logOutDiv {
-
     margin-top: 30px;
     margin-right: 20px;
 }

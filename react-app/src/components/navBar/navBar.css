@@ -82,9 +82,11 @@ body {
     cursor: pointer;
     color: white;
     font-size: large;
-   
     font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    
+}
+
+.viewAllClassesButton:hover {
+    color: rgb(200, 203, 166);
 }
 
 .loginDiv-Button {
@@ -98,8 +100,10 @@ body {
     color: white;
     font-size: large;
     font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  
-  
+}
+
+.loginDiv-Button:hover {
+    color: rgb(200, 203, 166);
 }
 
 .signupDiv-Button {
@@ -113,6 +117,10 @@ body {
     font-size: large;
     font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     
+}
+
+.signupDiv-Button:hover {
+    color: rgb(200, 203, 166);
 }
 
 .navBarContainerText{

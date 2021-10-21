@@ -13,17 +13,19 @@
 .classDetails {
     margin-top: 10px;
     font-family: cursive;
+    color: rgb(172, 176, 127)
 }
 .classDetailsPrice {
     font-family: cursive;
+    margin: 5px;
     color: rgb(244, 116, 70);
 }
 
 .classDetailsTitle {
     font-size: x-large;
-    border-bottom: solid grey;
+    border-bottom: solid rgb(172, 176, 127);
     font-family: cursive;
-
+    color: rgb(172, 176, 127)
 }
 .buttonDivs{
     margin: 20px;
@@ -66,9 +68,11 @@
    font-weight: bold;
    font-size: x-large;
     margin-top: 10px;
+    color: rgb(244, 116, 70);
 }
 
 .buttonCancel {
+    
     display: flex;
     justify-content: center;
 }
@@ -86,14 +90,18 @@
 
 .bookClassButton {
    
-    margin-top: 10px;
-    border-radius: 5px;
-    height: 50px;
-    width: 70px;
-    font-weight: bold;
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
+    border: 2px solid rgb(172, 176, 127);
+    margin-right: .5rem;
+    padding: .5rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgb(172, 176, 127);
+    font-size: large;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.bookClassButton:hover {
+    color: rgb(244, 116, 70);
 }
 
 .cancelButton {
@@ -104,11 +112,16 @@
     padding-bottom: 5px;
 }
 .editButtons {
-
-    border-radius: 5px;
-    height: 40px;
-    width: 70px;
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid rgb(172, 176, 127);
+    margin-right: .5rem;
+    padding: .5rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgb(172, 176, 127);
+    font-size: large;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
+.editButtons:hover {
+    color: rgb(244, 116, 70);
+}
