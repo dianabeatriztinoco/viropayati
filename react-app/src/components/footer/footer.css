@@ -9,10 +9,19 @@
     width: 100%;
 }
 
-.gitHubIcon {
+/* .gitHubIcon {
     height: 50px;
 }
 
 .gitHub {
    margin-top: 30px;
+} */
+
+.fab {
+    font-size: 40px;
+    margin: .5rem;
+}
+a {
+    text-decoration: none;
+    color: black;
 }

@@ -1,9 +1,9 @@
 .yogaClassContainer {
-    margin-bottom: 900px;
+    /* margin-bottom: 900px; */
 
 }
 .discover {
-    margin-top: 10px;
+    margin: 25px;
     font-family: cursive;
     font-size: 30px;
     color: sandybrown
@@ -13,6 +13,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    height: auto;
     /* width: 800px;
     height: 500px; */
 }

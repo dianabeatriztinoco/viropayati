@@ -86,15 +86,17 @@ if(sessionUser && sessionUser.isTeacher === true) {
         {/* <div>
           <DemoLogin/>
         </div> */}
-       <div className="navBarContainer">
+      
        <div className="navBarContainerText">
         viropayati
         </div>
+        <div className="navBarContainer">
+       
         <div className="createClassModal">
           <YogaClassFromModal />
           {/* <CreateYogaClassForm /> */}
           </div>
-        </div>
+        
         <div className="viewAllClasses"> 
         <Link to='/yogaClasses'>
   <button className='viewAllClassesButton' >View All Classes</button>
@@ -104,6 +106,7 @@ if(sessionUser && sessionUser.isTeacher === true) {
        
         <div className='logOutDiv'>
           <LogoutButton setAuthenticated={setAuthenticated} />
+        </div>
         </div>
       </div>
       
@@ -139,20 +142,19 @@ if(sessionUser && sessionUser.isTeacher === false) {
         {/* <div>
           <DemoLogin/>
         </div> */}
-        <div className='logOutDiv'>
-        
-        </div>
-        <div className="navBarContainer">
+      
+       
         <div className="navBarContainerText">
         viropayati
         </div>
+        <div className="navBarContainer">
         <div className="viewAllClasses"> 
         
         <Link to='/yogaClasses'>
   <button className='viewAllClassesButton' >View All Classes</button>
   </Link>
   <Link to='/bookedClasses'>
-    <button className="viewAllClassesButton"> Booked Classes </button>
+    <button className="bookedClassesButton"> Booked Classes </button>
         </Link>
         </div>
        
@@ -160,6 +162,7 @@ if(sessionUser && sessionUser.isTeacher === false) {
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div>
       </div>
+
       </div>
     </nav>
   );
@@ -177,10 +180,12 @@ else {
             <img className="logo" src={viropayati_logo}></img>
           </Link>
         </div>
-        <div className="navBarContainer">
+       
           <div className="navBarContainerText">
+         
         viropayati
         </div>
+        <div className="navBarContainer">
         <div className="authContainer">
         <div className='demoDiv'>
         
@@ -212,6 +217,7 @@ else {
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div> */}
       </div>
+
     </div>
     </nav>
   );

@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
-    background-image:  linear-gradient(-700deg, #dec077 30%,  #676767 50%);
+    background-image:  linear-gradient(-700deg, #dec077 30%,  #e47274 50%);
     width: 100%;
 }
 
@@ -14,8 +13,7 @@ body {
 .navBarContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-image:  linear-gradient(-700deg, #dec077 30%,  #e47274 50%);
+    justify-content: flex-end;
     width: 100%;
 }
 .logo {
@@ -60,9 +58,9 @@ body {
 
 }
 
-.viewAllClassesButton {
-    margin-left: .5rem;
-    margin-right: .5rem;
+.bookedClassesButton {
+    /* margin-left: .5rem;
+    margin-right: .5rem; */
     border-radius: 30px;
     padding: 1rem;
     background-color: transparent;
@@ -74,9 +72,24 @@ body {
     
 }
 
+.viewAllClassesButton {
+    /* margin-left: .5rem;
+    margin-right: .5rem; */
+    border-radius: 30px;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+   
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    
+}
+
 .loginDiv-Button {
-    margin-left: .5rem;
-    margin-right: .5rem;
+    /* margin-left: .5rem;
+    margin-right: .5rem; */
     border-radius: 30px;
     padding: 1rem;
     background-color: transparent;
@@ -90,8 +103,8 @@ body {
 }
 
 .signupDiv-Button {
-    margin-left: .5rem;
-    margin-right: .5rem;
+    /* margin-left: .5rem;
+    margin-right: .5rem; */
     padding: 1rem;
     border: 2px solid #E8E8E8;
     background-color: transparent;
@@ -112,12 +125,3 @@ body {
 }
 
 
-
-/* .loginDiv-Button {
-    border-radius: 5px;
-    height: 40px;
-    width: 70px;
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-radius: 5px;
-} */

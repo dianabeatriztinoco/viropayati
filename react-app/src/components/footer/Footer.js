@@ -10,15 +10,16 @@ const Footer = () => {
             <div>
             {/* <i class="fab fa-github-square"></i> */}
             <a className="gitHub" href="https://github.com/dianabeatriztinoco" target="_blank"> 
-            <img className="gitHubIcon" src={gitHubIcon} />
-            <i class="fab fa-github-square"></i>
+            {/* <img className="gitHubIcon" src={gitHubIcon} /> */}
+            <i class="fab fa-github"></i>
 
 
             </a>
             </div>
             <div>
             <a className="linkden" href='www.linkedin.com/in/dianabeatriztinoco' target='blank'>
-            <img className="gitHubIcon" src={linkedin} />
+            {/* <img className="gitHubIcon" src={linkedin} /> */}
+            <i class="fab fa-linkedin-in"></i>
             </a>
             </div>
             
