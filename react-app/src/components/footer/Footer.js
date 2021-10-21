@@ -8,8 +8,12 @@ const Footer = () => {
         <>
         <div className="footer__container">
             <div>
+            {/* <i class="fab fa-github-square"></i> */}
             <a className="gitHub" href="https://github.com/dianabeatriztinoco" target="_blank"> 
             <img className="gitHubIcon" src={gitHubIcon} />
+            <i class="fab fa-github-square"></i>
+
+
             </a>
             </div>
             <div>

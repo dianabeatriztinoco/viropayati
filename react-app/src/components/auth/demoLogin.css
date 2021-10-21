@@ -1,8 +1,13 @@
 .demo-button {
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-radius: 5px;
-    height: 40px;
-    width: 70px;
-
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius: 30px;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  
 }
