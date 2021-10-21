@@ -62,6 +62,7 @@ if(sessionUser && sessionUser.isTeacher === true) {
   return (
     <nav>
       <div className="navBarContainerWithLogo">
+       
         <div className='viropayatiLogo'>
           <NavLink to='/' exact={true} activeClassName='active'>
             <img className="logo" src={viropayati_logo}></img>
@@ -86,7 +87,9 @@ if(sessionUser && sessionUser.isTeacher === true) {
           <DemoLogin/>
         </div> */}
        <div className="navBarContainer">
-        
+       <div className="navBarContainerText">
+        viropayati
+        </div>
         <div className="createClassModal">
           <YogaClassFromModal />
           {/* <CreateYogaClassForm /> */}
@@ -140,6 +143,9 @@ if(sessionUser && sessionUser.isTeacher === false) {
         
         </div>
         <div className="navBarContainer">
+        <div className="navBarContainerText">
+        viropayati
+        </div>
         <div className="viewAllClasses"> 
         
         <Link to='/yogaClasses'>
@@ -172,8 +178,18 @@ else {
           </Link>
         </div>
         <div className="navBarContainer">
+          <div className="navBarContainerText">
+        viropayati
+        </div>
         <div className="authContainer">
+        <div className='demoDiv'>
+        
+        <DemoLoginStudent/>
+        <DemoLoginTeacher/>
+       
+      </div>
         <div>
+      
           <LoginFormModal />
           {/* <NavLink className='loginDiv' to='/login' exact={true} activeClassName='active'>
             <button className='loginDiv-Button'>Login</button>
@@ -190,12 +206,7 @@ else {
             Users
           </NavLink>
         </li> */}
-        <div className='demoDiv'>
-        
-          <DemoLoginStudent/>
-          <DemoLoginTeacher/>
-         
-        </div>
+       
         </div>
         {/* <div>
           <LogoutButton setAuthenticated={setAuthenticated} />

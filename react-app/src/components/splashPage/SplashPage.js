@@ -37,9 +37,9 @@ const SplashPage = () => {
            Vropayati is site where students and teachers can embark on the healing journey that is practicing/teaching yoga.
         
            </div>
-           <div> 
-         </div>
-           
+      
+        
+
        
         </div>
         </>

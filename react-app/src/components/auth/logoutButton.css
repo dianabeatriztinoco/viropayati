@@ -1,9 +1,13 @@
 .logout-button {
-        border-radius: 5px;
-        height: 40px;
-        width: 70px;
-        background-color: rgb(229, 233, 212);
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    padding: 1rem;
+    border: 2px solid #E8E8E8;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .logOutDiv {
