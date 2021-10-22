@@ -16,13 +16,23 @@
     font-family: cursive;
 }
 .signUp {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.input {
+    margin-top: 10px;
+    font-family: cursive;
     display: flex;
     justify-content: center;
     padding-top: 10px;
+    border-bottom: 2px solid rgb(186, 185, 185);
 }
+.input {
+    margin-top: 10px;
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  
+}
+
+
 
 .firstNameInput {
     border-radius: 20px;
@@ -78,12 +88,18 @@
 }
 
 .signUpFormButton {
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-radius: 5px;
-    height: 40px;
-    width: 70px;
+    padding: 1rem;
+    border: 2px solid #E8E8E8;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-size: large;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
+}
+
+.signUpFormButton:hover {
+    color: rgb(200, 203, 166);
 }
 /* .inputs {
     margin-left: 50px;

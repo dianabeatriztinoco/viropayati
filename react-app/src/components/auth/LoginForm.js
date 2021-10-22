@@ -85,10 +85,15 @@ const LoginForm = () => {
     
       <SignUpFormModal /> 
     </div>
-    <div className="loginText">Or</div>
+    <div className="loginText">or...</div>
     <div className="signUpModal">
     
-      <DemoLoginStudent /> <DemoLoginTeacher />
+        <div className="demoButtons">
+      <DemoLoginStudent />
+      </div>
+      <div className="demoButtons">
+       <DemoLoginTeacher />
+       </div>
     </div>
     </div>
     </div>

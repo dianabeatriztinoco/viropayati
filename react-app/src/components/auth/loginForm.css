@@ -15,6 +15,10 @@
     font-family: cursive;
 }
 
+.demoButtons{
+    border-bottom: 2px solid rgb(186, 185, 185); 
+    border-top: 2px solid rgb(186, 185, 185);
+}
 .input {
     display: flex;
     justify-content: center;
@@ -50,6 +54,7 @@
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .signUpModal {
@@ -60,17 +65,26 @@
 }
 
 .inputEmail:hover {
-    background-color: rgb(220, 249, 227);
+    background-color: rgb(200, 203, 166);
 }
 .inputPassword:hover {
-    background-color: rgb(220, 249, 227);
+    background-color: rgb(200, 203, 166);
 }
 
-.loginButton {
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-radius: 5px;
-    height: 40px;
-    width: 70px;
+.loginButton{
+        /* margin-left: .5rem;
+        margin-right: .5rem; */
+       
+        padding: 1rem;
+        background-color: transparent;
+        border: 2px solid #E8E8E8;
+        cursor: pointer;
+        color: white;
+        width: 100px;
+        font-size: large;
+        font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    }
+    .loginButton:hover {
+        color: rgb(200, 203, 166);
+    }
 
-}

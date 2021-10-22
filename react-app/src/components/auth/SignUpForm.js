@@ -99,7 +99,7 @@ const SignUpForm = () => {
 
   return (
     <div className="signUpForm">
-    <div className="input">SIGN-UP</div>
+    <div className="signUp">SIGN-UP</div>
     <form  onSubmit={onSignUp}>
      
         {errors.map((error, ind) => (
