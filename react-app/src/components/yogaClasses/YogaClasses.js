@@ -92,7 +92,7 @@ const YogaClasses = () => {
                         
                        <div className="date">{yogaClass.classDate}</div>
                        <div className="teacher">taught by {user.fullname}</div>
-                       <div className="price">${yogaClass.price}.00</div>
+                       <div className="price">{"$",yogaClass.price}.00</div>
                        
                        <Link to={`/yogaClasses/${yogaClass.id}`}>
                        {/* <div className="buttonContainer"> */}

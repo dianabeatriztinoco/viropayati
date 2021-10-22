@@ -44,6 +44,9 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
 
     return (
       <>
+      <div className="updateDescriptionHere">
+       update description below <i class="fas fa-arrow-down"></i>
+       </div>
         <form className="edit-form" onSubmit={handleSubmit}>
           <textarea
             className="editDescriptionForm"
@@ -55,10 +58,10 @@ const EditYogaClass = ({ yogaClass, hideForm }) => {
           ></textarea>
             <div className="updateAndCancelButton">
             <button className="update-button" type="submit">
-              Update Description
+              update description
             </button>
             <button className="cancel-edit-button" onClick={hideForm}>
-              Cancel
+              cancel
             </button>
             </div>
           

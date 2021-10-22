@@ -3,7 +3,7 @@ from wtforms import StringField
 from wtforms.fields.core import DateField, IntegerField
 from wtforms.fields.html5 import URLField
 from wtforms.fields.simple import FileField
-from wtforms.validators import DataRequired, Email, Regexp, ValidationError, URL
+from wtforms.validators import DataRequired, Email, Length, Regexp, ValidationError, URL
 
 
 # def user_exists(form, field):
@@ -26,7 +26,7 @@ class YogaClassForm(FlaskForm):
     classDate = StringField('classDate', validators=[DataRequired()])
     pic = StringField('pic',  validators=[DataRequired(), URL(message='Please Enter A Valid URL Format for Upload Image')])
     title = StringField('Title')
-    description = StringField('description',  validators=[DataRequired()])
+    description = StringField('description',  validators=[DataRequired(), Length(max=1000)])
     price = StringField('Price',   validators=[DataRequired()])
     address = StringField('Address',  validators=[DataRequired()])
     city = StringField('City',  validators=[DataRequired()])

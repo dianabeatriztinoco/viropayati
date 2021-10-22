@@ -3,17 +3,41 @@
     justify-content: center;
     font-size: 40px;
     font-family: cursive;
-    color: sandybrown
+    color: sandybrown;
+    margin: 20px;
 }
 
+.yogaBookedStudentDeets {
+    border: 4px solid olive;
+    height: 100%;
+    margin-bottom: 100px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
 .buttonBookedCancel {
     display: flex;
     justify-content: center;
-    margin-bottom: 300px;
+   
+    /* margin-bottom: 300px; */
 }
 
 .yogaDetailContainerStudent {
     display: flex;
     flex-direction: column;
   
+}
+
+.bookedClassContainer {
+    display: flex;
+    justify-content: flex-start;
+
+}
+.yogaBookedDetailContainer{
+    width: 100%;
+    border-bottom: 1px dotted olive;
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    
+    
 }

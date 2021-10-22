@@ -9,10 +9,12 @@
 }
 .mainClassDetails {
     margin: 20px;
+    
 }
 .classDetails {
     margin-top: 10px;
     font-family: cursive;
+    width: 100%;
     color: rgb(172, 176, 127)
 }
 .classDetailsPrice {
@@ -46,16 +48,27 @@
 .yogaDetailContainerStudent {
     margin-top: 20px;
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
     border: solid rgb(172, 176, 127);
-    width: 70%;
-    margin-left: 15%;
+    width: 100%;
+    height: 100%;
+}
+.yogaDetailContainerTeacher {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    border: solid rgb(172, 176, 127);
+    width: 100%;
+    height: 100%;
 }
 
 .yogaDetailContainer {
     display: flex;
     justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
+  
+   
 }
 
 .updateDelete{
@@ -111,6 +124,14 @@
 
 .yogaStudentDeets {
     padding-bottom: 5px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.yogaTeacherDeets {
+    padding-bottom: 5px;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 .editButtons {
     border: 2px solid rgb(172, 176, 127);

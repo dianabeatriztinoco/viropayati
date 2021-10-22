@@ -102,12 +102,12 @@ if (classDisplayedArray){
           Your Classes 
           </div>
           <div>
-          <div className="yogaStudentDeets">
+          <div className="yogaBookedStudentDeets">
            
-    <div className="yogaDetailContainerStudent">
+    <div className="yogaBookedDetailContainerStudent">
 
 {classDisplayedArray.map(obj => ( 
-        <div className="yogaDetailContainer">
+        <div className="yogaBookedDetailContainer">
           
         <div>
         <img className="yogaClassDetailImage" src={obj?.pic} />
@@ -116,7 +116,7 @@ if (classDisplayedArray){
         <div className="mainClassDetails">
           <div className='classDetailsTitle'>{obj?.title}</div>
             <div className='classDetails'>{obj?.description}</div>
-            <div className='classDetailsPrice'>${obj?.price}.00</div>
+            <div className='classDetailsPrice'>{"$", obj?.price}.00</div>
             <div className="buttonBookedCancel">
       
 

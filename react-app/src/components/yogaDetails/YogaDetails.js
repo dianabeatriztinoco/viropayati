@@ -170,12 +170,14 @@ const YogaDetails = () => {
     <div>
     <img className="yogaClassDetailImage" src={selectedYogaClass?.pic} />
     </div>
+    <div className="bookedClassContainer">
     <div className="mainClassDetails">
       <div className='classDetailsTitle'>{selectedYogaClass?.title}</div>
         <div className='classDetails'>{selectedYogaClass?.description}</div>
         <div className='classDetailsPrice'>{"$",selectedYogaClass?.price}.00</div>
         
         
+      </div>
       </div>
       </div>
       </div>
@@ -189,7 +191,7 @@ const YogaDetails = () => {
     <div className="alreadyBooked"> You're already booked! </div>
     <div className="cancelButton">
       <div className="buttonCancel">
-    <button  onClick={handleDeleteBooking} className="bookClassButton"> Cancel? </button>
+    <button  onClick={handleDeleteBooking} className="bookClassButton"> cancel? </button>
     </div>
     </div>
     </div>
@@ -201,7 +203,7 @@ const YogaDetails = () => {
     {!userClass ? 
     
     <div className="buttonContainer"> 
-    <button onClick={handleCreateBooking} className="bookClassButton"> Book Class </button>
+    <button onClick={handleCreateBooking} className="bookClassButton"> book class </button>
     </div>
    
      
@@ -216,8 +218,8 @@ const YogaDetails = () => {
 
     return (
       <>
+      <div className="yogaTeacherDeets">
       <div className="yogaDetailContainerTeacher">
-      <div className="test">
       <div>
       <img className="yogaClassDetailImage" src={selectedYogaClass?.pic} />
       
@@ -255,7 +257,7 @@ const YogaDetails = () => {
 
         {selectedYogaTeacher?.id === selectedYogaClass?.teacher_id ? 
         <div className="buttonDivs">
-    <button className='editButtons'onClick = {async () => await setShowEditDescription(selectedYogaClass?.id)}>Update</button>
+    <button className='editButtons'onClick = {async () => await setShowEditDescription(selectedYogaClass?.id)}>update</button>
     <button className='editButtons'onClick={handleDelete}>delete</button>
     </div>
        : null }

@@ -1,8 +1,10 @@
 
 .editDescriptionForm{
-    margin-top: 60px;
+    margin-top: 15px;
     height: 200px;
-    width: 250px;
+    width: 300px;
+    margin-left: 2rem;
+    margin-right: 1.5rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .updateAndCancelButton {
@@ -13,21 +15,39 @@
 }
 
 .update-button {
-    margin: 10px;
-    border-radius: 5px;
-    height: 40px;
-    width: auto;
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: .5rem;
+    padding: .5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(172, 176, 127);
+    border: 2px solid rgb(172, 176, 127);
+    font-size: medium;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .cancel-edit-button {
-    margin: 10px;
-    border-radius: 5px;
-    height: 40px;
-    width: 70px;
-    background-color: rgb(217, 240, 208);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: .5rem;
+    padding: .5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(172, 176, 127);
+    border: 2px solid rgb(172, 176, 127);
+    font-size: medium;
+    font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.updateDescriptionHere {
+    display: flex;
+    justify-content: center;
+    color: sandybrown;
+    margin-top: 20px;
+   
+}
+
+.fas {
+    margin-left: 10px;
 }
 
 
