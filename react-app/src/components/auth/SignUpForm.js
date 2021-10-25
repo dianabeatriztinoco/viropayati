@@ -5,6 +5,9 @@ import { signUp } from '../../store/session';
 import { useHistory } from "react-router-dom";
 import { createNewYogaTeacher } from '../../store/teacher';
 import { createNewYogaClass } from '../../store/yogaClass';
+import DemoLoginStudent from './DemoLoginStudent';
+import DemoLoginTeacher from './DemoLoginTeacher';
+import LoginFormModal from '../../components/LoginFormModal'
 import './signUpForm.css'
 
 const SignUpForm = () => {
@@ -99,6 +102,7 @@ const SignUpForm = () => {
 
   return (
     <div className="signUpForm">
+   
     <div className="signUp">SIGN-UP</div>
     <form  onSubmit={onSignUp}>
      
@@ -193,11 +197,31 @@ const SignUpForm = () => {
       </div>
       <div className="input">
       <button  className='signUpFormButton' type='submit'>Sign Up</button>
+
       </div>
       
     </form>
+    <div className="signUpBorder"></div>
+    <div className="loginText">Have an account?</div>
+    <div className="signUpModal">
+          <div className="loginButtonOnSignUp">
+      <LoginFormModal /> 
+      </div>
+    </div>
+    
+    <div className="loginText">or...</div>
+    <div className="signUpModal">
+    
+        <div className="demoButtons">
+      <DemoLoginStudent />
+      </div>
+      <div className="demoButtons">
+       <DemoLoginTeacher />
+       </div>
 
     </div>
+    </div>
+    
   );
   
 };
