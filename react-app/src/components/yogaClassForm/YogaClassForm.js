@@ -115,7 +115,7 @@ const [taughtBy] = useState(selectedTeacher.id)
   const onCreateYogaClass = async (e) => {
 
     e.preventDefault();
-    console.log(taughtBy)
+
     const data = await dispatch(
       createNewYogaClass(
         taughtBy,

@@ -23,7 +23,7 @@ const LoginForm = () => {
     history.push('/homePage')
     if (data) {
       setErrors(data);
-      history.push('/homePage')
+      history.push('/')
     }
   };
 
@@ -44,7 +44,9 @@ const LoginForm = () => {
     <form onSubmit={onLogin}>
       <div>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <ul>
+          <li key={ind}>{error}</li>
+          </ul>
         ))}
       </div>
    
