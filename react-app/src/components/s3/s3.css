@@ -1,0 +1,31 @@
+.footer__container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0; 
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+/* .gitHubIcon {
+    height: 50px;
+}
+
+.gitHub {
+   margin-top: 30px;
+} */
+
+.fab {
+    font-size: 40px;
+    margin: .5rem;
+}
+a {
+    text-decoration: none;
+    color: rgb(172, 176, 127)
+}
+
+a:hover {
+    color: rgb(244, 116, 70);
+}

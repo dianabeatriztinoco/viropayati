@@ -12,12 +12,16 @@ from .api.yoga_class_routes import yoga_class_routes
 from .api.teacher_routes import teacher_routes
 from .api.yoga_class_booking_routes import yoga_class_booking_routes
 from .api.reviews_routes import reviews_routes
+from .api.s3_routes import s3_routes
 
 from .seeds import seed_commands
 
 from .config import Config
 
+
 app = Flask(__name__)
+UPLOAD_FOLDER = 'uploads'
+BUCKET = 'viropayati-dev'
 
 # Setup login manager
 login = LoginManager(app)
@@ -39,6 +43,7 @@ app.register_blueprint(yoga_class_routes, url_prefix='/api/yoga_classes')
 app.register_blueprint(teacher_routes, url_prefix='/api/teachers')
 app.register_blueprint(yoga_class_booking_routes, url_prefix='/api/yoga_class_bookings')
 app.register_blueprint(reviews_routes, url_prefix='/api/reviews')
+app.register_blueprint(s3_routes, url_prefix='/api/s3')
 db.init_app(app)
 Migrate(app, db)
 
@@ -77,7 +82,7 @@ def inject_csrf_token(response):
 def react_root(path):
     if path == 'favicon.ico':
         return app.send_static_file('favicon.ico')
-    if path == 'viropayati.png':
-        return app.send_static_file('viropayati.png')
     return app.send_static_file('index.html')
+
+
  

@@ -19,6 +19,7 @@ import TeacherReviews from './components/TeacherReviews/teacherReviews';
 import TeacherReview from './components/TeacherReview/teacherReview';
 import BookedClasses from './components/BookedClasses/bookedClasses';
 import TeacherDetails from './components/TeacherDetails/teacherDetails';
+import S3 from './components/s3/s3';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -41,6 +42,9 @@ function App() {
       <Switch>
       <Route path='/' exact={true}>
        <SplashPage />
+        </Route>
+        <Route path='/s3' exact={true}>
+       <S3 />
         </Route>
         <Route path='/homepage' exact={true}>
        <HomePage />
