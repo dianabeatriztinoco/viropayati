@@ -6,9 +6,11 @@
     cursor: pointer;
     color: white;
     font-size: large;
+    font-size: large;
     font-family: "Averta","Segoe UI","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .demo-button:hover {
     color: rgb(200, 203, 166);
 }
+
