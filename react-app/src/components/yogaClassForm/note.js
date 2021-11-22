@@ -61,4 +61,5 @@ echo str_replace("p", "q", $text);
 const checkboxes = document.querySelectorAll('input[type="checkbox"]:unchecked')
 
 
+
 checkboxes.checked = true 
